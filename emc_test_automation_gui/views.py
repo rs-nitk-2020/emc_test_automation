@@ -102,3 +102,9 @@ def generate_schematic_image(request):
         else:
             return JsonResponse({'error': 'Failed to generate PNG'}, status=400)
     return JsonResponse({'error': 'No file uploaded'}, status=400)
+
+
+
+
+def test_config_gui(request):
+    return render(request, 'test_standards_config.html')
