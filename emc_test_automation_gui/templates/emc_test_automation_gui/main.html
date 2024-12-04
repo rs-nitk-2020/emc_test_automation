@@ -8,6 +8,22 @@
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/form.js' %}"></script>
     <script>
+      function generateId() {
+          const now = new Date();
+          
+          // Get individual components of the current time
+          const year = now.getFullYear();
+          const month = String(now.getMonth() + 1).padStart(2, '0');
+          const day = String(now.getDate()).padStart(2, '0');
+          const hours = String(now.getHours()).padStart(2, '0');
+          const minutes = String(now.getMinutes()).padStart(2, '0');
+          const seconds = String(now.getSeconds()).padStart(2, '0');
+          const milliseconds = String(now.getMilliseconds()).padStart(3, '0');
+          
+          // Combine them into the desired format
+          return `${year}${month}${day}${hours}${minutes}${seconds}${milliseconds}`;
+      }
+
       $(document).ready(function () {
         // Initially show the "Configure Simulation" section
         $("#configureSimulation").collapse("show");
@@ -22,6 +38,8 @@
           targetHeader.find('.symbol').text($(this).hasClass('show') ? '▼' : '▶');
         });
 
+        var requestId = generateId();
+
         // Handle file upload for pulse generator
         $("#imageUploadPanel1").change(function(){
           var formData = new FormData();
@@ -29,6 +47,8 @@
           if (filePanel1) formData.append("file1", filePanel1);
 
           formData.append("csrfmiddlewaretoken", "{{ csrf_token }}");
+          formData.append("requestId", requestId);
+          formData.append("circuitType", "PulseGenerator");
 
           $.ajax({
             url: "/generate_schematic_image/",  // Endpoint for your image generation logic
@@ -67,6 +87,8 @@
           if (filePanel2) formData.append("file1", filePanel2);
 
           formData.append("csrfmiddlewaretoken", "{{ csrf_token }}");
+          formData.append("requestId", requestId);
+          formData.append("circuitType", "DUT");
 
           $.ajax({
             url: "/generate_schematic_image/",  // Endpoint for your image generation logic

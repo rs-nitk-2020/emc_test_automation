@@ -71,10 +71,13 @@ def download_report(request):
 def generate_schematic_image(request):
     log_dashboard = app_dashboard.EMCTestAutomationApi()
     if request.method == 'POST' and request.FILES['file1']:
+        print(f"Test check {request}")
         asc_file = request.FILES['file1']
+        request_id = request.POST.get('requestId')
+        circuit_type = request.POST.get('circuitType')
 
         # Define where to save the file, e.g., a subfolder under media
-        custom_path = os.path.join(settings.BASE_DIR, 'emc_test_automation_api/data/Schematics/testx')  # Adjust the folder name or path as needed
+        custom_path = os.path.join(settings.BASE_DIR, f'emc_test_automation_api/data/Schematics/{request_id}/{circuit_type}')  # Adjust the folder name or path as needed
         os.makedirs(custom_path, exist_ok=True)  # Ensure the directory exists
 
         # Define the full path to save the file, including its name
@@ -103,8 +106,10 @@ def generate_schematic_image(request):
             return JsonResponse({'error': 'Failed to generate PNG'}, status=400)
     return JsonResponse({'error': 'No file uploaded'}, status=400)
 
-
-
-
 def test_config_gui(request):
     return render(request, 'test_standards_config.html')
+
+def get_test_standards_data(request):
+    dashboard = app_dashboard.EMCTestAutomationApi()
+    response = dashboard.load_gui_basic_data()
+    return JsonResponse(response)

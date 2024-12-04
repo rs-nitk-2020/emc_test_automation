@@ -25,6 +25,10 @@ from emc_test_automation_api.src.utils.file_utils import FileOps
 from emc_test_automation_api.src.services.image_ops import (
     ImageOps as iops,
 )
+from emc_test_automation_api.src.services.database_ops import (
+    DatabaseOps
+)
+
 
 class EMCTestAutomationApi:
     """
@@ -56,17 +60,9 @@ class EMCTestAutomationApi:
         Returns:
             OrderedDict: Dictionary of GUI options to load and populate the form entry page options.
         """
-        basic_data = OrderedDict()
-        basic_data[
-            "emc_test_automation_options"
-        ] = (
-            self.props.emc_test_automation_options.to_dict()  # pylint: disable=E1101 # dynamically populated
-        )
-        basic_data[
-            "emc_test_automation_valid_file_patterns"
-        ] = (
-            self.props.emc_test_automation_valid_file_patterns.to_dict()  # pylint: disable=E1101 # dynamically populated
-        )
+        basic_data = dict()
+        db_ops = DatabaseOps()
+        basic_data = db_ops.get_test_standards_details()
         return basic_data
     
     def generate_schematic_images(self, files:Any):

@@ -1,28 +1,1259 @@
-[2024-12-04 04:48:47,290 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+[2024-12-04 08:16:04,270 GMT] INFO::trigger_reload() D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py changed, reloading.
+[2024-12-04 08:16:04,270 GMT] INFO::trigger_reload() D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py changed, reloading.
+[2024-12-04 08:23:32,431 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
 Traceback (most recent call last):
-  File "C:\Users\Dilshad\Desktop\SOW\Code\emc_test_automation\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
     response = get_response(request)
-  File "C:\Users\Dilshad\Desktop\SOW\Code\emc_test_automation\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\Dilshad\Desktop\SOW\Code\emc_test_automation\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+  File "D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 75, in generate_schematic_image
+    request_id = request.id
+AttributeError: 'WSGIRequest' object has no attribute 'id'
+[2024-12-04 08:23:53,253 GMT] INFO::trigger_reload() D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py changed, reloading.
+[2024-12-04 08:24:00,566 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 75, in generate_schematic_image
+    request_id = request.request_id
+AttributeError: 'WSGIRequest' object has no attribute 'request_id'
+[2024-12-04 08:25:40,906 GMT] INFO::trigger_reload() D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py changed, reloading.
+[2024-12-04 08:25:47,687 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 76, in generate_schematic_image
+    request_id = request.request_id
+AttributeError: 'WSGIRequest' object has no attribute 'request_id'
+[2024-12-04 08:28:41,589 GMT] INFO::trigger_reload() D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py changed, reloading.
+[2024-12-04 08:39:53,371 GMT] ERROR::log_response() Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\loader_tags.py", line 197, in render
+    template = context.template.engine.select_template(template_name)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\engine.py", line 212, in select_template
+    raise TemplateDoesNotExist(", ".join(not_found))
+django.template.exceptions.TemplateDoesNotExist: main.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 16, in home
+    return render(request, 'home.html', basic_gui_data)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\backends\django.py", line 63, in render
+    reraise(exc, self.backend)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\backends\django.py", line 84, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: main.html
+[2024-12-04 08:39:53,463 GMT] WARNING::log_response() Not Found: /favicon.ico
+[2024-12-04 08:44:49,459 GMT] INFO::trigger_reload() D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py changed, reloading.
+[2024-12-04 08:57:17,960 GMT] INFO::trigger_reload() D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-12-04 09:06:34,622 GMT] INFO::trigger_reload() D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py changed, reloading.
+[2024-12-04 09:24:45,783 GMT] WARNING::log_response() Not Found: /favicon.ico
+[2024-12-04 09:27:39,632 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 98, in generate_schematic_image
     file_data = png_file_path[0]['image']
 KeyError: 'image'
-[2024-12-04 06:29:07,688 GMT] INFO::trigger_reload() C:\Users\Dilshad\Desktop\SOW\Code\emc_test_automation\emc_test_automation_gui\views.py changed, reloading.
-[2024-12-04 06:29:30,199 GMT] ERROR::log_response() Internal Server Error: /emc_test_automation_gui/
+[2024-12-04 09:43:42,567 GMT] INFO::trigger_reload() D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\urls.py changed, reloading.
+[2024-12-04 09:52:12,780 GMT] ERROR::log_response() Internal Server Error: /validation_rules/
 Traceback (most recent call last):
-  File "C:\Users\Dilshad\Desktop\SOW\Code\emc_test_automation\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
     response = get_response(request)
-  File "C:\Users\Dilshad\Desktop\SOW\Code\emc_test_automation\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "C:\Users\Dilshad\Desktop\SOW\Code\emc_test_automation\emc_test_automation_gui\views.py", line 110, in test_config_gui
-    return render(request, 'test_standards_config_.html')
-  File "C:\Users\Dilshad\Desktop\SOW\Code\emc_test_automation\env\lib\site-packages\django\shortcuts.py", line 24, in render
+  File "D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 20, in validation_rules
+    basic_gui_data = log_dashboard.load_gui_basic_data()
+  File "D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\app_dashboard.py", line 64, in load_gui_basic_data
+    basic_data = db_ops.get_test_standards_details()
+TypeError: DatabaseOps.get_test_standards_details() missing 1 required positional argument: 'self'
+[2024-12-04 09:52:12,793 GMT] ERROR::log_response() Internal Server Error: /emc_test_automation_gui/get_test_standards_data/
+Traceback (most recent call last):
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 114, in get_test_standards_data
+    response = dashboard.load_gui_basic_data()
+  File "D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\app_dashboard.py", line 64, in load_gui_basic_data
+    basic_data = db_ops.get_test_standards_details()
+TypeError: DatabaseOps.get_test_standards_details() missing 1 required positional argument: 'self'
+[2024-12-04 09:52:14,375 GMT] ERROR::log_response() Internal Server Error: /emc_test_automation_gui/get_test_standards_data/
+Traceback (most recent call last):
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 114, in get_test_standards_data
+    response = dashboard.load_gui_basic_data()
+  File "D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\app_dashboard.py", line 64, in load_gui_basic_data
+    basic_data = db_ops.get_test_standards_details()
+TypeError: DatabaseOps.get_test_standards_details() missing 1 required positional argument: 'self'
+[2024-12-04 09:52:14,398 GMT] ERROR::log_response() Internal Server Error: /validation_rules/
+Traceback (most recent call last):
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 20, in validation_rules
+    basic_gui_data = log_dashboard.load_gui_basic_data()
+  File "D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\app_dashboard.py", line 64, in load_gui_basic_data
+    basic_data = db_ops.get_test_standards_details()
+TypeError: DatabaseOps.get_test_standards_details() missing 1 required positional argument: 'self'
+[2024-12-04 09:52:16,177 GMT] ERROR::log_response() Internal Server Error: /emc_test_automation_gui/get_test_standards_data/
+Traceback (most recent call last):
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 114, in get_test_standards_data
+    response = dashboard.load_gui_basic_data()
+  File "D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\app_dashboard.py", line 64, in load_gui_basic_data
+    basic_data = db_ops.get_test_standards_details()
+TypeError: DatabaseOps.get_test_standards_details() missing 1 required positional argument: 'self'
+[2024-12-04 09:52:16,185 GMT] ERROR::log_response() Internal Server Error: /validation_rules/
+Traceback (most recent call last):
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 20, in validation_rules
+    basic_gui_data = log_dashboard.load_gui_basic_data()
+  File "D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\app_dashboard.py", line 64, in load_gui_basic_data
+    basic_data = db_ops.get_test_standards_details()
+TypeError: DatabaseOps.get_test_standards_details() missing 1 required positional argument: 'self'
+[2024-12-04 09:52:26,115 GMT] ERROR::log_response() Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 15, in home
+    basic_gui_data = log_dashboard.load_gui_basic_data()
+  File "D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\app_dashboard.py", line 64, in load_gui_basic_data
+    basic_data = db_ops.get_test_standards_details()
+TypeError: DatabaseOps.get_test_standards_details() missing 1 required positional argument: 'self'
+[2024-12-04 09:52:26,168 GMT] WARNING::log_response() Not Found: /favicon.ico
+[2024-12-04 09:53:36,410 GMT] INFO::trigger_reload() D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\app_dashboard.py changed, reloading.
+[2024-12-04 09:54:02,794 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 09:54:02,794 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 09:54:02,794 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 09:54:02,794 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 09:54:02,794 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 09:54:02,794 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 09:54:02,794 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 09:54:02,794 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 09:54:02,794 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 09:54:02,804 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 09:54:02,806 GMT] INFO::_exec_single_context() [generated in 0.00205s] ()
+[2024-12-04 09:54:02,811 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 09:54:02,813 GMT] INFO::_exec_single_context() [generated in 0.00205s] (1,)
+[2024-12-04 09:54:02,817 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 09:54:02,818 GMT] INFO::_exec_single_context() [cached since 0.007884s ago] (2,)
+[2024-12-04 09:54:02,819 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 09:54:02,895 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 09:54:02,897 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 09:54:02,898 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 09:54:02,899 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 09:54:02,900 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 09:54:02,901 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 09:54:02,902 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 09:54:02,903 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 09:54:02,905 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 09:54:02,906 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 09:54:02,908 GMT] INFO::_exec_single_context() [generated in 0.00138s] ()
+[2024-12-04 09:54:02,911 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 09:54:02,914 GMT] INFO::_exec_single_context() [generated in 0.00299s] (1,)
+[2024-12-04 09:54:02,916 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 09:54:02,918 GMT] INFO::_exec_single_context() [cached since 0.007542s ago] (2,)
+[2024-12-04 09:54:02,920 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 09:54:08,684 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 09:54:08,684 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 09:54:08,684 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 09:54:08,684 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 09:54:08,692 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 09:54:08,694 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 09:54:08,694 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 09:54:08,694 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 09:54:08,694 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 09:54:08,704 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 09:54:08,704 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 09:54:08,708 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 09:54:08,708 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 09:54:08,708 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 09:54:08,714 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 09:54:08,717 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 09:54:08,717 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 09:54:08,717 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 09:54:08,724 GMT] INFO::_exec_single_context() [generated in 0.00347s] ()
+[2024-12-04 09:54:08,726 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 09:54:08,734 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 09:54:08,734 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 09:54:08,740 GMT] INFO::_exec_single_context() [generated in 0.00743s] (1,)
+[2024-12-04 09:54:08,744 GMT] INFO::_exec_single_context() [generated in 0.00713s] ()
+[2024-12-04 09:54:08,749 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 09:54:08,756 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 09:54:08,759 GMT] INFO::_exec_single_context() [cached since 0.02729s ago] (2,)
+[2024-12-04 09:54:08,764 GMT] INFO::_exec_single_context() [generated in 0.00766s] (1,)
+[2024-12-04 09:54:08,764 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 09:54:08,764 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 09:54:08,778 GMT] INFO::_exec_single_context() [cached since 0.02079s ago] (2,)
+[2024-12-04 09:54:08,780 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 09:57:18,801 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 09:57:18,802 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 09:57:18,802 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 09:57:18,803 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 09:57:18,803 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 09:57:18,803 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 09:57:18,803 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 09:57:18,807 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 09:57:18,808 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 09:57:18,810 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 09:57:18,811 GMT] INFO::_exec_single_context() [generated in 0.00114s] ()
+[2024-12-04 09:57:18,813 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 09:57:18,815 GMT] INFO::_exec_single_context() [generated in 0.00245s] (1,)
+[2024-12-04 09:57:18,818 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 09:57:18,821 GMT] INFO::_exec_single_context() [cached since 0.007329s ago] (2,)
+[2024-12-04 09:57:18,822 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 09:57:49,003 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 09:57:49,003 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 09:57:49,003 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 09:57:49,003 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 09:57:49,013 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 09:57:49,017 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 09:57:49,019 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 09:57:49,019 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 09:57:49,023 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 09:57:49,023 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 09:57:49,036 GMT] INFO::_exec_single_context() [generated in 0.00433s] ()
+[2024-12-04 09:57:49,043 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 09:57:49,049 GMT] INFO::_exec_single_context() [generated in 0.00707s] (1,)
+[2024-12-04 09:57:49,053 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 09:57:49,053 GMT] INFO::_exec_single_context() [cached since 0.01802s ago] (2,)
+[2024-12-04 09:57:49,065 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 09:57:49,203 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 09:57:49,203 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 09:57:49,209 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 09:57:49,209 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 09:57:49,209 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 09:57:49,213 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 09:57:49,213 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 09:57:49,215 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 09:57:49,215 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 09:57:49,215 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 09:57:49,215 GMT] INFO::_exec_single_context() [generated in 0.00193s] ()
+[2024-12-04 09:57:49,224 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 09:57:49,224 GMT] INFO::_exec_single_context() [generated in 0.00246s] (1,)
+[2024-12-04 09:57:49,224 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 09:57:49,233 GMT] INFO::_exec_single_context() [cached since 0.009216s ago] (2,)
+[2024-12-04 09:57:49,233 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 09:57:51,548 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 09:57:51,548 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 09:57:51,553 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 09:57:51,553 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 09:57:51,553 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 09:57:51,560 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 09:57:51,561 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 09:57:51,564 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 09:57:51,564 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 09:57:51,573 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 09:57:51,573 GMT] INFO::_exec_single_context() [generated in 0.00312s] ()
+[2024-12-04 09:57:51,588 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 09:57:51,593 GMT] INFO::_exec_single_context() [generated in 0.00509s] (1,)
+[2024-12-04 09:57:51,600 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 09:57:51,603 GMT] INFO::_exec_single_context() [cached since 0.01829s ago] (2,)
+[2024-12-04 09:57:51,603 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 09:58:02,303 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 09:58:02,303 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 09:58:02,303 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 09:58:02,308 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 09:58:02,308 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 09:58:02,308 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 09:58:02,308 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 09:58:02,313 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 09:58:02,313 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 09:58:02,317 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 09:58:02,323 GMT] INFO::_exec_single_context() [generated in 0.00317s] ()
+[2024-12-04 09:58:02,323 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 09:58:02,333 GMT] INFO::_exec_single_context() [generated in 0.00607s] (1,)
+[2024-12-04 09:58:02,333 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 09:58:02,343 GMT] INFO::_exec_single_context() [cached since 0.01696s ago] (2,)
+[2024-12-04 09:58:02,350 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 09:58:05,903 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 09:58:05,903 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 09:58:05,903 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 09:58:05,903 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 09:58:05,903 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 09:58:05,903 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 09:58:05,903 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 09:58:05,915 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 09:58:05,915 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 09:58:05,923 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 09:58:05,923 GMT] INFO::_exec_single_context() [generated in 0.00387s] ()
+[2024-12-04 09:58:05,933 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 09:58:05,933 GMT] INFO::_exec_single_context() [generated in 0.00703s] (1,)
+[2024-12-04 09:58:05,947 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 09:58:05,953 GMT] INFO::_exec_single_context() [cached since 0.02005s ago] (2,)
+[2024-12-04 09:58:05,953 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:00:08,352 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:00:08,359 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:00:08,363 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:00:08,363 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:00:08,363 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:00:08,363 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:00:08,372 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:00:08,375 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:00:08,375 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:00:08,382 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:00:08,382 GMT] INFO::_exec_single_context() [generated in 0.00493s] ()
+[2024-12-04 10:00:08,392 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:00:08,403 GMT] INFO::_exec_single_context() [generated in 0.00529s] (1,)
+[2024-12-04 10:00:08,407 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:00:08,412 GMT] INFO::_exec_single_context() [cached since 0.0172s ago] (2,)
+[2024-12-04 10:00:08,412 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:00:08,677 GMT] ERROR::log_response() Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 16, in home
+    return render(request, 'home.html', basic_gui_data)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\shortcuts.py", line 24, in render
     content = loader.render_to_string(template_name, context, request, using=using)
-  File "C:\Users\Dilshad\Desktop\SOW\Code\emc_test_automation\env\lib\site-packages\django\template\loader.py", line 61, in render_to_string
-    template = get_template(template_name, using=using)
-  File "C:\Users\Dilshad\Desktop\SOW\Code\emc_test_automation\env\lib\site-packages\django\template\loader.py", line 19, in get_template
-    raise TemplateDoesNotExist(template_name, chain=chain)
-django.template.exceptions.TemplateDoesNotExist: test_standards_config_.html
-[2024-12-04 06:29:30,578 GMT] WARNING::log_response() Not Found: /favicon.ico
-[2024-12-04 06:30:23,424 GMT] INFO::trigger_reload() C:\Users\Dilshad\Desktop\SOW\Code\emc_test_automation\emc_test_automation_gui\views.py changed, reloading.
-[2024-12-04 06:30:33,478 GMT] WARNING::log_response() Not Found: /emc_test_automation_gui/script.js
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\loader_tags.py", line 208, in render
+    return template.render(context)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 177, in render
+    return self._render(context)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'emc_test_automation_gui' not found. 'emc_test_automation_gui' is not a valid view function or pattern name.
+[2024-12-04 10:00:08,792 GMT] WARNING::log_response() Not Found: /favicon.ico
+[2024-12-04 10:01:01,317 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:01,317 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:01:01,317 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:01,322 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:01:01,322 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:01,325 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:01:01,326 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:01,327 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:01:01,327 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:01,329 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:01:01,332 GMT] INFO::_exec_single_context() [generated in 0.00207s] ()
+[2024-12-04 10:01:01,334 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:01,337 GMT] INFO::_exec_single_context() [generated in 0.00213s] (1,)
+[2024-12-04 10:01:01,339 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:01,341 GMT] INFO::_exec_single_context() [cached since 0.006264s ago] (2,)
+[2024-12-04 10:01:01,342 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:01:01,447 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:01,449 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:01:01,450 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:01,453 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:01:01,453 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:01,454 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:01:01,455 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:01,456 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:01:01,458 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:01,460 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:01:01,461 GMT] INFO::_exec_single_context() [generated in 0.00131s] ()
+[2024-12-04 10:01:01,466 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:01,468 GMT] INFO::_exec_single_context() [generated in 0.00198s] (1,)
+[2024-12-04 10:01:01,470 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:01,474 GMT] INFO::_exec_single_context() [cached since 0.007716s ago] (2,)
+[2024-12-04 10:01:01,479 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:01:06,432 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:06,432 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:01:06,432 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:06,440 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:01:06,442 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:06,442 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:01:06,442 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:06,442 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:01:06,452 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:06,456 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:01:06,456 GMT] INFO::_exec_single_context() [generated in 0.00424s] ()
+[2024-12-04 10:01:06,462 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:06,472 GMT] INFO::_exec_single_context() [generated in 0.00706s] (1,)
+[2024-12-04 10:01:06,472 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:06,482 GMT] INFO::_exec_single_context() [cached since 0.01922s ago] (2,)
+[2024-12-04 10:01:06,491 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:01:10,672 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:10,672 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:01:10,680 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:10,682 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:01:10,682 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:10,682 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:01:10,682 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:10,692 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:01:10,696 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:10,696 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:01:10,702 GMT] INFO::_exec_single_context() [generated in 0.00424s] ()
+[2024-12-04 10:01:10,712 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:10,712 GMT] INFO::_exec_single_context() [generated in 0.00643s] (1,)
+[2024-12-04 10:01:10,726 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:10,732 GMT] INFO::_exec_single_context() [cached since 0.01923s ago] (2,)
+[2024-12-04 10:01:10,737 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:01:27,304 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:27,304 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:01:27,304 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:27,312 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:01:27,312 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:27,312 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:01:27,312 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:27,320 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:01:27,322 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:27,322 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:01:27,322 GMT] INFO::_exec_single_context() [generated in 0.00329s] ()
+[2024-12-04 10:01:27,336 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:27,342 GMT] INFO::_exec_single_context() [generated in 0.00740s] (1,)
+[2024-12-04 10:01:27,342 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:27,352 GMT] INFO::_exec_single_context() [cached since 0.01864s ago] (2,)
+[2024-12-04 10:01:27,352 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:01:28,602 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:28,602 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:01:28,609 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:28,609 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:01:28,612 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:28,612 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:01:28,612 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:28,612 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:01:28,612 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:28,625 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:01:28,625 GMT] INFO::_exec_single_context() [generated in 0.00387s] ()
+[2024-12-04 10:01:28,632 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:28,642 GMT] INFO::_exec_single_context() [generated in 0.00703s] (1,)
+[2024-12-04 10:01:28,642 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:28,652 GMT] INFO::_exec_single_context() [cached since 0.01886s ago] (2,)
+[2024-12-04 10:01:28,656 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:01:30,852 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:30,862 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:01:30,862 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:30,862 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:01:30,862 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:30,872 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:01:30,872 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:30,878 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:01:30,878 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:30,882 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:01:30,882 GMT] INFO::_exec_single_context() [generated in 0.00306s] ()
+[2024-12-04 10:01:30,892 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:30,894 GMT] INFO::_exec_single_context() [generated in 0.00534s] (1,)
+[2024-12-04 10:01:30,902 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:30,910 GMT] INFO::_exec_single_context() [cached since 0.01649s ago] (2,)
+[2024-12-04 10:01:30,912 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:01:33,872 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:33,872 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:01:33,872 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:33,882 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:01:33,882 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:33,882 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:01:33,892 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:33,892 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:01:33,898 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:33,898 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:01:33,902 GMT] INFO::_exec_single_context() [generated in 0.00437s] ()
+[2024-12-04 10:01:33,902 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:33,914 GMT] INFO::_exec_single_context() [generated in 0.00671s] (1,)
+[2024-12-04 10:01:33,914 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:33,922 GMT] INFO::_exec_single_context() [cached since 0.01565s ago] (2,)
+[2024-12-04 10:01:33,922 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:01:35,702 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:35,702 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:01:35,702 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:35,712 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:01:35,712 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:35,712 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:01:35,712 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:35,712 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:01:35,722 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:35,726 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:01:35,732 GMT] INFO::_exec_single_context() [generated in 0.00391s] ()
+[2024-12-04 10:01:35,742 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:35,742 GMT] INFO::_exec_single_context() [generated in 0.00412s] (1,)
+[2024-12-04 10:01:35,752 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:35,758 GMT] INFO::_exec_single_context() [cached since 0.01234s ago] (2,)
+[2024-12-04 10:01:35,758 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:01:37,512 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:37,512 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:01:37,512 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:37,523 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:01:37,523 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:37,523 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:01:37,523 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:37,523 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:01:37,523 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:37,532 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:01:37,532 GMT] INFO::_exec_single_context() [generated in 0.00216s] ()
+[2024-12-04 10:01:37,539 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:37,542 GMT] INFO::_exec_single_context() [generated in 0.00427s] (1,)
+[2024-12-04 10:01:37,542 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:37,542 GMT] INFO::_exec_single_context() [cached since 0.01043s ago] (2,)
+[2024-12-04 10:01:37,555 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:01:45,482 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:45,487 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:01:45,487 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:45,492 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:01:45,492 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:45,492 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:01:45,492 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:45,492 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:01:45,502 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:45,502 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:01:45,502 GMT] INFO::_exec_single_context() [generated in 0.00335s] ()
+[2024-12-04 10:01:45,518 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:45,522 GMT] INFO::_exec_single_context() [generated in 0.00785s] (1,)
+[2024-12-04 10:01:45,532 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:45,534 GMT] INFO::_exec_single_context() [cached since 0.01938s ago] (2,)
+[2024-12-04 10:01:45,542 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:01:47,458 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:47,462 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:01:47,462 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:47,462 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:01:47,468 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:47,468 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:01:47,472 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:47,474 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:01:47,474 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:47,474 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:01:47,482 GMT] INFO::_exec_single_context() [generated in 0.00363s] ()
+[2024-12-04 10:01:47,490 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:47,492 GMT] INFO::_exec_single_context() [generated in 0.00631s] (1,)
+[2024-12-04 10:01:47,502 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:47,506 GMT] INFO::_exec_single_context() [cached since 0.01874s ago] (2,)
+[2024-12-04 10:01:47,512 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:01:48,412 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:48,412 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:01:48,422 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:48,422 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:01:48,428 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:48,428 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:01:48,432 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:48,432 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:01:48,432 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:48,444 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:01:48,444 GMT] INFO::_exec_single_context() [generated in 0.00252s] ()
+[2024-12-04 10:01:48,452 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:48,460 GMT] INFO::_exec_single_context() [generated in 0.00561s] (1,)
+[2024-12-04 10:01:48,462 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:48,469 GMT] INFO::_exec_single_context() [cached since 0.01497s ago] (2,)
+[2024-12-04 10:01:48,472 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:01:54,702 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:54,702 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:01:54,702 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:54,713 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:01:54,713 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:54,713 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:01:54,722 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:54,722 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:01:54,729 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:54,732 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:01:54,732 GMT] INFO::_exec_single_context() [generated in 0.00455s] ()
+[2024-12-04 10:01:54,745 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:54,752 GMT] INFO::_exec_single_context() [generated in 0.00631s] (1,)
+[2024-12-04 10:01:54,752 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:54,762 GMT] INFO::_exec_single_context() [cached since 0.01783s ago] (2,)
+[2024-12-04 10:01:54,762 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:01:54,873 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:54,876 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:01:54,876 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:54,876 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:01:54,882 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:54,882 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:01:54,882 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:54,889 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:01:54,892 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:54,892 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:01:54,892 GMT] INFO::_exec_single_context() [generated in 0.00427s] ()
+[2024-12-04 10:01:54,905 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:54,912 GMT] INFO::_exec_single_context() [generated in 0.00684s] (1,)
+[2024-12-04 10:01:54,912 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:54,922 GMT] INFO::_exec_single_context() [cached since 0.01992s ago] (2,)
+[2024-12-04 10:01:54,932 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:01:56,973 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:56,973 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:01:56,978 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:56,978 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:01:56,983 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:56,983 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:01:56,987 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:01:56,992 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:01:56,992 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:01:56,992 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:01:57,005 GMT] INFO::_exec_single_context() [generated in 0.00687s] ()
+[2024-12-04 10:01:57,012 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:57,022 GMT] INFO::_exec_single_context() [generated in 0.00879s] (1,)
+[2024-12-04 10:01:57,022 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:01:57,037 GMT] INFO::_exec_single_context() [cached since 0.02108s ago] (2,)
+[2024-12-04 10:01:57,037 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:04:00,731 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:04:00,731 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:04:00,731 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:04:00,731 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:04:00,741 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:04:00,741 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:04:00,741 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:04:00,744 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:04:00,747 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:04:00,747 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:04:00,747 GMT] INFO::_exec_single_context() [generated in 0.00091s] ()
+[2024-12-04 10:04:00,752 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:04:00,755 GMT] INFO::_exec_single_context() [generated in 0.00266s] (1,)
+[2024-12-04 10:04:00,756 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:04:00,758 GMT] INFO::_exec_single_context() [cached since 0.006458s ago] (2,)
+[2024-12-04 10:04:00,760 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:04:00,911 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:04:00,912 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:04:00,913 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:04:00,915 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:04:00,916 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:04:00,918 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:04:00,918 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:04:00,918 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:04:00,921 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:04:00,922 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:04:00,923 GMT] INFO::_exec_single_context() [generated in 0.00115s] ()
+[2024-12-04 10:04:00,925 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:04:00,927 GMT] INFO::_exec_single_context() [generated in 0.00202s] (1,)
+[2024-12-04 10:04:00,930 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:04:00,933 GMT] INFO::_exec_single_context() [cached since 0.008011s ago] (2,)
+[2024-12-04 10:04:00,934 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:04:04,256 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:04:04,256 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:04:04,256 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:04:04,261 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:04:04,262 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:04:04,264 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:04:04,264 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:04:04,265 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:04:04,266 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:04:04,268 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:04:04,269 GMT] INFO::_exec_single_context() [generated in 0.00110s] ()
+[2024-12-04 10:04:04,271 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:04:04,272 GMT] INFO::_exec_single_context() [generated in 0.00167s] (1,)
+[2024-12-04 10:04:04,273 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:04:04,276 GMT] INFO::_exec_single_context() [cached since 0.004578s ago] (2,)
+[2024-12-04 10:04:04,277 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:04:05,665 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:04:05,666 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:04:05,668 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:04:05,669 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:04:05,669 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:04:05,670 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:04:05,670 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:04:05,671 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:04:05,672 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:04:05,673 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:04:05,674 GMT] INFO::_exec_single_context() [generated in 0.00086s] ()
+[2024-12-04 10:04:05,676 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:04:05,681 GMT] INFO::_exec_single_context() [generated in 0.00412s] (1,)
+[2024-12-04 10:04:05,683 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:04:05,685 GMT] INFO::_exec_single_context() [cached since 0.00808s ago] (2,)
+[2024-12-04 10:04:05,686 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:04:11,522 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:04:11,522 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:04:11,522 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:04:11,527 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:04:11,527 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:04:11,529 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:04:11,530 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:04:11,531 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:04:11,533 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:04:11,534 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:04:11,534 GMT] INFO::_exec_single_context() [generated in 0.00099s] ()
+[2024-12-04 10:04:11,536 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:04:11,536 GMT] INFO::_exec_single_context() [generated in 0.00155s] (1,)
+[2024-12-04 10:04:11,540 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:04:11,542 GMT] INFO::_exec_single_context() [cached since 0.004323s ago] (2,)
+[2024-12-04 10:04:11,543 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:04:12,551 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:04:12,551 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:04:12,551 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:04:12,551 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:04:12,551 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:04:12,551 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:04:12,551 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:04:12,557 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:04:12,559 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:04:12,562 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:04:12,564 GMT] INFO::_exec_single_context() [generated in 0.00318s] ()
+[2024-12-04 10:04:12,567 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:04:12,569 GMT] INFO::_exec_single_context() [generated in 0.00281s] (1,)
+[2024-12-04 10:04:12,571 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:04:12,571 GMT] INFO::_exec_single_context() [cached since 0.005611s ago] (2,)
+[2024-12-04 10:04:12,571 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:04:14,545 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:04:14,546 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:04:14,547 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:04:14,548 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:04:14,549 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:04:14,550 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:04:14,550 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:04:14,551 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:04:14,552 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:04:14,554 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:04:14,555 GMT] INFO::_exec_single_context() [generated in 0.00092s] ()
+[2024-12-04 10:04:14,556 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:04:14,556 GMT] INFO::_exec_single_context() [generated in 0.00125s] (1,)
+[2024-12-04 10:04:14,560 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:04:14,562 GMT] INFO::_exec_single_context() [cached since 0.005774s ago] (2,)
+[2024-12-04 10:04:14,564 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:04:16,040 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:04:16,041 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:04:16,042 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:04:16,043 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:04:16,044 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:04:16,045 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:04:16,047 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:04:16,048 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:04:16,050 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:04:16,052 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:04:16,054 GMT] INFO::_exec_single_context() [generated in 0.00205s] ()
+[2024-12-04 10:04:16,055 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:04:16,057 GMT] INFO::_exec_single_context() [generated in 0.00135s] (1,)
+[2024-12-04 10:04:16,060 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:04:16,062 GMT] INFO::_exec_single_context() [cached since 0.006376s ago] (2,)
+[2024-12-04 10:04:16,064 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:04:17,336 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:04:17,336 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:04:17,336 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:04:17,341 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:04:17,342 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:04:17,343 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:04:17,344 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:04:17,346 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:04:17,347 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:04:17,349 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:04:17,350 GMT] INFO::_exec_single_context() [generated in 0.00158s] ()
+[2024-12-04 10:04:17,351 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:04:17,355 GMT] INFO::_exec_single_context() [generated in 0.00236s] (1,)
+[2024-12-04 10:04:17,357 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:04:17,359 GMT] INFO::_exec_single_context() [cached since 0.006529s ago] (2,)
+[2024-12-04 10:04:17,361 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:04:36,753 GMT] INFO::trigger_reload() D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\urls.py changed, reloading.
+[2024-12-04 10:05:01,786 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:05:01,786 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:05:01,791 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:05:01,791 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:05:01,794 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:05:01,794 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:05:01,794 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:05:01,797 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:05:01,797 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:05:01,801 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:05:01,801 GMT] INFO::_exec_single_context() [generated in 0.00222s] ()
+[2024-12-04 10:05:01,801 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:05:01,810 GMT] INFO::_exec_single_context() [generated in 0.00322s] (1,)
+[2024-12-04 10:05:01,811 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:05:01,811 GMT] INFO::_exec_single_context() [cached since 0.01003s ago] (2,)
+[2024-12-04 10:05:01,818 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:05:01,961 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:05:01,969 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:05:01,969 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:05:01,971 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:05:01,971 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:05:01,971 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:05:01,971 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:05:01,971 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:05:01,971 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:05:01,981 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:05:01,981 GMT] INFO::_exec_single_context() [generated in 0.00215s] ()
+[2024-12-04 10:05:01,985 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:05:01,985 GMT] INFO::_exec_single_context() [generated in 0.00234s] (1,)
+[2024-12-04 10:05:01,991 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:05:01,996 GMT] INFO::_exec_single_context() [cached since 0.009231s ago] (2,)
+[2024-12-04 10:05:02,001 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:05:04,071 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:05:04,071 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:05:04,071 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:05:04,075 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:05:04,081 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:05:04,081 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:05:04,081 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:05:04,081 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:05:04,081 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:05:04,095 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:05:04,099 GMT] INFO::_exec_single_context() [generated in 0.00485s] ()
+[2024-12-04 10:05:04,101 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:05:04,112 GMT] INFO::_exec_single_context() [generated in 0.00630s] (1,)
+[2024-12-04 10:05:04,112 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:05:04,125 GMT] INFO::_exec_single_context() [cached since 0.02059s ago] (2,)
+[2024-12-04 10:05:04,127 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:05:05,591 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:05:05,591 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:05:05,591 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:05:05,601 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:05:05,601 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:05:05,601 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:05:05,607 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:05:05,607 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:05:05,611 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:05:05,611 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:05:05,611 GMT] INFO::_exec_single_context() [generated in 0.00322s] ()
+[2024-12-04 10:05:05,623 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:05:05,623 GMT] INFO::_exec_single_context() [generated in 0.00433s] (1,)
+[2024-12-04 10:05:05,631 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:05:05,631 GMT] INFO::_exec_single_context() [cached since 0.0128s ago] (2,)
+[2024-12-04 10:05:05,638 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:05:05,771 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:05:05,771 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:05:05,771 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:05:05,781 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:05:05,781 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:05:05,787 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:05:05,787 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:05:05,791 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:05:05,796 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:05:05,802 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:05:05,802 GMT] INFO::_exec_single_context() [generated in 0.00539s] ()
+[2024-12-04 10:05:05,811 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:05:05,823 GMT] INFO::_exec_single_context() [generated in 0.00701s] (1,)
+[2024-12-04 10:05:05,831 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:05:05,836 GMT] INFO::_exec_single_context() [cached since 0.01916s ago] (2,)
+[2024-12-04 10:05:05,836 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:05:07,466 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:05:07,466 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:05:07,466 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:05:07,471 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:05:07,471 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:05:07,471 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:05:07,471 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:05:07,482 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:05:07,482 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:05:07,482 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:05:07,491 GMT] INFO::_exec_single_context() [generated in 0.00311s] ()
+[2024-12-04 10:05:07,498 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:05:07,503 GMT] INFO::_exec_single_context() [generated in 0.00599s] (1,)
+[2024-12-04 10:05:07,511 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:05:07,514 GMT] INFO::_exec_single_context() [cached since 0.01919s ago] (2,)
+[2024-12-04 10:05:07,521 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:05:13,771 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:05:13,778 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:05:13,781 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:05:13,781 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:05:13,781 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:05:13,789 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:05:13,791 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:05:13,794 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:05:13,794 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:05:13,801 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:05:13,801 GMT] INFO::_exec_single_context() [generated in 0.00391s] ()
+[2024-12-04 10:05:13,815 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:05:13,821 GMT] INFO::_exec_single_context() [generated in 0.00677s] (1,)
+[2024-12-04 10:05:13,827 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:05:13,831 GMT] INFO::_exec_single_context() [cached since 0.02181s ago] (2,)
+[2024-12-04 10:05:13,831 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:05:13,951 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:05:13,951 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:05:13,951 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:05:13,961 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:05:13,961 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:05:13,961 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:05:13,967 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:05:13,967 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:05:13,971 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:05:13,971 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:05:13,981 GMT] INFO::_exec_single_context() [generated in 0.00388s] ()
+[2024-12-04 10:05:13,988 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:05:13,993 GMT] INFO::_exec_single_context() [generated in 0.00573s] (1,)
+[2024-12-04 10:05:13,999 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:05:14,001 GMT] INFO::_exec_single_context() [cached since 0.01945s ago] (2,)
+[2024-12-04 10:05:14,008 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:05:15,581 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:05:15,581 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:05:15,581 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:05:15,581 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:05:15,591 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:05:15,595 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:05:15,595 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:05:15,595 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:05:15,601 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:05:15,606 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:05:15,611 GMT] INFO::_exec_single_context() [generated in 0.00388s] ()
+[2024-12-04 10:05:15,618 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:05:15,621 GMT] INFO::_exec_single_context() [generated in 0.00366s] (1,)
+[2024-12-04 10:05:15,627 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:05:15,631 GMT] INFO::_exec_single_context() [cached since 0.01389s ago] (2,)
+[2024-12-04 10:05:15,631 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:41:45,049 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:41:45,052 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:41:45,054 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:41:45,057 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:41:45,058 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:41:45,061 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:41:45,062 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:41:45,065 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:41:45,070 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:41:45,075 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:41:45,080 GMT] INFO::_exec_single_context() [generated in 0.00465s] ()
+[2024-12-04 10:41:45,091 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:41:45,099 GMT] INFO::_exec_single_context() [generated in 0.00736s] (1,)
+[2024-12-04 10:41:45,106 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:41:45,112 GMT] INFO::_exec_single_context() [cached since 0.02158s ago] (2,)
+[2024-12-04 10:41:45,116 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:41:45,347 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:41:45,349 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:41:45,350 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:41:45,351 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:41:45,352 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:41:45,353 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:41:45,354 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:41:45,355 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:41:45,356 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:41:45,358 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:41:45,359 GMT] INFO::_exec_single_context() [generated in 0.00155s] ()
+[2024-12-04 10:41:45,362 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:41:45,366 GMT] INFO::_exec_single_context() [generated in 0.00304s] (1,)
+[2024-12-04 10:41:45,371 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:41:45,375 GMT] INFO::_exec_single_context() [cached since 0.01242s ago] (2,)
+[2024-12-04 10:41:45,377 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:44:00,164 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:44:00,165 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:44:00,167 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:44:00,168 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:44:00,170 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:44:00,172 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:44:00,174 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:44:00,176 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:44:00,178 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:44:00,182 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:44:00,186 GMT] INFO::_exec_single_context() [generated in 0.00413s] ()
+[2024-12-04 10:44:00,194 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:44:00,200 GMT] INFO::_exec_single_context() [generated in 0.00663s] (1,)
+[2024-12-04 10:44:00,205 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:44:00,213 GMT] INFO::_exec_single_context() [cached since 0.01935s ago] (2,)
+[2024-12-04 10:44:00,217 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:53:20,943 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:53:20,945 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:53:20,947 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:53:20,950 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:53:20,952 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:53:20,955 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:53:20,957 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:53:20,961 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:53:20,966 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:53:20,971 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:53:20,979 GMT] INFO::_exec_single_context() [generated in 0.00719s] ()
+[2024-12-04 10:53:20,989 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:53:20,999 GMT] INFO::_exec_single_context() [generated in 0.01047s] (1,)
+[2024-12-04 10:53:21,003 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:53:21,011 GMT] INFO::_exec_single_context() [cached since 0.02289s ago] (2,)
+[2024-12-04 10:53:21,015 GMT] INFO::_rollback_impl() ROLLBACK
+[2024-12-04 10:53:21,128 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:53:21,129 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_STANDARDS")
+[2024-12-04 10:53:21,131 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:53:21,132 GMT] INFO::_exec_single_context() PRAGMA main.table_info("TEST_PULSE_PARAMETERS")
+[2024-12-04 10:53:21,133 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:53:21,135 GMT] INFO::_exec_single_context() PRAGMA main.table_info("SIMULATION_PARAMETERS")
+[2024-12-04 10:53:21,136 GMT] INFO::_exec_single_context() [raw sql] ()
+[2024-12-04 10:53:21,137 GMT] INFO::_commit_impl() COMMIT
+[2024-12-04 10:53:21,139 GMT] INFO::_begin_impl() BEGIN (implicit)
+[2024-12-04 10:53:21,141 GMT] INFO::_exec_single_context() SELECT "TEST_STANDARDS"."TEST_ID" AS "TEST_STANDARDS_TEST_ID", "TEST_STANDARDS"."TYPE" AS "TEST_STANDARDS_TYPE", "TEST_STANDARDS"."NAME" AS "TEST_STANDARDS_NAME", "TEST_STANDARDS"."DESCRIPTION" AS "TEST_STANDARDS_DESCRIPTION" 
+FROM "TEST_STANDARDS"
+[2024-12-04 10:53:21,143 GMT] INFO::_exec_single_context() [generated in 0.00155s] ()
+[2024-12-04 10:53:21,147 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:53:21,150 GMT] INFO::_exec_single_context() [generated in 0.00368s] (1,)
+[2024-12-04 10:53:21,153 GMT] INFO::_exec_single_context() SELECT "TEST_PULSE_PARAMETERS"."TEST_ID" AS "TEST_PULSE_PARAMETERS_TEST_ID", "TEST_PULSE_PARAMETERS"."PARAMETER" AS "TEST_PULSE_PARAMETERS_PARAMETER", "TEST_PULSE_PARAMETERS"."DESCRIPTION" AS "TEST_PULSE_PARAMETERS_DESCRIPTION", "TEST_PULSE_PARAMETERS"."VALUE" AS "TEST_PULSE_PARAMETERS_VALUE", "TEST_PULSE_PARAMETERS"."UNITS" AS "TEST_PULSE_PARAMETERS_UNITS", "TEST_PULSE_PARAMETERS"."IS_DEFAULT" AS "TEST_PULSE_PARAMETERS_IS_DEFAULT", "TEST_PULSE_PARAMETERS"."SIMULATION_ID" AS "TEST_PULSE_PARAMETERS_SIMULATION_ID" 
+FROM "TEST_PULSE_PARAMETERS" 
+WHERE "TEST_PULSE_PARAMETERS"."TEST_ID" = ?
+[2024-12-04 10:53:21,155 GMT] INFO::_exec_single_context() [cached since 0.00861s ago] (2,)
+[2024-12-04 10:53:21,157 GMT] INFO::_rollback_impl() ROLLBACK

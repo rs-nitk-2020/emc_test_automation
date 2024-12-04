@@ -75,14 +75,6 @@ class ImageOps:
             print(f"LTSpice Windows {ltspice_windows}")
             ltspice_window = ltspice_windows[0]
 
-            # Find the window handle (HWND) of the application
-            # hwnd = win32gui.FindWindow(None, ltspice_window.title)
-            # if hwnd:
-            #     ltspice_window.minimize()
-            #     screenshot = ImageOps.capture_minimized_window(hwnd)
-            #     # img.show()  # Display the captured image
-            # else:
-            #     print("Window not found.")
             window_title = ltspice_window.title  # Replace with your window title
             print(f"Test now window {window_title}")
             # Replace 'YourApp.exe' with the name of the executable or window title.
@@ -112,42 +104,10 @@ class ImageOps:
             print(f"Trim {left_trim, right_trim, top_trim, bottom_trim}")
             print(f"Height {height} and width {width}")
 
-
             # Perform cropping
             cropped_screenshot = screenshot.crop(crop_box)
             cropped_width, cropped_height = cropped_screenshot.size
             print("Cropped dimensions:", cropped_width, "x", cropped_height)
-            # Find the window by title
-            # window_handle = win32gui.FindWindow(None, window_title)
-            # print(f"Window testing {window_handle}")
-
-            # # Step 5: Find the LTSpice window
-            # ltspice_windows = gw.getWindowsWithTitle("LTspice")
-            # print(f"LTSpice Windows {ltspice_windows}")
-            # ltspice_window = ltspice_windows[0]
-            
-            # Step 6: If the LTSpice window is minimized, restore it (without maximizing)
-            # if ltspice_window:
-            #     ltspice_window.maximize()  # Restore the window without focusing or maximizing it
-            #     time.sleep(3)  # Allow time for the window to be restored
-            # Get window rectangle (x, y, width, height)
-            # left, top, width, height = win32gui.GetWindowRect(window_handle)
-
-            # # Capture only the specified window region
-            # # Step 4: Capture the screenshot of the window's area, even if it's not in focus
-            # screenshot = ImageGrab.grab(bbox=(left, top + 100, left + width, top + height))
-            # Step 7: Capture the screenshot of the window's area
-            # ltspice_window_rect = ltspice_window._rect  # Get LTSpice window dimensions
-            # left, top, width, height = ltspice_window_rect.left, ltspice_window_rect.top, ltspice_window_rect.width, ltspice_window_rect.height
-            # Print bounding box coordinates for debugging
-            # print(f"Bounding Box - Left: {left}, Top: {top}, Width: {width}, Height: {height}")
-
-            # # # Step 4: Capture the screenshot of the window's area, even if it's not in focus
-            # # screenshot = ImageGrab.grab(bbox=(left, top + 100, left + width, top + height))
-
-            # Save the screenshot to the disk
-            # cropped_screenshot.save(png_output_path)
-
             # Convert the image to a byte stream for front-end use
             img_byte_arr = BytesIO()
             cropped_screenshot.save(img_byte_arr, format='PNG')
@@ -155,9 +115,9 @@ class ImageOps:
             # Step 10: Optional: Close LTSpice after capturing the screenshot
             subprocess.call(["taskkill", "/F", "/IM", "LTspice.exe"])
             time.sleep(1)  # Ensure the process has terminated
-
+            
             # Step 11: Return success with the image data
-            return {'status': 'success', 'image': img_byte_arr.getvalue()}
+            return {'status': 'success', 'image': img_byte_arr.getvalue(), 'netlist': ''}
 
         except Exception as e:
             return {'status': 'error', 'error_details': f"An error occurred: {str(e)}"}
