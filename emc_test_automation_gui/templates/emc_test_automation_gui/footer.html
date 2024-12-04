@@ -6,8 +6,18 @@
   <script src="{% static 'js/bootstrap.min.js' %}"></script> 
 </head>
 <body>
-  <div class="container-fluid position-absolute bottom-0 custom-footer text-center p-2">
+  <div class="container-fluid custom-footer text-center p-2">
     &copy; Marelli India Pvt. Ltd.
   </div>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .custom-footer {
+      margin-top: auto;
+    }
+  </style>
 </body>
 </html>

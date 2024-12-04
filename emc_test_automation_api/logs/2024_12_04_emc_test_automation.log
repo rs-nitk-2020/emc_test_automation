@@ -1,0 +1,28 @@
+[2024-12-04 04:48:47,290 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\Dilshad\Desktop\SOW\Code\emc_test_automation\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Dilshad\Desktop\SOW\Code\emc_test_automation\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Dilshad\Desktop\SOW\Code\emc_test_automation\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-12-04 06:29:07,688 GMT] INFO::trigger_reload() C:\Users\Dilshad\Desktop\SOW\Code\emc_test_automation\emc_test_automation_gui\views.py changed, reloading.
+[2024-12-04 06:29:30,199 GMT] ERROR::log_response() Internal Server Error: /emc_test_automation_gui/
+Traceback (most recent call last):
+  File "C:\Users\Dilshad\Desktop\SOW\Code\emc_test_automation\env\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Dilshad\Desktop\SOW\Code\emc_test_automation\env\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Dilshad\Desktop\SOW\Code\emc_test_automation\emc_test_automation_gui\views.py", line 110, in test_config_gui
+    return render(request, 'test_standards_config_.html')
+  File "C:\Users\Dilshad\Desktop\SOW\Code\emc_test_automation\env\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Dilshad\Desktop\SOW\Code\emc_test_automation\env\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Dilshad\Desktop\SOW\Code\emc_test_automation\env\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: test_standards_config_.html
+[2024-12-04 06:29:30,578 GMT] WARNING::log_response() Not Found: /favicon.ico
+[2024-12-04 06:30:23,424 GMT] INFO::trigger_reload() C:\Users\Dilshad\Desktop\SOW\Code\emc_test_automation\emc_test_automation_gui\views.py changed, reloading.
+[2024-12-04 06:30:33,478 GMT] WARNING::log_response() Not Found: /emc_test_automation_gui/script.js
