@@ -1,0 +1,207 @@
+{% load static %}
+<html>
+  <head>
+    <link rel="stylesheet" href="{% static 'css/custom-styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/form.js' %}"></script>
+    <script>
+      $(document).ready(function () {
+        // Initially show the "Configure Simulation" section
+        $("#configureSimulation").collapse("show");
+
+        // Set up click handler for collapsing/expanding sections
+        $(".collapse").on('show.bs.collapse', function () {
+          $(".collapse").not(this).collapse('hide');
+        });
+
+        $(".collapse").on('show.bs.collapse hide.bs.collapse', function () {
+          var targetHeader = $(this).prev('.card-header');
+          targetHeader.find('.symbol').text($(this).hasClass('show') ? '▼' : '▶');
+        });
+
+        // Handle file upload for pulse generator
+        $("#imageUploadPanel1").change(function(){
+          var formData = new FormData();
+          var filePanel1 = $("#imageUploadPanel1")[0].files[0];
+          if (filePanel1) formData.append("file1", filePanel1);
+
+          formData.append("csrfmiddlewaretoken", "{{ csrf_token }}");
+
+          $.ajax({
+            url: "/generate_schematic_image/",  // Endpoint for your image generation logic
+            type: "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+              if (response.status === 'success' && response.image) {
+                // Log the Base64 image data to the console for debugging
+                console.log("Base64 Image Data: ", response.image);
+
+                // Ensure there is no unwanted prefix or extra characters in the Base64 string
+                const base64Image = response.image.trim(); // Remove extra whitespace
+
+                // Alert to check if the image data is correct
+                // alert("Received Image Data: " + base64Image);  // This is for debugging, you can remove it later
+
+                // Set the image source to the Base64 data and show the container
+                $('#pulseGeneratorImage').attr('src', `data:image/png;base64,${base64Image}`);
+                $('#pulseGeneratorImageContainer').show();  // Display the image container
+              } else {
+                alert('Error: No image generated.');
+              }
+            },
+            error: function() {
+              console.log("Error uploading files.");
+            }
+          });
+
+        }) 
+        
+        $("#imageUploadPanel2").change(function(){
+          var formData = new FormData();
+          var filePanel2 = $("#imageUploadPanel2")[0].files[0];
+          if (filePanel2) formData.append("file1", filePanel2);
+
+          formData.append("csrfmiddlewaretoken", "{{ csrf_token }}");
+
+          $.ajax({
+            url: "/generate_schematic_image/",  // Endpoint for your image generation logic
+            type: "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+              if (response.status === 'success' && response.image) {
+                // Ensure there is no unwanted prefix or extra characters in the Base64 string
+                const base64Image = response.image.trim(); // Remove extra whitespace
+                // Set the image source to the Base64 data and show the container
+                $('#dutCircuitImage').attr('src', `data:image/png;base64,${base64Image}`);
+                $('#dutCircuitImageContainer').show();  // Display the image container
+              } else {
+                alert('Error: No image generated.');
+              }
+            },
+            error: function() {
+              console.log("Error uploading files.");
+            }
+          });
+
+        }) 
+      });
+    </script>
+
+    <style>
+      .collapse-link {
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .collapse-link:hover {
+        color: inherit;
+      }
+    </style>
+  </head>
+  <body onload="initialize()">
+    <div class="container-md p-5 overflow-y-scroll h-75">
+      
+      <!-- Image Display Container -->
+      
+    
+      
+      <form action="/submit" method="post" id="warningForm">
+        {% csrf_token %}
+        
+        <!-- Configure Simulation Section -->
+        <div class="mb-4">
+          <div class="card">
+            <div class="card-header" id="configureSimulationHeader">
+              <h5 class="mb-0">
+                <a href="#" class="collapse-link" data-bs-toggle="collapse" data-bs-target="#configureSimulation" aria-expanded="true" aria-controls="configureSimulation">
+                  <span class="symbol">▶</span> <strong>Configure Simulation</strong>
+                </a>
+              </h5>
+            </div>
+            <div id="configureSimulation" class="collapse show" aria-labelledby="configureSimulationHeader">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-6">
+                    <label for="imageUploadPanel1" class="form-label"><b>Pulse Generator Circuit</b></label>
+                    <div id="pulseGeneratorImageContainer" style="display: block; width: 100%; max-width: 400px; margin-bottom: 20px;">
+                      <img id="pulseGeneratorImage" style="max-width: 100%; height: auto; object-fit: contain;" />
+                    </div>
+                    <input type="file" id="imageUploadPanel1" class="form-control" accept=".asc" single onchange="">
+                  </div>
+                  <div class="col-6">
+                    <label for="imageUploadPanel2" class="form-label"><b>Device Under Test (DUT) Circuit</b></label>
+                    <div id="dutCircuitImageContainer" style="display: block; width: 100%; max-width: 400px; margin-bottom: 20px;">
+                      <img id="dutCircuitImage" style="max-width: 100%; height: auto; object-fit: contain;" />
+                    </div>
+                    <input type="file" id="imageUploadPanel2" class="form-control" accept=".asc" single>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Simulation Parameters Section -->
+        <div class="mb-4">
+          <div class="card">
+            <div class="card-header" id="simulationParametersHeader">
+              <h5 class="mb-0">
+                <a href="#" class="collapse-link" data-bs-toggle="collapse" data-bs-target="#simulationParameters" aria-expanded="false" aria-controls="simulationParameters">
+                  <span class="symbol">▶</span> <strong>Simulation Parameters</strong>
+                </a>
+              </h5>
+            </div>
+            <div id="simulationParameters" class="collapse" aria-labelledby="simulationParametersHeader">
+              <div class="card-body">
+                <div class="mb-3">
+                  <label for="pulseGeneratorDetails" class="form-label">Pulse Generator Details</label>
+                  <input type="text" class="form-control" id="pulseGeneratorDetails" placeholder="Enter details for pulse generator">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visualize Simulation Results Section -->
+        <div class="mb-4">
+          <div class="card">
+            <div class="card-header" id="visualizeSimulationResultsHeader">
+              <h5 class="mb-0">
+                <a href="#" class="collapse-link" data-bs-toggle="collapse" data-bs-target="#visualizeSimulationResults" aria-expanded="false" aria-controls="visualizeSimulationResults">
+                  <span class="symbol">▶</span> <strong>Visualize Simulation Results</strong>
+                </a>
+              </h5>
+            </div>
+            <div id="visualizeSimulationResults" class="collapse" aria-labelledby="visualizeSimulationResultsHeader">
+              <div class="card-body">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="graph1">
+                  <label class="form-check-label" for="graph1">
+                    Graph 1
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="graph2">
+                  <label class="form-check-label" for="graph2">
+                    Graph 2
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label id="lblMessage" class="form-label text-primary-emphasis px-1"></label>
+          {{ new_element|escape }}
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

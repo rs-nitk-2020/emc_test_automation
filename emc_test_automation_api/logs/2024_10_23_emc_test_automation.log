@@ -1,0 +1,28 @@
+[2024-10-23 09:00:15,159 GMT] ERROR::log_response() Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/saldanha/miniconda3/envs/emc_test_automation_dashboard/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/saldanha/miniconda3/envs/emc_test_automation_dashboard/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/saldanha/PythonProjects/emc_test_automation_dashboard/emc_test_automation_gui/views.py", line 11, in home
+    basic_gui_data = log_dashboard.load_gui_basic_data()
+  File "/home/saldanha/PythonProjects/emc_test_automation_dashboard/emc_test_automation_api/app_dashboard.py", line 61, in load_gui_basic_data
+    self.props.emc_test_automation_options.to_dict()  # pylint: disable=E1101 # dynamically populated
+AttributeError: 'DictToObject' object has no attribute 'emc_test_automation_options'
+[2024-10-23 09:00:15,184 GMT] WARNING::log_response() Not Found: /favicon.ico
+[2024-10-23 09:01:50,289 GMT] ERROR::log_response() Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/saldanha/miniconda3/envs/emc_test_automation_dashboard/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/saldanha/miniconda3/envs/emc_test_automation_dashboard/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/saldanha/PythonProjects/emc_test_automation_dashboard/emc_test_automation_gui/views.py", line 11, in home
+    basic_gui_data = log_dashboard.load_gui_basic_data()
+  File "/home/saldanha/PythonProjects/emc_test_automation_dashboard/emc_test_automation_api/app_dashboard.py", line 66, in load_gui_basic_data
+    self.props.emc_test_automation_valid_file_patterns.to_dict()  # pylint: disable=E1101 # dynamically populated
+AttributeError: 'DictToObject' object has no attribute 'emc_test_automation_valid_file_patterns'
+[2024-10-23 09:04:27,650 GMT] WARNING::log_response() Not Found: /favicon.ico
+[2024-10-23 09:16:40,676 GMT] WARNING::log_response() Not Found: /favicon.ico
+[2024-10-23 09:17:03,409 GMT] WARNING::log_response() Not Found: /favicon.ico
+[2024-10-23 09:19:43,634 GMT] WARNING::log_response() Not Found: /favicon.ico
+[2024-10-23 09:20:47,051 GMT] WARNING::log_response() Not Found: /favicon.ico

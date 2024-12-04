@@ -1,0 +1,6 @@
+venv
+__pycache__
+*.pyc
+/log_analysis_api/data/dev/
+/log_analysis_api/log/dev/
+db.sqlite3

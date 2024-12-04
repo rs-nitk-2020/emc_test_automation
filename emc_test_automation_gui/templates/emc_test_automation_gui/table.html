@@ -1,0 +1,30 @@
+{% load static %}
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href=" {% static '/css/custom-styles.css' %} ">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+  <script src="{% static 'js/xlsx.full.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/table.js' %}"></script>
+</head>
+
+<body onload="loadReport()">
+  <div class="container mt-3">
+    <label id="lblMessage"></label>
+    <div class="row m-2">
+      <div id="reportMenu" class="col-7 flex-wrap btn-group pt-3" role="group" aria-label="Basic example">
+      </div>
+      <div class="col-5 d-flex flex-row-reverse">
+        <button class="custom-btn" onclick="window.history.back();">BACK</button><br>
+        <button class="custom-btn" id="downloadBtn" onclick="downloadReport(resultsResponseData)">DOWNLOAD REPORT</button>
+      </div>
+    </div>
+    <div class="row custom-border overflow-y-scroll h-75" id="resultsTable">
+    </div>
+  </div>
+</body>
+
+</html>

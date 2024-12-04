@@ -1,0 +1,27 @@
+[2024-12-03 05:39:22,186 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-12-03 05:39:42,819 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-12-03 05:40:19,560 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'

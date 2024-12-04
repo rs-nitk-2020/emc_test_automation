@@ -1,0 +1,519 @@
+[2024-11-08 04:01:35,776 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 04:02:09,314 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 97, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 04:02:21,862 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 04:06:12,288 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 04:16:13,442 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 04:17:38,434 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 04:17:52,216 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 97, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 04:18:32,214 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 97, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 04:24:51,964 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 97, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 04:25:19,233 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 97, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 04:26:03,808 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 97, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 04:27:26,498 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 04:28:01,098 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 97, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 04:29:42,598 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 04:30:08,070 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 97, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 04:31:43,382 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 04:33:31,150 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 04:35:55,286 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 04:36:25,011 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 97, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 04:37:44,233 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 97, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 04:42:05,967 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 04:42:23,148 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 97, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 04:43:49,657 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 04:44:19,603 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 97, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 04:45:30,970 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 04:46:36,596 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 97, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 04:48:48,329 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 97, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 04:49:33,228 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 04:49:49,260 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 97, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 04:51:01,677 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 97, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 04:51:49,071 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 04:52:00,744 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 97, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 04:52:23,735 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 04:52:47,950 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 97, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 04:53:33,829 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 04:53:48,463 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 97, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 04:56:36,057 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 97, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 04:58:39,605 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py changed, reloading.
+[2024-11-08 05:00:02,510 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 05:01:08,375 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 05:01:24,097 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 05:01:59,254 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 05:02:28,656 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 05:03:26,401 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 05:03:56,226 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 05:09:42,412 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 05:09:56,572 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 97, in generate_schematic_image
+    base64_data = base64.b64encode(file_data).decode('utf-8')
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\base64.py", line 58, in b64encode
+    encoded = binascii.b2a_base64(s, newline=False)
+TypeError: a bytes-like object is required, not 'Image'
+[2024-11-08 05:10:43,855 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 05:13:06,489 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 05:13:32,864 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 05:13:42,311 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 05:13:56,436 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 05:14:15,189 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 05:16:16,563 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 05:16:27,956 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 05:16:46,046 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 05:16:53,096 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 07:55:12,100 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 07:56:40,033 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 07:57:56,009 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 08:01:01,003 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 08:05:47,305 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 08:06:56,233 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 08:08:08,102 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 08:35:34,071 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 08:36:48,495 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 08:37:14,547 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 08:37:54,330 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 08:38:03,608 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 08:38:29,918 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 08:38:38,808 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 08:39:43,199 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 08:40:47,584 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 08:41:18,563 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 08:42:04,352 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 08:42:48,236 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 08:43:22,875 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 08:44:21,218 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 08:44:52,704 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 08:46:12,927 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 08:47:01,023 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 08:47:39,664 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 08:47:45,282 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 08:47:47,545 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 08:48:07,256 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 08:48:17,020 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 08:48:46,888 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 08:49:30,669 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 08:52:11,029 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 08:56:46,252 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 08:57:40,159 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 08:58:16,742 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 08:58:52,482 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 08:59:01,674 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 09:01:03,215 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 09:03:14,784 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 09:04:58,214 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 09:12:36,265 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 09:12:58,120 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 09:14:05,205 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 09:15:08,279 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 09:16:08,877 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 09:16:19,040 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 09:16:46,499 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 09:16:55,910 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 09:17:26,884 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 09:17:55,634 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 09:18:07,155 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 09:18:32,346 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 09:18:39,914 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 09:19:13,897 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 09:19:28,547 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 09:19:46,359 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 09:20:04,060 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 09:21:05,023 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 95, in generate_schematic_image
+    file_data = png_file_path[0]['image']
+KeyError: 'image'
+[2024-11-08 09:21:43,116 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-08 09:23:10,042 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.

@@ -1,0 +1,7 @@
+# All dev environment properties are present over here
+applog_suffix:
+  'emc_test_automation_dashboard.log'
+applog_prefix:
+  '%Y_%m_%d'
+applog_message_format;
+  '[%(asct

@@ -1,0 +1,537 @@
+[2024-11-07 03:10:51,842 GMT] ERROR::log_response() Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 12, in home
+    return render(request, 'home.html', basic_gui_data)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\loader_tags.py", line 208, in render
+    return template.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 177, in render
+    return self._render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'test_configuration' not found. 'test_configuration' is not a valid view function or pattern name.
+[2024-11-07 03:10:52,050 GMT] WARNING::log_response() Not Found: /favicon.ico
+[2024-11-07 03:11:48,040 GMT] ERROR::log_response() Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 12, in home
+    return render(request, 'home.html', basic_gui_data)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\loader_tags.py", line 208, in render
+    return template.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 177, in render
+    return self._render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'index' not found. 'index' is not a valid view function or pattern name.
+[2024-11-07 03:11:49,672 GMT] ERROR::log_response() Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 12, in home
+    return render(request, 'home.html', basic_gui_data)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\loader_tags.py", line 208, in render
+    return template.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 177, in render
+    return self._render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'index' not found. 'index' is not a valid view function or pattern name.
+[2024-11-07 03:11:51,345 GMT] ERROR::log_response() Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 12, in home
+    return render(request, 'home.html', basic_gui_data)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\loader_tags.py", line 208, in render
+    return template.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 177, in render
+    return self._render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'index' not found. 'index' is not a valid view function or pattern name.
+[2024-11-07 03:25:24,708 GMT] ERROR::log_response() Internal Server Error: /emc_test_automation_gui/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 12, in home
+    return render(request, 'home.html', basic_gui_data)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\loader_tags.py", line 208, in render
+    return template.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 177, in render
+    return self._render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'main' not found. 'main' is not a valid view function or pattern name.
+[2024-11-07 05:11:33,749 GMT] ERROR::log_response() Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 12, in home
+    return render(request, 'home.html', basic_gui_data)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\loader_tags.py", line 208, in render
+    return template.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 177, in render
+    return self._render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'generate_png' not found. 'generate_png' is not a valid view function or pattern name.
+[2024-11-07 05:11:33,796 GMT] WARNING::log_response() Not Found: /favicon.ico
+[2024-11-07 05:14:30,506 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\urls.py changed, reloading.
+[2024-11-07 05:38:58,051 GMT] ERROR::log_response() Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 12, in home
+    return render(request, 'home.html', basic_gui_data)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\loader_tags.py", line 208, in render
+    return template.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 177, in render
+    return self._render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'generate_png' not found. 'generate_png' is not a valid view function or pattern name.
+[2024-11-07 05:38:58,117 GMT] WARNING::log_response() Not Found: /favicon.ico
+[2024-11-07 05:39:55,446 GMT] WARNING::log_response() Forbidden (CSRF token missing.): /emc_test_automation_gui/generate_schematic_image/
+[2024-11-07 05:46:23,919 GMT] WARNING::log_response() Forbidden (CSRF token missing.): /emc_test_automation_gui/generate_schematic_image/
+[2024-11-07 05:48:23,541 GMT] WARNING::log_response() Forbidden (CSRF token from the 'X-Csrftoken' HTTP header has incorrect length.): /emc_test_automation_gui/generate_schematic_image/
+[2024-11-07 05:53:38,039 GMT] WARNING::log_response() Not Found: /your-upload-url/
+[2024-11-07 05:59:54,239 GMT] WARNING::log_response() Not Found: /generate_shematic_image
+[2024-11-07 06:01:36,401 GMT] WARNING::log_response() Not Found: /generate_shematic_image/
+[2024-11-07 06:03:17,401 GMT] WARNING::log_response() Not Found: /generate_shematic_image/
+[2024-11-07 06:05:05,965 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py changed, reloading.
+[2024-11-07 06:08:00,177 GMT] WARNING::log_response() Not Found: /generate_shematic_image/
+[2024-11-07 06:13:27,027 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'asc_file'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 70, in generate_schematic_image
+    if request.method == 'POST' and request.FILES['asc_file']:
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'asc_file'
+[2024-11-07 06:18:40,546 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py changed, reloading.
+[2024-11-07 06:19:07,991 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 70, in generate_schematic_image
+    if request.method == 'POST' and request.FILES[0]:
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 0
+[2024-11-07 06:19:42,816 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py changed, reloading.
+[2024-11-07 06:20:02,706 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 76, in generate_schematic_image
+    png_file_path = log_dashboard.generate_schematic_images([asc_file])
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\app_dashboard.py", line 75, in generate_schematic_images
+    processed_images.append(iops.generate_schematic_image(schematic_file=file))
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py", line 14, in generate_schematic_image
+    if not os.path.exists(schematic_file):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+TypeError: stat: path should be string, bytes, os.PathLike or integer, not InMemoryUploadedFile
+[2024-11-07 08:45:22,348 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 86, in generate_schematic_image
+    png_file_path = log_dashboard.generate_schematic_images([asc_file])
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\app_dashboard.py", line 75, in generate_schematic_images
+    processed_images.append(iops.generate_schematic_image(schematic_file=file))
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py", line 15, in generate_schematic_image
+    if not os.path.exists(schematic_file):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\genericpath.py", line 19, in exists
+    os.stat(path)
+TypeError: stat: path should be string, bytes, os.PathLike or integer, not InMemoryUploadedFile
+[2024-11-07 08:49:39,301 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py changed, reloading.
+[2024-11-07 08:50:30,264 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 97, in generate_schematic_image
+    png_url = os.path.join('media', png_file_path)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\ntpath.py", line 117, in join
+    genericpath._check_arg_types('join', path, *paths)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\genericpath.py", line 152, in _check_arg_types
+    raise TypeError(f'{funcname}() argument must be str, bytes, or '
+TypeError: join() argument must be str, bytes, or os.PathLike object, not 'list'
+[2024-11-07 08:51:31,852 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py changed, reloading.
+[2024-11-07 08:51:47,087 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 97, in generate_schematic_image
+    png_url = os.path.join('media', png_file_path)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\ntpath.py", line 117, in join
+    genericpath._check_arg_types('join', path, *paths)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\genericpath.py", line 152, in _check_arg_types
+    raise TypeError(f'{funcname}() argument must be str, bytes, or '
+TypeError: join() argument must be str, bytes, or os.PathLike object, not 'list'
+[2024-11-07 08:52:50,624 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py changed, reloading.
+[2024-11-07 08:54:00,621 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 97, in generate_schematic_image
+    return JsonResponse(png_file_path[0])
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\http\response.py", line 731, in __init__
+    data = json.dumps(data, cls=encoder, **json_dumps_params)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\serializers\json.py", line 106, in default
+    return super().default(o)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type bytes is not JSON serializable
+[2024-11-07 08:58:32,008 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py changed, reloading.
+[2024-11-07 09:09:27,927 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'file1'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 73, in generate_schematic_image
+    if request.method == 'POST' and request.FILES['file1']:
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'file1'
+[2024-11-07 09:29:48,519 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'file1'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 73, in generate_schematic_image
+    if request.method == 'POST' and request.FILES['file1']:
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'file1'
+[2024-11-07 09:33:09,151 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py changed, reloading.
+[2024-11-07 14:10:01,674 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py changed, reloading.
+[2024-11-07 14:10:34,022 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'file1'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 73, in generate_schematic_image
+    if request.method == 'POST' and request.FILES['file1']:
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'file1'
+[2024-11-07 14:11:15,332 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 97, in generate_schematic_image
+    file_data = png_file_path[0]['image'].decode('utf-8')
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x89 in position 0: invalid start byte
+[2024-11-07 14:13:42,241 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py changed, reloading.
+[2024-11-07 14:22:51,879 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py changed, reloading.
+[2024-11-07 14:22:52,139 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py changed, reloading.
+[2024-11-07 14:23:20,988 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 101, in generate_schematic_image
+    return JsonResponse({
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\http\response.py", line 731, in __init__
+    data = json.dumps(data, cls=encoder, **json_dumps_params)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\serializers\json.py", line 106, in default
+    return super().default(o)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\json\encoder.py", line 179, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type set is not JSON serializable
+[2024-11-07 14:23:37,699 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py changed, reloading.
+[2024-11-07 14:25:03,212 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py changed, reloading.
+[2024-11-07 14:29:46,459 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_api\src\services\image_ops.py changed, reloading.
+[2024-11-07 14:31:23,087 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 79, in generate_schematic_image
+    os.makedirs(custom_path, exist_ok=True)  # Ensure the directory exists
+  File "C:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\os.py", line 225, in makedirs
+    mkdir(name, mode)
+OSError: [WinError 123] The filename, directory name, or volume label syntax is incorrect: 'C:\\PythonProjects\\emc_test_automation_dashboard\\emc_test_automation_dashboard\\data\\Schematics\testx'
+[2024-11-07 14:31:51,425 GMT] INFO::trigger_reload() C:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py changed, reloading.

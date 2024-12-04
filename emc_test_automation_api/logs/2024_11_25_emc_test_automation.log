@@ -1,0 +1,36 @@
+[2024-11-25 03:42:06,272 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'file1'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 73, in generate_schematic_image
+    if request.method == 'POST' and request.FILES['file1']:
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'file1'
+[2024-11-25 03:43:10,489 GMT] ERROR::log_response() Internal Server Error: /generate_schematic_image/
+Traceback (most recent call last):
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\utils\datastructures.py", line 84, in __getitem__
+    list_ = super().__getitem__(key)
+KeyError: 'file1'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\PythonProjects\emc_test_automation_dashboard\emc_test_automation_gui\views.py", line 73, in generate_schematic_image
+    if request.method == 'POST' and request.FILES['file1']:
+  File "D:\Users\saldanha\miniconda3\envs\emc_test_automation_dashboard\lib\site-packages\django\utils\datastructures.py", line 86, in __getitem__
+    raise MultiValueDictKeyError(key)
+django.utils.datastructures.MultiValueDictKeyError: 'file1'
