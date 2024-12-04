@@ -1,207 +1,442 @@
+{% include "./header.html" %}
 {% load static %}
 <html>
-  <head>
-    <link rel="stylesheet" href="{% static 'css/custom-styles.css' %}">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
-    <script src="{% static 'js/popper.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'js/form.js' %}"></script>
-    <script>
-      $(document).ready(function () {
-        // Initially show the "Configure Simulation" section
-        $("#configureSimulation").collapse("show");
 
-        // Set up click handler for collapsing/expanding sections
-        $(".collapse").on('show.bs.collapse', function () {
-          $(".collapse").not(this).collapse('hide');
-        });
+<head>
+  <link rel="stylesheet" href="{% static 'css/custom-styles.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/form.js' %}"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
 
-        $(".collapse").on('show.bs.collapse hide.bs.collapse', function () {
-          var targetHeader = $(this).prev('.card-header');
-          targetHeader.find('.symbol').text($(this).hasClass('show') ? '▼' : '▶');
-        });
+    .container {
+      margin-top: 20px;
+    }
 
-        // Handle file upload for pulse generator
-        $("#imageUploadPanel1").change(function(){
-          var formData = new FormData();
-          var filePanel1 = $("#imageUploadPanel1")[0].files[0];
-          if (filePanel1) formData.append("file1", filePanel1);
+    .card {
+      border: none;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
 
-          formData.append("csrfmiddlewaretoken", "{{ csrf_token }}");
+    .card-header {
+      background-color: #007bff;
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+    }
 
-          $.ajax({
-            url: "/generate_schematic_image/",  // Endpoint for your image generation logic
-            type: "POST",
-            data: formData,
-            processData: false,
-            contentType: false,
-            success: function(response) {
-              if (response.status === 'success' && response.image) {
-                // Log the Base64 image data to the console for debugging
-                console.log("Base64 Image Data: ", response.image);
+    .card-body {
+      padding: 20px;
+    }
 
-                // Ensure there is no unwanted prefix or extra characters in the Base64 string
-                const base64Image = response.image.trim(); // Remove extra whitespace
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+    }
 
-                // Alert to check if the image data is correct
-                // alert("Received Image Data: " + base64Image);  // This is for debugging, you can remove it later
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
 
-                // Set the image source to the Base64 data and show the container
-                $('#pulseGeneratorImage').attr('src', `data:image/png;base64,${base64Image}`);
-                $('#pulseGeneratorImageContainer').show();  // Display the image container
-              } else {
-                alert('Error: No image generated.');
-              }
-            },
-            error: function() {
-              console.log("Error uploading files.");
-            }
-          });
+    textarea,
+    input[type="text"] {
+      margin-bottom: 10px;
+    }
 
-        }) 
-        
-        $("#imageUploadPanel2").change(function(){
-          var formData = new FormData();
-          var filePanel2 = $("#imageUploadPanel2")[0].files[0];
-          if (filePanel2) formData.append("file1", filePanel2);
+    .suggestions {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      max-height: 150px;
+      overflow-y: auto;
+      display: none;
+      position: absolute;
+      z-index: 10;
+    }
 
-          formData.append("csrfmiddlewaretoken", "{{ csrf_token }}");
+    .suggestions div {
+      padding: 8px;
+      cursor: pointer;
+    }
 
-          $.ajax({
-            url: "/generate_schematic_image/",  // Endpoint for your image generation logic
-            type: "POST",
-            data: formData,
-            processData: false,
-            contentType: false,
-            success: function(response) {
-              if (response.status === 'success' && response.image) {
-                // Ensure there is no unwanted prefix or extra characters in the Base64 string
-                const base64Image = response.image.trim(); // Remove extra whitespace
-                // Set the image source to the Base64 data and show the container
-                $('#dutCircuitImage').attr('src', `data:image/png;base64,${base64Image}`);
-                $('#dutCircuitImageContainer').show();  // Display the image container
-              } else {
-                alert('Error: No image generated.');
-              }
-            },
-            error: function() {
-              console.log("Error uploading files.");
-            }
-          });
+    .suggestions div:hover {
+      background-color: #e9ecef;
+    }
 
-        }) 
-      });
-    </script>
+    #saveCancel {
+      text-align: right;
+      margin-top: 20px;
+    }
+  </style>
+</head>
 
-    <style>
-      .collapse-link {
-        text-decoration: none;
-        cursor: pointer;
-      }
-      .collapse-link:hover {
-        color: inherit;
-      }
-    </style>
-  </head>
-  <body onload="initialize()">
-    <div class="container-md p-5 overflow-y-scroll h-75">
-      
-      <!-- Image Display Container -->
-      
-    
-      
-      <form action="/submit" method="post" id="warningForm">
-        {% csrf_token %}
-        
-        <!-- Configure Simulation Section -->
-        <div class="mb-4">
-          <div class="card">
-            <div class="card-header" id="configureSimulationHeader">
-              <h5 class="mb-0">
-                <a href="#" class="collapse-link" data-bs-toggle="collapse" data-bs-target="#configureSimulation" aria-expanded="true" aria-controls="configureSimulation">
-                  <span class="symbol">▶</span> <strong>Configure Simulation</strong>
-                </a>
-              </h5>
-            </div>
-            <div id="configureSimulation" class="collapse show" aria-labelledby="configureSimulationHeader">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-6">
-                    <label for="imageUploadPanel1" class="form-label"><b>Pulse Generator Circuit</b></label>
-                    <div id="pulseGeneratorImageContainer" style="display: block; width: 100%; max-width: 400px; margin-bottom: 20px;">
-                      <img id="pulseGeneratorImage" style="max-width: 100%; height: auto; object-fit: contain;" />
-                    </div>
-                    <input type="file" id="imageUploadPanel1" class="form-control" accept=".asc" single onchange="">
-                  </div>
-                  <div class="col-6">
-                    <label for="imageUploadPanel2" class="form-label"><b>Device Under Test (DUT) Circuit</b></label>
-                    <div id="dutCircuitImageContainer" style="display: block; width: 100%; max-width: 400px; margin-bottom: 20px;">
-                      <img id="dutCircuitImage" style="max-width: 100%; height: auto; object-fit: contain;" />
-                    </div>
-                    <input type="file" id="imageUploadPanel2" class="form-control" accept=".asc" single>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="card-header">
+        Transient Immunity Standard
+      </div>
+      <div class="card-body">
+        <div class="d-flex flex" style="width: 100%;">
+
+        <div class="form-group" style="width: 80%;">
+          <label for="standardInput">Enter Standard Name:</label>
+          <input type="text" id="standardInput" class="form-control" placeholder="Enter standard name..."
+            oninput="showSuggestions()" />
+          <div id="suggestions" class="suggestions"></div>
         </div>
 
-        <!-- Simulation Parameters Section -->
-        <div class="mb-4">
-          <div class="card">
-            <div class="card-header" id="simulationParametersHeader">
-              <h5 class="mb-0">
-                <a href="#" class="collapse-link" data-bs-toggle="collapse" data-bs-target="#simulationParameters" aria-expanded="false" aria-controls="simulationParameters">
-                  <span class="symbol">▶</span> <strong>Simulation Parameters</strong>
-                </a>
-              </h5>
-            </div>
-            <div id="simulationParameters" class="collapse" aria-labelledby="simulationParametersHeader">
-              <div class="card-body">
-                <div class="mb-3">
-                  <label for="pulseGeneratorDetails" class="form-label">Pulse Generator Details</label>
-                  <input type="text" class="form-control" id="pulseGeneratorDetails" placeholder="Enter details for pulse generator">
-                </div>
-              </div>
-            </div>
-          </div>
+        <button id="createModifyStandard" class="btn btn-primary" onclick="CreateStandard()" style="margin: 8 4 8 14;">Create/Modify
+          Standard</button>
+
         </div>
 
-        <!-- Visualize Simulation Results Section -->
-        <div class="mb-4">
-          <div class="card">
-            <div class="card-header" id="visualizeSimulationResultsHeader">
-              <h5 class="mb-0">
-                <a href="#" class="collapse-link" data-bs-toggle="collapse" data-bs-target="#visualizeSimulationResults" aria-expanded="false" aria-controls="visualizeSimulationResults">
-                  <span class="symbol">▶</span> <strong>Visualize Simulation Results</strong>
-                </a>
-              </h5>
-            </div>
-            <div id="visualizeSimulationResults" class="collapse" aria-labelledby="visualizeSimulationResultsHeader">
-              <div class="card-body">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="graph1">
-                  <label class="form-check-label" for="graph1">
-                    Graph 1
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="graph2">
-                  <label class="form-check-label" for="graph2">
-                    Graph 2
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="form-group">
+          <label for="standardDescription">Description (Optional):</label>
+          <textarea id="standardDescription" class="form-control" readonly rows="1" style="resize: none;"></textarea>
         </div>
-
-        <div class="mb-4">
-          <label id="lblMessage" class="form-label text-primary-emphasis px-1"></label>
-          {{ new_element|escape }}
-        </div>
-      </form>
+      </div>
     </div>
-  </body>
+
+    <div id="pulseSection" class="card mt-4" style="display: none;">
+      <div class="card-header">
+        Tests
+      </div>
+      <div class="card-body">
+        <div class="flex d-flex" style="justify-content: space-between;">
+          <div id="pulses" class="mb-3 d-flex flex" ></div>
+          <button id="addPulse" class="btn btn-primary" onclick="CreatePulse()" style="margin: 8 4 8 14;">Create Pulse</button>
+        </div>
+        <div id="pulseDetails">
+          <h5 id="pulseName"></h5>
+          <p id="pulseDescription"></p>
+
+          <button id="addParameter" class="btn btn-primary" style="display: none;" onclick="CreateParam()">Add Parameter</button>
+
+
+          <table class="table table-striped table-bordered" id="parametersTable" style="display: none;">
+            <thead>
+              <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+                <th>Value</th>
+                <th>Units</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div id="createSection" class="card mt-4" style="display: none;">
+      <div class="card-header">
+        Create New Test
+      </div>
+      <div class="card-body">
+        <textarea id="newDescription" class="form-control" placeholder="Enter description..."></textarea>
+        <button class="btn btn-primary mt-3" onclick="addNewTest()">Create Test</button>
+      </div>
+    </div>
+
+    <div id="saveCancel" class="mt-4">
+      <button id="saveBtn" class="btn btn-success" onclick="save()">Save</button>
+      <button id="cancelBtn" class="btn btn-secondary" onclick="cancel()">Cancel</button>
+    </div>
+  </div>
+
+  <script>
+    // Your existing JavaScript code for managing the page
+
+    let data = {
+      "Transient Immunity Standard": {
+        "description": "description of Transient immunity (optional) - None",
+        "tests": {
+          "Pulse 1": {
+            "description": "Pulse 1 default parameters",
+            "parameters": [
+              { "name": "Us", "description": "optional", "value": "13.5+/-2", "units": "V" },
+              { "name": "Ri", "description": "Internal Resistance", "value": "10", "units": "Ohms" }
+            ]
+          },
+
+          "Pulse 2": {
+            "description": "Pulse 2 default parameters",
+            "parameters": [
+              { "name": "Us", "description": "optional", "value": "13.5+/-2", "units": "V" },
+              { "name": "Ri", "description": "Internal Resistance", "value": "10", "units": "Ohms" }
+            ]
+          },
+
+          "Pulse 3": {
+            "description": "Pulse 3 default parameters",
+            "parameters": [
+              { "name": "Us", "description": "optional", "value": "13.5+/-2", "units": "V" },
+              { "name": "Ri", "description": "Internal Resistance", "value": "10", "units": "Ohms" }
+            ]
+          }
+        }
+      },
+      "Other Standard": {
+        "description": "",
+        "tests": {}
+      }
+    };
+
+    function showSuggestions() {
+      const input = document.getElementById("standardInput").value;
+      const suggestions = document.getElementById("suggestions");
+      suggestions.innerHTML = "";
+
+      if (input) {
+        Object.keys(data).forEach((key) => {
+          if (key.toLowerCase().includes(input.toLowerCase())) {
+            const suggestion = document.createElement("div");
+            suggestion.innerText = key;
+            suggestion.onclick = () => selectStandard(key);
+            suggestions.appendChild(suggestion);
+          }
+        });
+        suggestions.style.display = "block";
+      } else {
+        suggestions.style.display = "none";
+      }
+    }
+
+    function selectStandard(standard) {
+      const description = data[standard]?.description || "";
+      document.getElementById("standardInput").value = standard;
+      document.getElementById("standardDescription").value = description;
+      document.getElementById("suggestions").style.display = "none";
+      showTests(standard);
+    }
+
+    function showTests(standard) {
+      const testSection = document.getElementById("pulseSection");
+      testSection.style.display = "block";
+      const pulses = document.getElementById("pulses");
+      pulses.innerHTML = "";
+
+      if (data[standard]?.tests) {
+        const tests = data[standard].tests;
+
+        Object.keys(tests).forEach((pulse) => {
+          const radio = document.createElement("input");
+          radio.type = "radio";
+          radio.name = "pulse";
+          radio.value = pulse;
+          radio.onclick = () => showPulseDetails(standard, pulse);
+
+          const label = document.createElement("label");
+          label.innerText = pulse;
+
+          radio.style.marginRight = "0.8rem";
+          label.style.marginRight = "3rem";
+          pulses.appendChild(radio);
+          pulses.appendChild(label);
+          // pulses.appendChild(document.createElement("br"));
+        });
+      } else {
+        testSection.style.display = "none";
+      }
+    }
+
+    function showPulseDetails(standard, pulse) {
+      const pulseName = document.getElementById("pulseName");
+      const pulseDescription = document.getElementById("pulseDescription");
+      const table = document.getElementById("parametersTable");
+      table.style.display = "table";
+      const parametersTable = document.getElementById("parametersTable").getElementsByTagName("tbody")[0];
+      parametersTable.innerHTML = "";
+
+      const pulseData = data[standard]?.tests[pulse];
+      pulseName.innerText = pulse;
+      pulseDescription.innerText = pulseData?.description || "";
+
+      pulseData?.parameters.forEach((param) => {
+        const row = parametersTable.insertRow();
+        row.insertCell(0).innerText = param.name;
+        row.insertCell(1).innerText = param.description;
+        row.insertCell(2).innerText = param.value;
+        row.insertCell(3).innerText = param.units;
+      });
+    }
+
+    function CreateStandard() {
+      // document.getElementById("createSection").style.display = "block";
+
+      name = document.getElementById("standardInput").value;
+      description = document.getElementById("standardDescription");
+      description.readOnly = false;
+      description.value = "";
+
+      const testSection = document.getElementById("pulseSection");
+      testSection.style.display = "block";
+
+
+
+    }
+
+    function CreatePulse() {
+      //uncheck all the radio buttons
+      var radios = document.getElementsByName("pulse");
+      for (var i = 0; i < radios.length; i++) {
+        radios[i].checked = false;
+      }
+
+      pulseName = document.getElementById("pulseName");
+      pulseDescription = document.getElementById("pulseDescription");
+
+      document.getElementById("pulseName").innerText = "";
+      document.getElementById("pulseDescription").innerText = "";
+
+      // clear the table
+      //clear the table
+      const parametersTable = document.getElementById("parametersTable").getElementsByTagName("tbody")[0];
+      parametersTable.innerHTML = "";
+      
+
+      //convert the pulse name and description to editable fields
+      pulseName.contentEditable = true;
+      pulseDescription.contentEditable = true;
+
+      //put some placeholder text and give focus to the pulse name
+      pulseName.innerText = "New Pulse Name";
+      pulseDescription.innerText = "New Pulse Description";
+      
+      //give margin betwwen text and border in pulseName and pulseDescription
+      pulseName.style.padding = "10px";
+      pulseDescription.style.padding = "10px";
+
+      //give a boundary to the pulse name and description
+      pulseName.style.border = "1px solid #ccc";
+      pulseDescription.style.border = "1px solid #ccc";
+
+
+      //add parameter button, which will create a form for adding the 4 fields of the table
+      document.getElementById("addParameter").style.display = "block";
+         
+
+    }
+
+    function CreateParam() {
+
+      const table = document.getElementById("parametersTable");
+      table.style.display = "table";
+
+      //add a row in the table, with the modifiable fields
+
+      //clear the tabel
+
+      const row = parametersTable.insertRow();
+      row.insertCell(0).innerHTML = "<input type='text' class='form-control' placeholder='Enter parameter name...'>";
+      row.insertCell(1).innerHTML = "<input type='text' class='form-control' placeholder='Enter parameter description...'>";
+      row.insertCell(2).innerHTML = "<input type='text' class='form-control' placeholder='Enter parameter value...'>";
+      row.insertCell(3).innerHTML = "<input type='text' class='form-control' placeholder='Enter parameter units...'>";
+
+
+
+    }
+
+    function addNewTest() {
+      alert("Feature not fully implemented");
+    }
+
+    function save() {
+      //fetch the standard name from standardinput box
+      standardName = document.getElementById("standardInput").value;
+
+      //fetch the description from standardDescription box
+      standardDescription = document.getElementById("standardDescription").value;
+
+      //fetch the pulse name from pulseName box
+      pulseName = document.getElementById("pulseName").innerText;
+
+      //fetch the pulse description from pulseDescription box
+      pulseDescription = document.getElementById("pulseDescription").innerText;
+
+      //fetch the parameters from the table
+      parametersTable = document.getElementById("parametersTable").getElementsByTagName("tbody")[0];
+      parameters = [];
+      for (var i = 0; i < parametersTable.rows.length; i++) {
+        var parameter = {};
+        parameter.name = parametersTable.rows[i].cells[0].getElementsByTagName("input")[0].value;
+        parameter.description = parametersTable.rows[i].cells[1].getElementsByTagName("input")[0].value;
+        parameter.value = parametersTable.rows[i].cells[2].getElementsByTagName("input")[0].value;
+        parameter.units = parametersTable.rows[i].cells[3].getElementsByTagName("input")[0].value;
+        parameters.push(parameter);
+      }
+
+      //save the data in the data object
+      test_standard_json = {
+        "name": standardName,
+        "description": standardDescription,
+        "type": "standard",
+        "id" : 1,
+      };
+
+      pulse_json = {
+        "name": pulseName,
+        "description": pulseDescription,
+        "type": "pulse",
+        "id" : 1,
+      };
+
+      // for each parameter in parameters, create a json object and push it to the parameters array, each json object will have name, description, value and units
+      parameters_json = [];
+      for (var i = 0; i < parameters.length; i++) {
+        parameter = {
+          "name": parameters[i].name,
+          "description": parameters[i].description,
+          "value": parameters[i].value,
+          "units": parameters[i].units,
+        };
+        parameters_json.push(parameter);
+      }
+
+
+      //TODO: save the data in the database
+
+
+
+
+
+    }
+
+    //TODO: revert the changes made in the page
+    function cancel() {
+      document.getElementById("createSection").style.display = "none";
+      document.getElementById("pulseSection").style.display = "none";
+
+      //clear the standard name and description
+      document.getElementById("standardInput").value = "";
+      document.getElementById("standardDescription").value = "";
+
+      //clear the pulse name and description
+      document.getElementById("pulseName").innerText = "";
+      document.getElementById("pulseDescription").innerText = "";
+
+      //clear the table
+      const parametersTable = document.getElementById("parametersTable").getElementsByTagName("tbody")[0];
+      parametersTable.innerHTML = "";
+
+      //remove all the inserted rows in the  table
+      for (var i = 0; i < parametersTable.rows.length; i++) {
+        parametersTable.deleteRow(i);
+      }
+
+    }
+
+
+  </script>
+</body>
+
 </html>
+{% include "./footer.html" %}
