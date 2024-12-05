@@ -257,9 +257,10 @@
           pulses.appendChild(label);
           // pulses.appendChild(document.createElement("br"));
         });
-      } else {
-        testSection.style.display = "none";
-      }
+      } 
+      // else {
+      //   testSection.style.display = "none";
+      // }
     }
 
     function showPulseDetails(standard, pulse) {
@@ -291,11 +292,7 @@
       description.readOnly = false;
       description.value = "";
 
-      const testSection = document.getElementById("pulseSection");
-      testSection.style.display = "block";
-
-
-
+      showTests(name);
     }
 
     function CreatePulse() {
@@ -356,7 +353,7 @@
       row.insertCell(3).innerHTML = "<input type='text' class='form-control' placeholder='Enter parameter units...'>";
 
 
-
+      // console.log(parametersTable.rows.length);
     }
 
     function addNewTest() {
@@ -377,74 +374,77 @@
       pulseDescription = document.getElementById("pulseDescription").innerText;
 
       //fetch the parameters from the table
-      parametersTable = document.getElementById("parametersTable").getElementsByTagName("tbody")[0];
+      parametersTable = document.getElementById("parametersTable");
       parameters = [];
-      for (var i = 0; i < parametersTable.rows.length; i++) {
+      // console.log(parametersTable.rows.length);
+      
+      for (var i = 1; i < parametersTable.rows.length; i++) {
+        // console.log("row: " + i);
+        
         var parameter = {};
         parameter.name = parametersTable.rows[i].cells[0].getElementsByTagName("input")[0].value;
         parameter.description = parametersTable.rows[i].cells[1].getElementsByTagName("input")[0].value;
         parameter.value = parametersTable.rows[i].cells[2].getElementsByTagName("input")[0].value;
         parameter.units = parametersTable.rows[i].cells[3].getElementsByTagName("input")[0].value;
+        console.log(parameter);
+        
         parameters.push(parameter);
       }
 
-      //save the data in the data object
-      test_standard_json = {
-        "name": standardName,
-        "description": standardDescription,
-        "type": "standard",
-        "id" : 1,
-      };
-
-      pulse_json = {
-        "name": pulseName,
-        "description": pulseDescription,
-        "type": "pulse",
-        "id" : 1,
-      };
-
-      // for each parameter in parameters, create a json object and push it to the parameters array, each json object will have name, description, value and units
-      parameters_json = [];
-      for (var i = 0; i < parameters.length; i++) {
-        parameter = {
-          "name": parameters[i].name,
-          "description": parameters[i].description,
-          "value": parameters[i].value,
-          "units": parameters[i].units,
+      //save the data in the data object, if standard is already present just add new pukse, else create a new standard use the three dots operator
+      if (data[standardName]) {
+        data[standardName].tests[pulseName] = {
+          description: pulseDescription,
+          parameters: parameters
         };
-        parameters_json.push(parameter);
+      } else {
+        data[standardName] = {
+          description: standardDescription,
+          tests: {
+            [pulseName]: {
+              description: pulseDescription,
+              parameters: parameters
+            }
+          }
+        };
       }
 
+      
+      
 
-      //TODO: save the data in the database
+      // console.log(data);
+      
 
 
-
-
-
+      //reload the page
+      // location.reload();
     }
 
     //TODO: revert the changes made in the page
     function cancel() {
-      document.getElementById("createSection").style.display = "none";
-      document.getElementById("pulseSection").style.display = "none";
+      //reload the page
+      location.reload();
 
-      //clear the standard name and description
-      document.getElementById("standardInput").value = "";
-      document.getElementById("standardDescription").value = "";
 
-      //clear the pulse name and description
-      document.getElementById("pulseName").innerText = "";
-      document.getElementById("pulseDescription").innerText = "";
+      // document.getElementById("createSection").style.display = "none";
+      // document.getElementById("pulseSection").style.display = "none";
 
-      //clear the table
-      const parametersTable = document.getElementById("parametersTable").getElementsByTagName("tbody")[0];
-      parametersTable.innerHTML = "";
+      // //clear the standard name and description
+      // document.getElementById("standardInput").value = "";
+      // document.getElementById("standardDescription").value = "";
 
-      //remove all the inserted rows in the  table
-      for (var i = 0; i < parametersTable.rows.length; i++) {
-        parametersTable.deleteRow(i);
-      }
+      // //clear the pulse name and description
+      // document.getElementById("pulseName").innerText = "";
+      // document.getElementById("pulseDescription").innerText = "";
+
+      // //clear the table
+      // const parametersTable = document.getElementById("parametersTable").getElementsByTagName("tbody")[0];
+      // parametersTable.innerHTML = "";
+
+      // //remove all the inserted rows in the  table
+      // for (var i = 0; i < parametersTable.rows.length; i++) {
+      //   parametersTable.deleteRow(i);
+      // }
 
     }
 
