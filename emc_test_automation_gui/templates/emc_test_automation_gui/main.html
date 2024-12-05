@@ -114,6 +114,76 @@
 
         }) 
       });
+
+      let data = {
+          "PulseParams": {
+            "Port 1": ["n1", "n2", "n3"], "Port 2": ["n1", "n2"], "Port 3": ["Ground"],
+
+            "ISO1": [{ "name": "Ua", "value": "10" }, { "name": "Us", "value": "10" }, { "name": "Ri", "value": "10" }, { "name": "td", "value": "10" }, { "name": "tr(s)", "value": "10" }, { "name": "t1(s)", "value": "10" }, { "name": "t2(s)", "value": "10" }, { "name": "t3(s)", "value": "10" }, { "name": "t(0)", "value": "10" }, { "name": "Ext res.", "value": "10" }],
+
+            "ISO2a": [{ "name": "St", "value": "10" }, { "name": "Ti", "value": "10" }, { "name": "Max", "value": "10" }]
+
+          },
+
+          "RunParams": [
+            { "name": "Stop time", "value": "10", "units": ["s", "ms", "us"] },
+            { "name": "Time to start saving data", "value": "10", "units": ["s", "ms", "us"] },
+            { "name": "Maximum Timestep", "value": "10", "units": ["s", "ms", "us"] },
+          ],
+
+          "Measurements": {
+            "voltage": true,
+            "current": true,
+            "power": true,
+            "frequency": false,
+            "powerLoss": false,
+            "thermal": false
+          }
+        };
+      
+
+      let visualisationData = {
+        "Voltage": [{
+          "probe": "Vbat",
+          "ref": "Vbat_protect",
+          "params": [
+            { "name": "Peak","unit": ["V","kV","mV"] },
+            { "name": "RMS","unit": ["V","kV","mV"] },
+            { "name": "Average","unit":  ["V","kV","mV"] }
+          ]            
+        },
+      
+        {
+          "probe": "Vbatprotect",
+          "ref": "Vbuck",
+          "params": [
+            { "name": "Peak","unit": ["V","kV","mV"] },
+            { "name": "RMS","unit": ["V","kV","mV"] },
+            { "name": "Average","unit":  ["V","kV","mV"] }
+          ]            
+        },
+      
+        {
+          "probe": "something",
+          "ref": "something",
+          "params": [
+            { "name": "Peak","unit": ["V","kV","mV"] },
+            { "name": "RMS","unit": ["V","kV","mV"] },
+            { "name": "Average","unit":  ["V","kV","mV"] }
+          ]            
+        }],
+
+        "Current": {
+          "file": null,
+          "plotType": "Line"
+        },
+        "Power": {
+          "file": null,
+          "plotType": "Line"
+        }
+      };  
+
+
     </script>
 
     <style>
@@ -173,24 +243,63 @@
         <div class="mb-4">
           <div class="card">
             <div class="card-header" id="simulationParametersHeader">
+              <div style="display: flex; justify-content: space-between;">
               <h5 class="mb-0">
                 <a href="#" class="collapse-link" data-bs-toggle="collapse" data-bs-target="#simulationParameters" aria-expanded="false" aria-controls="simulationParameters">
                   <span class="symbol">▶</span> <strong>Simulation Parameters</strong>
                 </a>
               </h5>
+
+              <div>
+                <div class="text-end">
+                  <button class="btn btn-primary" style="width: 5rem;" onclick="RunSimulation()">Run</button>
+                  <button class="btn btn-primary" style="width: 5rem;" onclick="PauseSimulation()">Pause</button>
+
+                </div>
+              </div>
+
+              </div>
             </div>
             <div id="simulationParameters" class="collapse" aria-labelledby="simulationParametersHeader">
               <div class="card-body">
-                <div class="mb-3">
-                  <label for="pulseGeneratorDetails" class="form-label">Pulse Generator Details</label>
-                  <input type="text" class="form-control" id="pulseGeneratorDetails" placeholder="Enter details for pulse generator">
+                
+                <!-- Pulse params -->
+                <div class="card mb-4" id="pulseParamSection">
+                  <div class="card-header">
+                    <h5 class="mb-0">
+                      <a href="#" class="collapse-link" data-bs-toggle="collapse" data-bs-target="#pulseParamBody"  aria-expanded="false" aria-controls="simulationParameters">
+                        <span class="symbol">▶</span> <strong>Pulse Parameters</strong>
+                      </a>
+                    </h5>
+                  </div>
+                  <div class="card-body " id="pulseParamBody"></div>
                 </div>
+
+                <!-- Run params -->
+                <div class="card mb-4" id="RunParamSection">
+                  <div class="card-header">
+                    <h5 class="mb-0">
+                      <a href="#" class="collapse-link" data-bs-toggle="collapse"  aria-expanded="false" aria-controls="simulationParameters">
+                        <span class="symbol">▶</span> <strong>Run Parameters</strong>
+                      </a>
+                    </h5>
+                  </div>
+                  <div class="card-body mb-4" id="RunParamBody"></div>
+                </div>
+
+                <!-- Save button -->
+                 <div class="text-end" >
+
+                   <button id="saveBtn" class="btn btn-success" style="width: 5rem;" onclick="save()">Save</button>
+                 </div>
+                
               </div>
             </div>
           </div>
         </div>
 
         <!-- Visualize Simulation Results Section -->
+        
         <div class="mb-4">
           <div class="card">
             <div class="card-header" id="visualizeSimulationResultsHeader">
@@ -201,19 +310,8 @@
               </h5>
             </div>
             <div id="visualizeSimulationResults" class="collapse" aria-labelledby="visualizeSimulationResultsHeader">
-              <div class="card-body">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="graph1">
-                  <label class="form-check-label" for="graph1">
-                    Graph 1
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="graph2">
-                  <label class="form-check-label" for="graph2">
-                    Graph 2
-                  </label>
-                </div>
+              <div class="card-body" id="visualiseSimulationBody">
+                
               </div>
             </div>
           </div>
@@ -225,5 +323,551 @@
         </div>
       </form>
     </div>
+
+
+
+
+    <script>
+      function initialize() {
+        createPulseParamForm();
+        createRunParamForm();
+        createVisualiseBody();
+      }
+
+      function createVisualiseBody(){
+        const visualiseBody = document.getElementById('visualiseSimulationBody');
+
+        ['Voltage', 'Current', 'Power'].forEach(type => {
+          const card = document.createElement('div');
+          card.className = 'card mb-4';
+
+          const header = document.createElement('div');
+          header.className = 'card-header';
+          header.innerHTML = `
+            <h5 class="mb-0">
+              <a href="#" class="collapse-link" data-bs-toggle="collapse" data-bs-target="#${type.toLowerCase()}Section">
+                <span class="symbol">▶</span> <strong>${type}</strong>
+              </a>
+            </h5>
+          `;
+
+          const body = document.createElement('div');
+          body.id = `${type.toLowerCase()}Section`;
+          body.className = 'collapse';
+          body.innerHTML = `<div class="card-body"></div>`;
+
+          card.appendChild(header);
+          card.appendChild(body);
+          visualiseBody.appendChild(card);
+          createVisualiseSection(type);
+        });
+      }
+
+      function createVisualiseSection(type) {
+        const data = visualisationData[type];
+        const section = document.getElementById(`${type.toLowerCase()}Section`);
+
+        if (type === 'Voltage'){
+          createVoltageSection({"Voltage" : data});
+        }else if (type === 'Current'){
+          createCurrentSection();
+        }else if (type === 'Power'){
+          createPowerSection();
+        }
+      }
+
+
+function createVoltageSection(voltageData) {
+  const voltageSection = document.getElementById("voltageSection");
+  voltageSection.innerHTML = ""; // Clear existing content
+  // Create the header row for probe and reference
+  const headRow = document.createElement("div");
+  headRow.className = "d-flex justify-content-between align-items-center mb-2";
+
+    // Probe header
+    const head1 = document.createElement("input");
+    head1.type = "text";
+    head1.className = "form-control me-2";
+    head1.placeholder = "Probe";
+    head1.value = "Probe";
+    head1.disabled = true;
+  
+    // Ref header
+    const head2 = document.createElement("input");
+    head2.type = "text";
+    head2.className = "form-control";
+    head2.placeholder = "Ref";
+    head2.value = "Ref";
+    head2.disabled = true;
+
+    // Append probe and ref
+    headRow.appendChild(head1);
+    headRow.appendChild(head2);
+    //add left, right, top padding to the header row
+    headRow.style.padding = '0.5rem 1rem';
+    
+    voltageSection.appendChild(headRow);
+ 
+
+  voltageData.Voltage.forEach((item, index) => {
+    // Create a card for each probe
+    const card = document.createElement("div");
+    card.className = "card";
+
+    // Create the header row for probe and reference
+    const probeRow = document.createElement("div");
+    probeRow.className = "d-flex justify-content-between align-items-center mb-2";
+
+    // Probe input
+    const probeInput = document.createElement("input");
+    probeInput.type = "text";
+    probeInput.className = "form-control me-2";
+    probeInput.placeholder = "Probe";
+    probeInput.value = item.probe;
+    probeInput.disabled = true;
+    probeInput.style.backgroundColor = 'white';
+
+    // Ref input
+    const refInput = document.createElement("input");
+    refInput.type = "text";
+    refInput.className = "form-control";
+    refInput.placeholder = "Ref";
+    refInput.value = item.ref;
+    refInput.disabled = true;
+    refInput.style.backgroundColor = 'white';
+
+    //create a checkbox
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.className = 'form-check-input me-2';
+    checkbox.id = `checkbox-${item.probe}-${item.ref}`;
+    //add some margin to the checkbox
+    checkbox.style.margin = '0.5rem';
+    //increase the size of the checkbox
+    checkbox.style.transform = 'scale(1.5)';
+
+
+    // Append probe and ref
+    probeRow.appendChild(probeInput);
+    probeRow.appendChild(refInput);
+    probeRow.appendChild(checkbox);
+
+    // Add parameter section
+    const paramContainer = document.createElement("div");
+    
+    paramContainer.className = "row g-2 mt-3";
+
+    item.params.forEach((param) => {
+      const paramRow = document.createElement("div");
+      paramRow.className = "col-12 d-flex align-items-space-between";
+
+      // Parameter checkbox
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.className = "form-check-input me-2";
+
+      // Parameter name
+      const paramLabel = document.createElement("span");
+      paramLabel.textContent = param.name;
+      paramLabel.className = "me-3";
+
+      // Units dropdown
+      const unitSelect = document.createElement("select");
+      unitSelect.className = "form-select form-select-sm w-auto";
+      param.unit.forEach((unit) => {
+        const option = document.createElement("option");
+        option.value = unit;
+        option.textContent = unit;
+        unitSelect.appendChild(option);
+      });
+
+      // Append elements to the paramRow
+      paramRow.appendChild(checkbox);
+      paramRow.appendChild(paramLabel);
+      paramRow.appendChild(unitSelect);
+
+      // Append paramRow to paramContainer
+      paramContainer.appendChild(paramRow);
+    });
+
+    // Add "Visualise" button
+    const visualiseButton = document.createElement("button");
+    visualiseButton.textContent = "Visualise";
+    visualiseButton.className = "btn btn-primary mt-3";
+    visualiseButton.onclick = () => {
+      event.preventDefault();
+      // Get the selected parameters
+      const selectedParams = Array.from(paramContainer.querySelectorAll('input[type="checkbox"]:checked')).map((checkbox) => {
+        const param = checkbox.nextElementSibling.textContent;
+        const unit = checkbox.nextElementSibling.nextElementSibling.value;
+        return {
+          "name": param,
+          "unit": unit,        
+        }
+        
+      });
+
+      const final_data = {
+        "probe": item.probe,
+        "ref": item.ref,
+        "params": selectedParams,
+        "graphCard_id": `graph-${item.probe}-${item.ref}`
+      }
+      // Log the selected parameters TODO: call the function to plot the graph
+      console.log(final_data);
+      plotGraph(final_data);
+    };
+
+    // Append everything to the card
+    card.appendChild(probeRow);
+
+    //if it is unchecked, hide the param container
+    checkbox.addEventListener('change', (event) => {
+      paramContainer.style.display = event.target.checked ? 'block' : 'none';
+      //hide visualise button if unchecked
+      visualiseButton.style.display = event.target.checked ? 'block' : 'none';
+      //if unchecked remove the boundary of card
+      card.style.border = event.target.checked ? '1px solid #ccc' : 'none';
+      card.style.margin = event.target.checked ? '1rem' : '0';
+    });
+
+    //by default keep both of them hidden
+    paramContainer.style.display = 'none';
+    visualiseButton.style.display = 'none';
+    card.appendChild(paramContainer);
+    card.appendChild(visualiseButton);
+
+    //create an card and keep it hidden
+    const graphCard = document.createElement('div');
+    graphCard.className = 'card mt-3';
+    graphCard.style.display = 'none';
+    graphCard.id = `graph-${item.probe}-${item.ref}`;
+
+    card.appendChild(graphCard);
+
+    //add some margin to the card
+    card.style.margin = '0';
+    card.style.padding = '0.5rem';
+    card.style.border = 'none'
+
+    // Append card to the voltage section
+    voltageSection.appendChild(card);
+  });
+}
+
+//TODO: Implement the createCurrentSection and createPowerSection functions
+function createCurrentSection(){}
+function createPowerSection(){}
+
+function plotGraph(data) {
+   const graphCard = document.getElementById(data.graphCard_id);
+  graphCard.style.display = 'block';
+  graphCard.innerHTML = '';
+
+  const graphdiv = document.createElement('div');
+  graphdiv.className = 'card-body';
+  graphdiv.style.height = '300px';
+  graphdiv.style.width = '100%';
+  graphdiv.style.border = '1px solid #ccc';
+
+  const graph = document.createElement('canvas');
+
+  const table = document.createElement('table');
+
+  fill_graph(graph, data);
+  fill_table(table, data);
+
+  //create 2 buttons for save as, and export
+  const saveAs = document.createElement('button');
+  saveAs.textContent = 'Save As';
+  saveAs.className = 'btn btn-primary mt-3 me-3';
+
+  const exportBtn = document.createElement('button');
+  exportBtn.textContent = 'Export';
+  exportBtn.className = 'btn btn-primary mt-3 me-3';
+
+  //put both of them in one row and append to graph card
+  const buttonRow = document.createElement('div');
+  buttonRow.className = 'd-flex justify-content-end mb-3 pr-3';
+  buttonRow.appendChild(saveAs);
+  buttonRow.appendChild(exportBtn);
+
+  
+  graphCard.appendChild(graphdiv);
+  graphdiv.appendChild(graph);
+  graphCard.appendChild(table);
+  graphCard.appendChild(buttonRow);
+
+
+}
+
+//TODO: Implement the fill_graph and fill_table functions
+function fill_graph(graph, data) {}
+function fill_table(table, data) {}
+
+//TODO: Implement this
+      function RunSimulation(){
+        document.getElementById('lblMessage').textContent = 'Simulation is running...';
+      }
+
+//TODO: Implement this
+      function PauseSimulation(){
+        document.getElementById('lblMessage').textContent = 'Simulation is paused.';
+      }
+
+      function createPulseParamForm(){
+          // Create form for pulse parameters
+      const pulseParamDiv = document.getElementById('pulseParamBody');
+      const form = document.createElement('form');
+      form.className = 'mt-3';
+
+      // Create ports section
+      const portsDiv = document.createElement('div');
+      portsDiv.className = 'mb-4';
+      portsDiv.style.display = 'flex';
+      portsDiv.style.gap = '20px';
+      Object.entries(data.PulseParams).forEach(([portName, nodes]) => {
+        if (portName.startsWith('Port')) {
+          const formGroup = document.createElement('div');
+          formGroup.className = 'form-group mb-3';
+          formGroup.style.width = '12rem';
+          
+          const label = document.createElement('label');
+          label.textContent = portName;
+          label.className = 'form-label';
+          
+          const select = document.createElement('select');
+          select.className = 'form-select';
+          select.id = portName.replace(' ', '');
+          
+          nodes.forEach(node => {
+            const option = document.createElement('option');
+            option.value = node;
+            option.textContent = node;
+            select.appendChild(option);
+          });
+          
+          formGroup.appendChild(label);
+          formGroup.appendChild(select);
+          portsDiv.appendChild(formGroup);
+        }
+      });
+      form.appendChild(portsDiv);
+
+      // Create ISO section
+      const isoDiv = document.createElement('div');
+      isoDiv.className = 'mb-4';
+      
+      const radioGroup = document.createElement('div');
+      radioGroup.className = 'btn-group mb-3';
+      radioGroup.setAttribute('role', 'group');
+
+      ['ISO1', 'ISO2a'].forEach((isoType, index) => {
+        const radioBtn = document.createElement('input');
+        radioBtn.type = 'radio';
+        radioBtn.className = 'btn-check';
+        radioBtn.name = 'isoOptions';
+        radioBtn.id = isoType;
+        radioBtn.autocomplete = 'off';
+        if (index === 0) radioBtn.checked = true;
+
+        const label = document.createElement('label');
+        label.className = 'btn btn-outline-primary';
+        label.htmlFor = isoType;
+        label.textContent = isoType;
+
+        radioBtn.addEventListener('change', () => updateIsoFields(isoType));
+
+        radioGroup.appendChild(radioBtn);
+        radioGroup.appendChild(label);
+      });
+
+      isoDiv.appendChild(radioGroup);
+
+      // Create container for ISO fields
+      const isoFieldsContainer = document.createElement('div');
+      isoFieldsContainer.id = 'isoFieldsContainer';
+      isoDiv.appendChild(isoFieldsContainer);
+
+      form.appendChild(isoDiv);
+      pulseParamDiv.appendChild(form);
+
+      // Initially show ISO1 fields
+      updateIsoFields('ISO1');
+      }
+
+
+      function createRunParamForm(){
+        // Create form for run parameters
+        // Create form for run parameters
+      // const runParamDiv = document.getElementById('RunParamBody');
+    // Create form for run parameters
+    const runParamDiv = document.getElementById('RunParamBody');
+    const runParamForm = document.createElement('form');
+    runParamForm.className = 'mt-3';
+
+    // Run Parameters section
+    const runParamsContainer = document.createElement('div');
+    runParamsContainer.className = 'mb-4';
+
+    data.RunParams.forEach(param => {
+      const row = document.createElement('div');
+      row.className = 'row mb-3 align-items-end';
+
+      // Name label
+      const nameCol = document.createElement('div');
+      nameCol.className = 'col-md-4';
+      const nameLabel = document.createElement('label');
+      nameLabel.className = 'form-label';
+      nameLabel.textContent = param.name;
+      nameCol.appendChild(nameLabel);
+
+      // Value input
+      const valueCol = document.createElement('div');
+      valueCol.className = 'col-md-4';
+      const valueInput = document.createElement('input');
+      valueInput.type = 'number';
+      valueInput.className = 'form-control';
+      valueInput.value = param.value;
+      valueInput.id = param.name.replace(/\s+/g, '');
+      valueCol.appendChild(valueInput);
+
+      // Units dropdown
+      const unitsCol = document.createElement('div');
+      unitsCol.className = 'col-md-4';
+      const unitsSelect = document.createElement('select');
+      unitsSelect.className = 'form-select';
+      param.units.forEach(unit => {
+        const option = document.createElement('option');
+        option.value = unit;
+        option.textContent = unit;
+        unitsSelect.appendChild(option);
+      });
+      unitsCol.appendChild(unitsSelect);
+
+      row.appendChild(nameCol);
+      row.appendChild(valueCol);
+      row.appendChild(unitsCol);
+      runParamsContainer.appendChild(row);
+    });
+
+    // Measurements section
+    const measurementsContainer = document.createElement('div');
+    measurementsContainer.className = 'mt-4';
+    const measurementsTitle = document.createElement('h6');
+    measurementsTitle.textContent = 'Measurements';
+    measurementsContainer.appendChild(measurementsTitle);
+
+    const checkboxRow = document.createElement('div');
+    checkboxRow.className = 'row mt-3';
+
+    Object.entries(data.Measurements).forEach(([measurementName, isChecked]) => {
+      const col = document.createElement('div');
+      col.className = 'col-auto';
+      
+      const checkboxDiv = document.createElement('div');
+      checkboxDiv.className = 'form-check';
+      
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.className = 'form-check-input';
+      checkbox.id = measurementName;
+      checkbox.checked = isChecked;
+      
+      const label = document.createElement('label');
+      label.className = 'form-check-label';
+      label.htmlFor = measurementName;
+      label.textContent = measurementName.charAt(0).toUpperCase() + measurementName.slice(1);
+      
+      checkboxDiv.appendChild(checkbox);
+      checkboxDiv.appendChild(label);
+      col.appendChild(checkboxDiv);
+      checkboxRow.appendChild(col);
+    });
+
+    measurementsContainer.appendChild(checkboxRow);
+    runParamForm.appendChild(runParamsContainer);
+    runParamForm.appendChild(measurementsContainer);
+    runParamDiv.appendChild(runParamForm);
+        
+      }
+
+
+    function updateIsoFields(isoType) {
+      const container = document.getElementById('isoFieldsContainer');
+      container.innerHTML = '';
+      const row = document.createElement('div');
+      row.className = 'row';
+      container.appendChild(row);
+
+      data.PulseParams[isoType].forEach((field, index) => {
+        const col = document.createElement('div');
+        col.className = 'col-md-6';
+        
+        const formGroup = document.createElement('div');
+        formGroup.className = 'form-group mb-3';
+        
+        const label = document.createElement('label');
+        label.className = 'form-label';
+        label.textContent = field.name;
+        
+        const input = document.createElement('input');
+        input.type = 'number';
+        input.className = 'form-control';
+        input.value = field.value;
+        input.id = field.name.replace(/\s+/g, '');
+        
+        formGroup.appendChild(label);
+        formGroup.appendChild(input);
+        col.appendChild(formGroup);
+        row.appendChild(col);
+      });
+    }
+
+
+    function save() {
+      //prevent form submission
+      event.preventDefault();
+
+      const pulseParams = {};
+      const ports = document.getElementById('Port1').value;
+      pulseParams['Port 1'] = ports;
+      pulseParams['Port 2'] = document.getElementById('Port2').value;
+      pulseParams['Port 3'] = document.getElementById('Port3').value;
+
+      const isoType = document.querySelector('input[name="isoOptions"]:checked').id;
+      const isoFields = {};
+      data.PulseParams[isoType].forEach(field => {
+        isoFields[field.name] = document.getElementById(field.name.replace(/\s+/g, '')).value;
+      });
+
+      const runParams = {};
+      data.RunParams.forEach(param => {
+        runParams[param.name] = document.getElementById(param.name.replace(/\s+/g, '')).value;
+      });
+
+      const measurements = {};
+      Object.keys(data.Measurements).forEach(measurement => {
+        measurements[measurement] = document.getElementById(measurement).checked;
+      });
+
+
+      const payload = {
+        pulseParams,
+        isoType,
+        isoFields,
+        runParams,
+        measurements
+      };
+
+      console.log(payload);
+    }
+
+    </script>
+
+
+
+
+
   </body>
 </html>
