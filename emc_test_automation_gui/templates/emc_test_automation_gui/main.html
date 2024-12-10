@@ -8,6 +8,7 @@
   <script src="{% static 'js/popper.min.js' %}"></script>
   <script src="{% static 'js/bootstrap.min.js' %}"></script>
   <script src="{% static 'js/form.js' %}"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script>
     function generateId() {
       const now = new Date();
@@ -262,6 +263,48 @@
         }
       ]
     };
+
+    var graph_data = [
+          ['Time', 'Voltage', 'Current'],
+          ['4',  -1000,      400],
+          ['5',  1170,      -460],
+          ['6',  -660,       1120],
+          ['7',  1030,      -540],
+          ['8',  660,       1120],
+          ['9',  1030,      -540],
+          ['10',  660,       1120],
+          ['11',  1030,      -540],
+          ['12',  660,       1120],
+          ['13',  1030,      -540],
+          ['14',  660,       1120],
+          ['15',  1030,      -540],
+          ['16',  660,       1120],
+          ['17',  1030,      -540],
+          ['18',  660,       1120],
+          ['19',  1030,      -540],
+          ['20',  660,       1120],
+          ['21',  1030,      -540],
+          ['22',  660,       1120],
+          ['23',  1030,      -540],
+          ['24',  660,       1120],
+          ['25',  1030,      -540],
+          ['26',  660,       1120],
+          ['27',  1030,      -540],
+          ['28',  660,       1120],
+          ['29',  1030,      -540],
+          ['30',  660,       1120],
+          ['31',  1030,      -540],
+          ['32',  660,       1120],
+          ['33',  1030,      -540],
+          ['34',  660,       1120],
+          ['35',  1030,      -540],
+          ['36',  660,       1120],
+          ['37',  1030,      -540],
+          ['38',  660,       1120],
+          ['39',  1030,      -540],
+          ['40',  660,       1120],
+        ];
+  
   </script>
 
   <style>
@@ -381,7 +424,7 @@
 
 
 
-
+  
   <script>
     function initialize() {
       createSimulationParamSection();
@@ -419,18 +462,18 @@
       });
 
       // Add the save button
-      const saveButtonDiv = document.createElement('div');
-      saveButtonDiv.className = 'text-end';
+      // const saveButtonDiv = document.createElement('div');
+      // saveButtonDiv.className = 'text-end';
 
-      const saveBtn = document.createElement('button');
-      saveBtn.id = 'saveBtn';
-      saveBtn.className = 'btn btn-success';
-      saveBtn.style.width = '7rem';
-      saveBtn.textContent = 'Save';
-      saveBtn.onclick = save;
+      // const saveBtn = document.createElement('button');
+      // saveBtn.id = 'saveBtn';
+      // saveBtn.className = 'btn btn-success';
+      // saveBtn.style.width = '7rem';
+      // saveBtn.textContent = 'Save';
+      // saveBtn.onclick = save;
 
-      saveButtonDiv.appendChild(saveBtn);
-      simulationParametersBody.appendChild(saveButtonDiv);
+      // saveButtonDiv.appendChild(saveBtn);
+      // simulationParametersBody.appendChild(saveButtonDiv);
     }
 
     function createSimulationSection(type) {
@@ -691,7 +734,7 @@
             "probe": item.probe,
             "ref": item.ref,
             "params": selectedParams,
-            "graphCard_id": `graph-${item.probe}-${item.ref}`
+            "visualisationCard_id": `visualisation-${item.probe}-${item.ref}`
           }
           // Log the selected parameters TODO: call the function to plot the graph
           console.log(final_data);
@@ -707,7 +750,7 @@
           //hide visualise button if unchecked
           visualiseButton.style.display = event.target.checked ? 'block' : 'none';
           //hide graph and table if unchecked
-          document.getElementById(`graph-${item.probe}-${item.ref}`).style.display = 'none';
+          document.getElementById(`visualisation-${item.probe}-${item.ref}`).style.display = 'none';
           // document.getElementById(`table-${item.probe}-${item.ref}`).style.display = 'none';
 
           //if unchecked remove the boundary of card
@@ -723,12 +766,12 @@
         card.appendChild(visualiseButton);
 
         //create an card and keep it hidden
-        const graphCard = document.createElement('div');
-        graphCard.className = 'card mt-3';
-        graphCard.style.display = 'none';
-        graphCard.id = `graph-${item.probe}-${item.ref}`;
+        const visualisationCard = document.createElement('div');
+        visualisationCard.className = 'card mt-3';
+        visualisationCard.style.display = 'none';
+        visualisationCard.id = `visualisation-${item.probe}-${item.ref}`;
 
-        card.appendChild(graphCard);
+        card.appendChild(visualisationCard);
 
         //default styling for the card
         card.style.margin = '0';
@@ -749,33 +792,35 @@
       //       "probe": item.probe,
       //       "ref": item.ref,
       //       "params": selectedParams,
-      //       "graphCard_id": `graph-${item.probe}-${item.ref}`
+      //       "visualisationCard_id": `visualisation-${item.probe}-${item.ref}`
       //     }
 
-      const graphCard = document.getElementById(data.graphCard_id);
-      graphCard.style.display = 'block';
-      graphCard.innerHTML = '';
+      const graphDivID = `graph-${data.probe}-${data.ref}`;
+
+      const visualisationCard = document.getElementById(data.visualisationCard_id);
+      visualisationCard.style.display = 'block';
+      visualisationCard.innerHTML = '';
 
       const graphdiv = document.createElement('div');
       graphdiv.className = 'card-body';
-      graphdiv.style.height = '300px';
-      graphdiv.style.width = '100%';
+      graphdiv.style.height = '700px';
+      // graphdiv.style.width = '100%';
       graphdiv.style.border = '1px solid #ccc';
-
-      const graph = document.createElement('canvas');
+      graphdiv.style.overflow = 'auto';
+      graphdiv.id = graphDivID;
+      
 
       const tableDiv = document.createElement('div');
       const table = document.createElement('table');
-      //set padding for the table
       tableDiv.style.padding = '2rem';
-
       tableDiv.appendChild(table);
 
       //TODO:
       //fetch the table data
       //fetch the graph data
+      
 
-      fill_graph(graph, data);
+      fill_graph( graphDivID, graph_data);
       fill_table(table, table_data);
 
       //create 2 buttons for save as, and export
@@ -797,11 +842,11 @@
       const customExportDiv = document.createElement('div');
       customExportDiv.id = 'custom-export-div';
 
-      graphCard.appendChild(graphdiv);
-      graphdiv.appendChild(graph);
-      graphCard.appendChild(tableDiv);
-      graphCard.appendChild(buttonRow);
-      graphCard.appendChild(customExportDiv);
+      visualisationCard.appendChild(graphdiv);
+      // graphdiv.appendChild(graph);
+      visualisationCard.appendChild(tableDiv);
+      visualisationCard.appendChild(buttonRow);
+      visualisationCard.appendChild(customExportDiv);
 
       saveAs.addEventListener('click', () => { event.preventDefault(); alert('Save as clicked'); });
 
@@ -927,8 +972,33 @@
       });
     }
 
-    //TODO: Implement the fill_graph and fill_table functions
-    function fill_graph(graph, data) { }
+    //TODO: Width changes according to client
+    function fill_graph(graph, graph_data) {
+      
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {        
+
+        var data = google.visualization.arrayToDataTable(graph_data);
+
+        var options = {
+          title: graph.split('-').join(' '),
+          curveType: 'function',
+          legend: { position: 'bottom' },
+          explorer: { actions: ['dragToPan','dragToZoom', 'rightClickToReset']},
+          // width: graph_data.length * 40,
+          hAxis: {showTextEvery: 2},
+        // height: 700
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById(graph));
+
+        chart.draw(data, options);
+      }
+      
+
+     }
 
 
     function fill_table(tableElement, data) {
@@ -968,11 +1038,15 @@
     }
 
     //TODO: Implement this
+    //TODO: Remove the save button, call  the save function when the user clicks on the runsimulation button
     function RunSimulation() {
       event.preventDefault();
       document.getElementById('lblMessage').textContent = 'Simulation is running...';
 
-      //populate visualisation data
+      // const simulationParams = save();
+      // API call with simulationParams
+
+      //populate visualisation data or get the ID and use it to fetch the data
       
     }
 
@@ -1237,6 +1311,7 @@
       };
 
       console.log(payload);
+      return payload;
     }
 
   </script>
