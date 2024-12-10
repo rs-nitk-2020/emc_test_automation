@@ -116,6 +116,8 @@
       })
     });
 
+   
+    // when the circuit is uploaded and immage is being created then fill this data
     let data = {
       "PulseParams": {
         "Port 1": ["n1", "n2", "n3"], "Port 2": ["n1", "n2"], "Port 3": ["Ground"],
@@ -143,6 +145,7 @@
     };
 
 
+    // when user click on runsimulation, fill this data
     let visualisationData = {
       "Voltage": [{
         "probe": "Vbat",
@@ -190,6 +193,8 @@
       }
     };
 
+    //when the user click on runsimulation, fill this data
+    // Note this is further complex, like every probe-ref has a table data
     const table_data = {
       "parameters": [
         {
@@ -740,6 +745,13 @@
     function createPowerSection(PowerData) { }
 
     function plotGraph(data) {
+      // data = {
+      //       "probe": item.probe,
+      //       "ref": item.ref,
+      //       "params": selectedParams,
+      //       "graphCard_id": `graph-${item.probe}-${item.ref}`
+      //     }
+
       const graphCard = document.getElementById(data.graphCard_id);
       graphCard.style.display = 'block';
       graphCard.innerHTML = '';
@@ -759,8 +771,9 @@
 
       tableDiv.appendChild(table);
 
-
-
+      //TODO:
+      //fetch the table data
+      //fetch the graph data
 
       fill_graph(graph, data);
       fill_table(table, table_data);
@@ -958,6 +971,9 @@
     function RunSimulation() {
       event.preventDefault();
       document.getElementById('lblMessage').textContent = 'Simulation is running...';
+
+      //populate visualisation data
+      
     }
 
     //TODO: Implement this

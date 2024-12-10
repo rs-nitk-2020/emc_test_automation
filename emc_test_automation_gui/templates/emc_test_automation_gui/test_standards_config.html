@@ -52,8 +52,8 @@
     }
 
     .suggestions {
-      background-color: #fff;
-      border: 1px solid #ccc;
+      background-color: #fdf9f9;
+      /* border: 1px solid #c8c4c4;  */
       max-height: 150px;
       overflow-y: auto;
       display: none;
@@ -84,23 +84,22 @@
         Transient Immunity Standard
       </div>
       <div class="card-body">
-        <div class="d-flex flex" style="width: 100%;">
+        <div class="d-flex flex justify-content-between" style="width: 100%;">
 
         <div class="form-group" style="width: 80%;">
           <label for="standardInput">Enter Standard Name:</label>
           <input type="text" id="standardInput" class="form-control" placeholder="Enter standard name..."
-            oninput="showSuggestions()" />
-          <div id="suggestions" class="suggestions"></div>
+            oninput="showSuggestions()"  style="margin-bottom: 0;"/>
+          <div id="suggestions" class="suggestions w-50" style="border-radius: 0 0 5px 5px;"></div>
         </div>
 
-        <button id="createModifyStandard" class="btn btn-primary" onclick="CreateStandard()" style="margin: 8 4 8 14;">Create/Modify
-          Standard</button>
+        <button id="createModifyStandard" class="btn btn-primary" onclick="CreateStandard()" style="margin: 18 4 8 14; width: 15rem;">Create Standard</button>
 
         </div>
 
         <div class="form-group">
           <label for="standardDescription">Description (Optional):</label>
-          <textarea id="standardDescription" class="form-control" readonly rows="1" style="resize: none;"></textarea>
+          <textarea id="standardDescription" class="form-control" rows="1" style="resize: none;"></textarea>
         </div>
       </div>
     </div>
@@ -110,18 +109,23 @@
         Tests
       </div>
       <div class="card-body">
-        <div class="flex d-flex" style="justify-content: space-between;">
-          <div id="pulses" class="mb-3 d-flex flex" ></div>
-          <button id="addPulse" class="btn btn-primary" onclick="CreatePulse()" style="margin: 8 4 8 14;">Create Pulse</button>
+        <div class="flex d-flex mb-3" style="justify-content: space-between;">
+          <div id="pulses" class="mb-3 d-flex flex align-items-center" ></div>
+          <button id="addPulse" class="btn btn-primary" onclick="CreatePulse()" style="margin: 8 4 8 14; width: 10rem;">Create Pulse</button>
         </div>
         <div id="pulseDetails">
-          <h5 id="pulseName"></h5>
-          <p id="pulseDescription"></p>
 
-          <button id="addParameter" class="btn btn-primary" style="display: none;" onclick="CreateParam()">Add Parameter</button>
+          <div class="flex d-flex justify-content-between">
+            <input type="text" id="pulseName" class="w-75 form-control" style="display: none;">
+          <button id="addParameter" class="btn btn-primary mb-3" style="display: none; width: 10rem;" onclick="CreateParam()">Add Parameters</button>
+        </div>
+        
+        <textarea id="pulseDescription" class="form-control" style="margin-bottom: 10px; display: none;" placeholder="Enter pulse description..." rows="1"></textarea>
+        <!-- <button id="addParameter" class="btn btn-primary" style="display: none;" onclick="CreateParam()">Add Parameter</button> -->
 
 
-          <table class="table table-striped table-bordered" id="parametersTable" style="display: none;">
+
+          <table class="table table-striped table-bordered table-hover" id="parametersTable" style="display: none;">
             <thead>
               <tr>
                 <th>Parameter</th>
@@ -146,9 +150,9 @@
       </div>
     </div>
 
-    <div id="saveCancel" class="mt-4">
-      <button id="saveBtn" class="btn btn-success" onclick="save()">Save</button>
-      <button id="cancelBtn" class="btn btn-secondary" onclick="cancel()">Cancel</button>
+    <div id="saveCancel" class="mt-4 mb-4" style="display: none;">
+      <button id="saveBtn" class="btn btn-success" style="width: 8rem;" onclick="save()">Save</button>
+      <button id="cancelBtn" class="btn btn-secondary" style="width: 8rem; background-color: #D74C4C;" onclick="cancel()">Cancel</button>
     </div>
   </div>
 
@@ -169,6 +173,8 @@
     //         console.log('Error: ' + error);
     //     }
     // });
+
+
     let data = {
       "Transient Immunity Standard": {
         "description": "description of Transient immunity (optional) - None",
@@ -204,6 +210,10 @@
       }
     };
 
+
+    // let data = {};
+
+
     function showSuggestions() {
       const input = document.getElementById("standardInput").value;
       const suggestions = document.getElementById("suggestions");
@@ -214,6 +224,9 @@
           if (key.toLowerCase().includes(input.toLowerCase())) {
             const suggestion = document.createElement("div");
             suggestion.innerText = key;
+            suggestion.style.border = "1px solid #6d6c6c";
+            suggestion.style.borderTop = "none";
+            suggestion.style.borderRadius = "0 0 5px 5px";
             suggestion.onclick = () => selectStandard(key);
             suggestions.appendChild(suggestion);
           }
@@ -229,7 +242,63 @@
       document.getElementById("standardInput").value = standard;
       document.getElementById("standardDescription").value = description;
       document.getElementById("suggestions").style.display = "none";
+
+      document.getElementById("saveCancel").style.display = "block";
+
       showTests(standard);
+    }
+
+    
+
+    function showPulseDetails(standard, pulse) {
+      const pulseName = document.getElementById("pulseName");
+      const pulseDescription = document.getElementById("pulseDescription");
+      const table = document.getElementById("parametersTable");
+      const addParamButton = document.getElementById("addParameter");
+
+      pulseDescription.style.display = "block";
+      pulseName.style.display = "block";
+      table.style.display = "table";
+      addParamButton.style.display = "block";
+
+      const parametersTable = document.getElementById("parametersTable").getElementsByTagName("tbody")[0];
+      parametersTable.innerHTML = "";
+
+      const pulseData = data[standard]?.tests[pulse];
+      pulseName.value = pulse;
+      pulseDescription.value = pulseData?.description || "No Description";
+
+      //style
+      pulseName.style.fontSize = "20px";
+      pulseName.style.fontWeight = "500";
+
+      pulseData?.parameters.forEach((param) => {
+        const row = parametersTable.insertRow();
+        row.insertCell(0).innerHTML = `<input type='text' class='form-control' value='${param.name}'>`;
+        row.insertCell(1).innerHTML = `<input type='text' class='form-control' value='${param.description}'>`;
+        row.insertCell(2).innerHTML = `<input type='text' class='form-control' value='${param.value}'>`;
+        row.insertCell(3).innerHTML = `<input type='text' class='form-control' value='${param.units}'>`;
+      });
+
+    }
+
+    function CreateStandard() {
+      
+      name = document.getElementById("standardInput").value;
+      // description = document.getElementById("standardDescription");
+      // description.value = "";
+      
+      //if name is already present, alert the user
+      if (data[name]) {
+        alert(name + ": Standard already present. If you want to modify, you can do so in the tests section.");
+        return;
+      }
+
+      //show the pulses
+      showTests(name);
+
+      //show the save and cancel buttons
+      document.getElementById("saveCancel").style.display = "block";
     }
 
     function showTests(standard) {
@@ -251,48 +320,16 @@
           const label = document.createElement("label");
           label.innerText = pulse;
 
+          //style
           radio.style.marginRight = "0.8rem";
           label.style.marginRight = "3rem";
+          radio.style.transform = "scale(1.5)";
+          radio.style.accentColor = "#007bff";
+
           pulses.appendChild(radio);
           pulses.appendChild(label);
-          // pulses.appendChild(document.createElement("br"));
         });
-      } 
-      // else {
-      //   testSection.style.display = "none";
-      // }
-    }
-
-    function showPulseDetails(standard, pulse) {
-      const pulseName = document.getElementById("pulseName");
-      const pulseDescription = document.getElementById("pulseDescription");
-      const table = document.getElementById("parametersTable");
-      table.style.display = "table";
-      const parametersTable = document.getElementById("parametersTable").getElementsByTagName("tbody")[0];
-      parametersTable.innerHTML = "";
-
-      const pulseData = data[standard]?.tests[pulse];
-      pulseName.innerText = pulse;
-      pulseDescription.innerText = pulseData?.description || "";
-
-      pulseData?.parameters.forEach((param) => {
-        const row = parametersTable.insertRow();
-        row.insertCell(0).innerText = param.name;
-        row.insertCell(1).innerText = param.description;
-        row.insertCell(2).innerText = param.value;
-        row.insertCell(3).innerText = param.units;
-      });
-    }
-
-    function CreateStandard() {
-      // document.getElementById("createSection").style.display = "block";
-
-      name = document.getElementById("standardInput").value;
-      description = document.getElementById("standardDescription");
-      description.readOnly = false;
-      description.value = "";
-
-      showTests(name);
+      }  
     }
 
     function CreatePulse() {
@@ -305,30 +342,22 @@
       pulseName = document.getElementById("pulseName");
       pulseDescription = document.getElementById("pulseDescription");
 
-      document.getElementById("pulseName").innerText = "";
-      document.getElementById("pulseDescription").innerText = "";
+      //clear the pulse name and description
+      pulseName.value = "";
+      pulseDescription.value = "";
 
-      // clear the table
+      //display the pulse name and description
+      pulseName.style.display = "block";
+      pulseDescription.style.display = "block";
+
+      //put some placeholder text and give focus to the pulse name
+      pulseName.placeholder = "New Pulse Name";
+      pulseDescription.placeholder = "New Pulse Description";
+      pulseName.focus();
+
       //clear the table
       const parametersTable = document.getElementById("parametersTable").getElementsByTagName("tbody")[0];
       parametersTable.innerHTML = "";
-      
-
-      //convert the pulse name and description to editable fields
-      pulseName.contentEditable = true;
-      pulseDescription.contentEditable = true;
-
-      //put some placeholder text and give focus to the pulse name
-      pulseName.innerText = "New Pulse Name";
-      pulseDescription.innerText = "New Pulse Description";
-      
-      //give margin betwwen text and border in pulseName and pulseDescription
-      pulseName.style.padding = "10px";
-      pulseDescription.style.padding = "10px";
-
-      //give a boundary to the pulse name and description
-      pulseName.style.border = "1px solid #ccc";
-      pulseDescription.style.border = "1px solid #ccc";
 
 
       //add parameter button, which will create a form for adding the 4 fields of the table
@@ -356,42 +385,42 @@
       // console.log(parametersTable.rows.length);
     }
 
-    function addNewTest() {
-      alert("Feature not fully implemented");
-    }
 
     function save() {
       //fetch the standard name from standardinput box
       standardName = document.getElementById("standardInput").value;
 
+      if(!standardName){
+        alert("Please enter a standard name");
+        return;
+      }
+
       //fetch the description from standardDescription box
       standardDescription = document.getElementById("standardDescription").value;
 
       //fetch the pulse name from pulseName box
-      pulseName = document.getElementById("pulseName").innerText;
+      pulseName = document.getElementById("pulseName").value ? document.getElementById("pulseName").value : "New pulse";
 
       //fetch the pulse description from pulseDescription box
-      pulseDescription = document.getElementById("pulseDescription").innerText;
+      pulseDescription = document.getElementById("pulseDescription").value ? document.getElementById("pulseDescription").value : "No Description";
 
       //fetch the parameters from the table
       parametersTable = document.getElementById("parametersTable");
       parameters = [];
-      // console.log(parametersTable.rows.length);
       
-      for (var i = 1; i < parametersTable.rows.length; i++) {
-        // console.log("row: " + i);
-        
+      
+      for (var i = 1; i < parametersTable.rows.length; i++) {        
         var parameter = {};
+
         parameter.name = parametersTable.rows[i].cells[0].getElementsByTagName("input")[0].value;
         parameter.description = parametersTable.rows[i].cells[1].getElementsByTagName("input")[0].value;
         parameter.value = parametersTable.rows[i].cells[2].getElementsByTagName("input")[0].value;
         parameter.units = parametersTable.rows[i].cells[3].getElementsByTagName("input")[0].value;
-        console.log(parameter);
         
         parameters.push(parameter);
       }
 
-      //save the data in the data object, if standard is already present just add new pukse, else create a new standard use the three dots operator
+      //save the data in the data object, if standard is already present just add new pulse, else create a new standard 
       if (data[standardName]) {
         data[standardName].tests[pulseName] = {
           description: pulseDescription,
@@ -409,43 +438,18 @@
         };
       }
 
+      //TODO: send the data to the backend
       
-      
-
-      // console.log(data);
-      
-
-
-      //reload the page
+      //reload the page after populating the data
       // location.reload();
+
+      console.log(data);
     }
 
-    //TODO: revert the changes made in the page
+    
     function cancel() {
       //reload the page
       location.reload();
-
-
-      // document.getElementById("createSection").style.display = "none";
-      // document.getElementById("pulseSection").style.display = "none";
-
-      // //clear the standard name and description
-      // document.getElementById("standardInput").value = "";
-      // document.getElementById("standardDescription").value = "";
-
-      // //clear the pulse name and description
-      // document.getElementById("pulseName").innerText = "";
-      // document.getElementById("pulseDescription").innerText = "";
-
-      // //clear the table
-      // const parametersTable = document.getElementById("parametersTable").getElementsByTagName("tbody")[0];
-      // parametersTable.innerHTML = "";
-
-      // //remove all the inserted rows in the  table
-      // for (var i = 0; i < parametersTable.rows.length; i++) {
-      //   parametersTable.deleteRow(i);
-      // }
-
     }
 
 
