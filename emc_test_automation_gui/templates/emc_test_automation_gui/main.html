@@ -118,7 +118,7 @@
     });
 
    
-    // when the circuit is uploaded and immage is being created then fill this data
+    //TODO: when the circuit is uploaded and immage is being created then fill this data
     let data = {
       "PulseParams": {
         "Port 1": ["n1", "n2", "n3"], "Port 2": ["n1", "n2"], "Port 3": ["Ground"],
@@ -146,7 +146,7 @@
     };
 
 
-    // when user click on runsimulation, fill this data
+    //TODO: when user click on runsimulation, fill this data
     let visualisationData = {
       "Voltage": [{
         "probe": "Vbat",
@@ -195,7 +195,7 @@
     };
 
     //when the user click on runsimulation, fill this data
-    // Note this is further complex, like every probe-ref has a table data
+    // Note this is further complex, like every probe-ref has a table data so instead of "parameters" use "probe-ref" as key
     const table_data = {
       "parameters": [
         {
@@ -397,7 +397,7 @@
 
       <!-- Visualize Simulation Results Section -->
 
-      <div class="mb-4">
+      <div class="mb-4" id="outerVisualiseResultsSection" style="display: none;">
         <div class="card">
           <div class="card-header" id="visualizeSimulationResultsHeader">
             <h5 class="mb-0">
@@ -812,6 +812,8 @@
 
       const tableDiv = document.createElement('div');
       const table = document.createElement('table');
+      const tableID = `table-${data.probe}-${data.ref}`;
+      table.id = tableID;
       tableDiv.style.padding = '2rem';
       tableDiv.appendChild(table);
 
@@ -821,7 +823,7 @@
       
 
       fill_graph( graphDivID, graph_data);
-      fill_table(table, table_data);
+      fill_table(tableID, table_data);
 
       //create 2 buttons for save as, and export
       const saveAs = document.createElement('button');
@@ -907,6 +909,7 @@
       componentList.id = 'component-list';
       componentList.classList.add('form-check', 'mb-3');
 
+      //TODO: Fetch the component data from the API
       const componentData = [
         { name: 'L1', isChecked: false },
         { name: 'C3', isChecked: false },
@@ -1001,7 +1004,9 @@
      }
 
 
-    function fill_table(tableElement, data) {
+    function fill_table(tableID, data) {
+
+      const tableElement = document.getElementById(tableID);
       // Clear the existing table content
       tableElement.innerHTML = '';
 
@@ -1038,16 +1043,22 @@
     }
 
     //TODO: Implement this
-    //TODO: Remove the save button, call  the save function when the user clicks on the runsimulation button
     function RunSimulation() {
       event.preventDefault();
       document.getElementById('lblMessage').textContent = 'Simulation is running...';
-
-      // const simulationParams = save();
-      // API call with simulationParams
-
+      
+      
+      const simulationParams = save();
+      console.log(simulationParams);
+      
+      //TODO: Implement the API call
+      // API call with simulationParams (payload)
+      
       //populate visualisation data or get the ID and use it to fetch the data
       
+      
+      document.getElementById('outerVisualiseResultsSection').style.display = 'block';
+      document.getElementById('lblMessage').textContent = 'Simulation is completed...';
     }
 
     //TODO: Implement this
@@ -1309,8 +1320,6 @@
         runParams,
         measurements
       };
-
-      console.log(payload);
       return payload;
     }
 
