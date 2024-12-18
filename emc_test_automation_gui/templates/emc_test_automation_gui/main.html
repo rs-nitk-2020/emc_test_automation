@@ -813,6 +813,7 @@
       const tableDiv = document.createElement('div');
       const table = document.createElement('table');
       const tableID = `table-${data.probe}-${data.ref}`;
+      // alert('created table')
       table.id = tableID;
       tableDiv.style.padding = '2rem';
       tableDiv.appendChild(table);
@@ -823,7 +824,7 @@
       
 
       fill_graph( graphDivID, graph_data);
-      fill_table(tableID, table_data);
+      fill_table(table, table_data);
 
       //create 2 buttons for save as, and export
       const saveAs = document.createElement('button');
@@ -1004,9 +1005,9 @@
      }
 
 
-    function fill_table(tableID, data) {
+    function fill_table(tableElement, data) {
 
-      const tableElement = document.getElementById(tableID);
+      // const tableElement = document.getElementById(tableID);
       // Clear the existing table content
       tableElement.innerHTML = '';
 
