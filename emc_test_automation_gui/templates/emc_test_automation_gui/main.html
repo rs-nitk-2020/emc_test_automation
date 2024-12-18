@@ -123,9 +123,137 @@
       "PulseParams": {
         "Port 1": ["n1", "n2", "n3"], "Port 2": ["n1", "n2"], "Port 3": ["Ground"],
 
-        "ISO1": [{ "name": "Ua", "value": "10" }, { "name": "Us", "value": "10" }, { "name": "Ri", "value": "10" }, { "name": "td", "value": "10" }, { "name": "tr(s)", "value": "10" }, { "name": "t1(s)", "value": "10" }, { "name": "t2(s)", "value": "10" }, { "name": "t3(s)", "value": "10" }, { "name": "t(0)", "value": "10" }, { "name": "Ext res.", "value": "10" }],
+        "ISO1_12V": [
+      { "name": "Ua", "value": "13.5" },
+      { "name": "Us", "value": "-150" },
+      { "name": "Ri", "value": "10" },
+      { "name": "td", "value": "2m" },
+      { "name": "tr(s)", "value": "1u" },
+      { "name": "t1(s)", "value": "0.5" },
+      { "name": "t2(s)", "value": "200m" },
+      { "name": "t3(s)", "value": "50u" },
+      { "name": "t(0)", "value": "1m" },
+      { "name": "Ext res.", "value": "10" }
+    ],
+    "ISO1_24V": [
+      { "name": "Ua", "value": "27" },
+      { "name": "Us", "value": "-600" },
+      { "name": "Ri", "value": "50" },
+      { "name": "td", "value": "1m" },
+      { "name": "tr(s)", "value": "3u" },
+      { "name": "t1(s)", "value": "0.5" },
+      { "name": "t2(s)", "value": "200m" },
+      { "name": "t3(s)", "value": "50u" },
+      { "name": "t(0)", "value": "1m" }
+    ],
 
-        "ISO2a": [{ "name": "St", "value": "10" }, { "name": "Ti", "value": "10" }, { "name": "Max", "value": "10" }]
+    "ISO2a_12V": [
+      { "name": "Ua", "value": "13.5" },
+      { "name": "Us", "value": "112" },
+      { "name": "Ri", "value": "2" },
+      { "name": "td", "value": "0.05m" },
+      { "name": "tr(s)", "value": "1u" },
+      { "name": "t1(s)", "value": "0.2" },
+      { "name": "t(0)", "value": "1m" }
+    ],
+    "ISO2a_24V": [
+      { "name": "Ua", "value": "27" },
+      { "name": "Us", "value": "112" },
+      { "name": "Ri", "value": "2" },
+      { "name": "td", "value": "0.05m" },
+      { "name": "tr(s)", "value": "1u" },
+      { "name": "t1(s)", "value": "0.2" },
+      { "name": "t(0)", "value": "1m" }
+    ],
+    "ISO2b_12V": [
+      { "name": "Ua", "value": "13.5" },
+      { "name": "Us", "value": "10" },
+      { "name": "Ri", "value": "0.05" },
+      { "name": "td", "value": "0.2" },
+      { "name": "t12(s)", "value": "1m" },
+      { "name": "tr(s)", "value": "1m" },
+      { "name": "t6(s)", "value": "1m" },
+      { "name": "trep(s)", "value": "5" },
+      { "name": "ton(s)", "value": "1" },
+      { "name": "t0(s)", "value": "1m" }
+    ],
+    "ISO2b_24V": [
+      { "name": "Ua", "value": "27" },
+      { "name": "Us", "value": "20" },
+      { "name": "Ri", "value": "0.05" },
+      { "name": "td", "value": "0.2" },
+      { "name": "t12(s)", "value": "1m" },
+      { "name": "tr(s)", "value": "1m" },
+      { "name": "t6(s)", "value": "1m" },
+      { "name": "trep(s)", "value": "5" },
+      { "name": "ton(s)", "value": "1" },
+      { "name": "t0(s)", "value": "1m" }
+    ],
+
+        "ISO_Pulse3a_12V": [
+    { "name": "Ua", "value": "13.5" },
+    { "name": "Us", "value": "-300" },
+    { "name": "Ri", "value": "50" },
+    { "name": "td(s)", "value": "150n" },
+    { "name": "tr(s)", "value": "5n" },
+    { "name": "t1(s)", "value": "100u" },
+    { "name": "t0(s)", "value": "1m" },
+    { "name": "t4(s)", "value": "10m" },
+    { "name": "t5(s)", "value": "90m" }
+
+  ],
+  "ISO_Pulse3a_24V": [
+    { "name": "Ua", "value": "27" },
+    { "name": "Us", "value": "-220" },
+    { "name": "Ri", "value": "50" },
+    { "name": "td(s)", "value": "150n" },
+    { "name": "tr(s)", "value": "5n" },
+    { "name": "t1(s)", "value": "100u" },
+    { "name": "t0(s)", "value": "1m" },
+    { "name": "t4(s)", "value": "10m" },
+    { "name": "t5(s)", "value": "90m" }
+  ],
+  "ISO_Pulse3b_12V": [
+    { "name": "Ua", "value": "13.5" },
+    { "name": "Us", "value": "150" },
+    { "name": "Ri", "value": "50" },
+    { "name": "td(s)", "value": "150n" },
+    { "name": "tr(s)", "value": "5n" },
+    { "name": "t1(s)", "value": "100u" },
+    { "name": "t0(s)", "value": "1m" },
+    { "name": "t4(s)", "value": "10m" },
+    { "name": "t5(s)", "value": "90m" }
+  ],
+  "ISO_Pulse3b_24V": [
+    { "name": "Ua", "value": "27" },
+    { "name": "Us", "value": "300" },
+    { "name": "Ri", "value": "50" },
+    { "name": "td(s)", "value": "150n" },
+    { "name": "tr(s)", "value": "5n" },
+    { "name": "t1(s)", "value": "100u" },
+    { "name": "t0(s)", "value": "1m" },
+    { "name": "t4(s)", "value": "10m" },
+    { "name": "t5(s)", "value": "90m" }
+  ],
+  "ISO_Pulse5_12V": [
+    { "name": "Ua", "value": "14" },
+    { "name": "Us", "value": "101" },
+    { "name": "UsClamp", "value": "35" },
+    { "name": "Ri", "value": "0.5" },
+    { "name": "td(s)", "value": "40m" },
+    { "name": "tr(s)", "value": "5m" },
+    { "name": "t0(s)", "value": "1" }
+  ],
+  "ISO_Pulse5_24V": [
+    { "name": "Ua", "value": "28" },
+    { "name": "Us", "value": "202" },
+    { "name": "UsClamp", "value": "58" },
+    { "name": "Ri", "value": "1" },
+    { "name": "td(s)", "value": "100m" },
+    { "name": "tr(s)", "value": "5m" },
+    { "name": "t0(s)", "value": "1" }
+  ]
+
 
       },
 
@@ -1116,16 +1244,20 @@
 
       const radioGroup = document.createElement('div');
       radioGroup.className = 'btn-group mb-3';
-      radioGroup.setAttribute('role', 'group');
+      radioGroup.style = 'width: -webkit-fill-available;overflow-x: scroll;'
 
-      ['ISO1', 'ISO2a'].forEach((isoType, index) => {
+      radioGroup.setAttribute('role', 'group');
+      ISOs = Object.keys(data.PulseParams);
+
+      ISOs.forEach((isoType, index) => {
+        if (isoType.startsWith('Port')) return;
         const radioBtn = document.createElement('input');
         radioBtn.type = 'radio';
         radioBtn.className = 'btn-check';
         radioBtn.name = 'isoOptions';
         radioBtn.id = isoType;
         radioBtn.autocomplete = 'off';
-        if (index === 0) radioBtn.checked = true;
+        if (index === 3) radioBtn.checked = true;
 
         const label = document.createElement('label');
         label.className = 'btn btn-outline-primary';
@@ -1149,7 +1281,7 @@
       pulseParamDiv.appendChild(form);
 
       // Initially show ISO1 fields
-      updateIsoFields('ISO1');
+      updateIsoFields('ISO1_12V');
     }
 
 
