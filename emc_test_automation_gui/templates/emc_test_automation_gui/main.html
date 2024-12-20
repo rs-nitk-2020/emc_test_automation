@@ -114,6 +114,29 @@
           }
         });
 
+      
+
+        $.ajax({
+          url: "/get_node_list/",  
+          type: "POST",
+          data: formData,
+          processData: false,
+          contentType: false,
+          success: function (response) {
+            if (response.status === 'success' && response.nodes) {
+              //update the data[pulse params][port1, port2] with the nodes
+              console.log(response.nodes);
+
+              data["PulseParams"]["Port 1"] = response.nodes;
+              data["PulseParams"]["Port 2"] = response.nodes;
+
+
+            } else {
+              alert('Error: No nodes generated.');
+            }
+          },
+        });
+
       })
     });
 

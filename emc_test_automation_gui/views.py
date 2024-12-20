@@ -113,3 +113,56 @@ def get_test_standards_data(request):
     dashboard = app_dashboard.EMCTestAutomationApi()
     response = dashboard.load_gui_basic_data()
     return JsonResponse(response)
+
+
+from PyLTSpice import SimRunner, SpiceEditor, LTspice, RawRead, SimCommander
+def generate_netlist(asc_file):
+    # if request.method == 'POST' and request.FILES['file1']:
+    # asc_file = request.FILES['file1']
+    sim = SimCommander(asc_file)
+    sim.add_instruction('.tran 100u 100m 0 100u')
+    sim.run()
+    netlist = asc_file.replace(".asc", ".net")
+    search_path='.'
+    for root, dirs, files in os.walk(search_path):
+        if netlist in files:
+            return os.path.join(root, netlist)
+
+    print(f"Netlist file not found {netlist}") 
+    return None
+
+def get_node_list(request):
+    if request.method == 'POST' and request.FILES['file1']:
+        asc_file = request.FILES['file1']
+
+        request_id = request.POST.get('requestId')
+        circuit_type = request.POST.get('circuitType')
+
+        custom_path = os.path.join(settings.BASE_DIR, f'emc_test_automation_api/data/Schematics/{request_id}/{circuit_type}')  # Adjust the folder name or path as needed
+        os.makedirs(custom_path, exist_ok=True)  # Ensure the directory exists
+
+        # Define the full path to save the file, including its name
+        file_path = os.path.join(custom_path, asc_file.name)
+
+        net_list = generate_netlist(file_path)
+        print(net_list)
+        # Set to store unique nodes
+        nodes = set()
+
+        # Read the netlist file
+        with open(net_list, 'r') as file:
+            for line in file:
+                # Skip empty lines or comments
+                line = line.strip()
+                if not line or line.startswith('*'):
+                    continue
+
+                # Split the line into words (assuming netlist format)
+                words = line.split()
+                
+                # Extract nodes (ignore the first word, which is usually the component name)
+                for word in words[1:len(words)-1]:
+                    if word.upper() not in {"GND", "0"}:  # Exclude GND and 0
+                        nodes.add(word)
+        
+        return JsonResponse({'status': 'success','nodes': list(nodes)})
