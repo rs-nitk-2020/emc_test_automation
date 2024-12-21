@@ -109,6 +109,9 @@ def generate_schematic_image(request):
 def test_config_gui(request):
     return render(request, 'test_standards_config.html')
 
+def prediction_gui(request):
+    return render(request, 'prediction.html')
+
 def get_test_standards_data(request):
     dashboard = app_dashboard.EMCTestAutomationApi()
     response = dashboard.load_gui_basic_data()
