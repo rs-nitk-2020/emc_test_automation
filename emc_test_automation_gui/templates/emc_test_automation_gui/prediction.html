@@ -343,23 +343,47 @@
             document.getElementById('lblMessage').textContent = 'Predicting...';
 
             const inputs = {}
+            var formData = new FormData();
             input_fields.forEach((input_field) => {
-                inputs[input_field] = document.getElementById(input_field);
+                formData.append(input_field, document.getElementById(input_field).value); 
             })
 
 
             //Get the results from model via API call with inputs (payload)
             console.log(inputs)
-            const demo_results = [1.2, 2.3]
+            var results = ''
 
-            output_fields.forEach((output_field, idx) => {
-                document.getElementById(output_field).value = demo_results[idx];
+                
+
+               
+            
+                formData.append("csrfmiddlewaretoken", "{{ csrf_token }}");
+              
+
+                $.ajax({
+                    url: "/get_prediction_results/",  // Endpoint for your image generation logic
+                    type: "POST",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (response) {
+                        if (response.status === 'success') {
+                            // alert(response.predictions);
+                            results = response.predictions
+                            output_fields.forEach((output_field, idx) => {
+                document.getElementById(output_field).value = results[idx];
             })
+                        } else {
+                            alert(response.predictions);
+                        }
+                    },
+                    error: function () {
+                        console.log("Error uploading files.");
+                    }
+                });
 
-            //TODO: Implement the API call
-            // API call with simulationParams (payload)
-
-
+                console.log(results);
+    
             document.getElementById('outerVisualiseResultsSection').style.display = 'block';
             document.getElementById('lblMessage').textContent = '';
         }

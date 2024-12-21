@@ -46,7 +46,7 @@ class ImageOps:
 
     @staticmethod
     def generate_schematic_image(schematic_file):
-        ltspice_path = "C:/Users/saldanha/AppData/Local/Programs/ADI/LTspice/LTspice.exe"
+        ltspice_path = "C:/Users/Dilshad/AppData/Local/Programs/ADI/LTspice/LTspice.exe"
         # Step 1: Check if the input file exists
         if not os.path.exists(schematic_file):
             return {'status': 'error', 'error_details': 'Schematic file does not exist.'}

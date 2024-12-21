@@ -29,6 +29,8 @@ from emc_test_automation_api.src.services.database_ops import (
     DatabaseOps
 )
 
+from emc_test_automation_api.src.services.prediction import ( Prediction )
+
 
 class EMCTestAutomationApi:
     """
@@ -70,6 +72,9 @@ class EMCTestAutomationApi:
         for file in files:
             processed_images.append(iops.generate_schematic_image(schematic_file=file))
         return processed_images
+    
+    def getPrediction(self, inputs):
+        return Prediction.predict_results(inputs)
 
     def process_compiler_warnings(self, files: Any):
         """
