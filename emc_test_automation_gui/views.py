@@ -8,6 +8,8 @@ from django.core.files.storage import FileSystemStorage
 
 from emc_test_automation_dashboard import settings
 
+from django.views.decorators.csrf import csrf_exempt
+
 # Create your views here.
 def home(request):
     basic_gui_data = None
@@ -107,15 +109,43 @@ def generate_schematic_image(request):
     return JsonResponse({'error': 'No file uploaded'}, status=400)
 
 def test_config_gui(request):
-    return render(request, 'test_standards_config.html')
+    return render(request, 'test_stnadard_page.html')
 
 def prediction_gui(request):
     return render(request, 'prediction.html')
 
+def get_Prediction(request):
+    log_dashboard = app_dashboard.EMCTestAutomationApi()
+    
+    if request.method == 'POST':
+        inputs = [request.POST.get('Component Position'), request.POST.get('Component Value'), request.POST.get('Input Voltage'), request.POST.get('Input Current')]
+        results =  log_dashboard.getPrediction(inputs)
+        return JsonResponse({'status': results['status'], 'predictions': results['predictions']})
+
 def get_test_standards_data(request):
-    dashboard = app_dashboard.EMCTestAutomationApi()
-    response = dashboard.load_gui_basic_data()
-    return JsonResponse(response)
+    if request.method == 'GET':
+        try:
+            json_file_path = 'emc_test_automation_gui/test_data.json'
+            with open(json_file_path, 'r') as f:
+                data = json.load(f)
+            return JsonResponse(data)
+        except Exception as e:
+            print(e)
+            return JsonResponse({'error': str(e)}, status=500)
+
+@csrf_exempt  #TODO: Remove this decorator in production
+def set_test_standards_data(request):
+    if request.method == 'POST':
+        print(request.POST.get('data'))
+        try:
+            json_file_path = 'emc_test_automation_gui/test_data.json'
+            data = json.loads(request.POST.get('data'))
+            with open(json_file_path, 'w') as f:
+                json.dump(data, f, indent=4)
+            return JsonResponse({'status': 'success'})
+        except Exception as e:
+            print(e)
+            return JsonResponse({'error': str(e)}, status=500)
 
 
 from PyLTSpice import SimRunner, SpiceEditor, LTspice, RawRead, SimCommander

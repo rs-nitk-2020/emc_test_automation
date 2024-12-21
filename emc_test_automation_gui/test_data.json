@@ -1,0 +1,100 @@
+{
+    "Transient Immunity Standard": {
+        "description": "description of Transient immunity (optional) - None",
+        "tests": {
+            "Pulse 1": {
+                "description": "Pulse 1 default parameters",
+                "parameters": [
+                    {
+                        "name": "Us",
+                        "description": "optional",
+                        "value": "13.5+/-2",
+                        "units": "V"
+                    },
+                    {
+                        "name": "Ri",
+                        "description": "Internal Resistance",
+                        "value": "10",
+                        "units": "Ohms"
+                    }
+                ]
+            },
+            "Pulse 2": {
+                "description": "Pulse 2 default parameters",
+                "parameters": [
+                    {
+                        "name": "Us",
+                        "description": "optional",
+                        "value": "13.5+/-2",
+                        "units": "V"
+                    },
+                    {
+                        "name": "Ri",
+                        "description": "Internal Resistance",
+                        "value": "10",
+                        "units": "Ohms"
+                    }
+                ]
+            },
+            "Pulse 3": {
+                "description": "Pulse 3 default parameters",
+                "parameters": [
+                    {
+                        "name": "Us",
+                        "description": "optional",
+                        "value": "13.5+/-2",
+                        "units": "V"
+                    },
+                    {
+                        "name": "Ri",
+                        "description": "Internal Resistance",
+                        "value": "10",
+                        "units": "Ohms"
+                    }
+                ]
+            }
+        }
+    },
+    "Other Standard": {
+        "description": "",
+        "tests": {}
+    },
+    "trans 2": {
+        "description": "",
+        "tests": {
+            "11": {
+                "description": "No Description",
+                "parameters": [
+                    {
+                        "name": "",
+                        "description": "",
+                        "value": "",
+                        "units": ""
+                    }
+                ]
+            }
+        }
+    },
+    "new test standard": {
+        "description": "some new test standard",
+        "tests": {
+            "pulse 1": {
+                "description": "new pulse",
+                "parameters": [
+                    {
+                        "name": "ua",
+                        "description": "some desc",
+                        "value": "1",
+                        "units": "v"
+                    },
+                    {
+                        "name": "us",
+                        "description": "some desc",
+                        "value": "2",
+                        "units": "s"
+                    }
+                ]
+            }
+        }
+    }
+}

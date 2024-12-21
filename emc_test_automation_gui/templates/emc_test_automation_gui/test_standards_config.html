@@ -1,4 +1,4 @@
-{% include "./header.html" %}
+
 {% load static %}
 <html>
 
@@ -78,7 +78,12 @@
 </head>
 
 <body>
+
+
+ 
+
   <div class="container">
+    
     <div class="card">
       <div class="card-header">
         Transient Immunity Standard
@@ -156,63 +161,25 @@
     </div>
   </div>
 
+  
   <script>
     // Your existing JavaScript code for managing the page
-    // let data = {};
+    let data = {};
     // AJAX call to Django backend
-    // $.ajax({
-    //     url: '{% url "get_test_standards_data" %}', // URL of the Django view
-    //     type: 'GET', // HTTP method
-    //     dataType: 'json', // Expected response format
-    //     success: function(response) {
-    //         // On success, populate the `data` variable
-    //         data = response;
-    //         console.log(data); // Output the data to console for verification
-    //     },
-    //     error: function(xhr, status, error) {
-    //         console.log('Error: ' + error);
-    //     }
-    // });
-
-
-    let data = {
-      "Transient Immunity Standard": {
-        "description": "description of Transient immunity (optional) - None",
-        "tests": {
-          "Pulse 1": {
-            "description": "Pulse 1 default parameters",
-            "parameters": [
-              { "name": "Us", "description": "optional", "value": "13.5+/-2", "units": "V" },
-              { "name": "Ri", "description": "Internal Resistance", "value": "10", "units": "Ohms" }
-            ]
-          },
-
-          "Pulse 2": {
-            "description": "Pulse 2 default parameters",
-            "parameters": [
-              { "name": "Us", "description": "optional", "value": "13.5+/-2", "units": "V" },
-              { "name": "Ri", "description": "Internal Resistance", "value": "10", "units": "Ohms" }
-            ]
-          },
-
-          "Pulse 3": {
-            "description": "Pulse 3 default parameters",
-            "parameters": [
-              { "name": "Us", "description": "optional", "value": "13.5+/-2", "units": "V" },
-              { "name": "Ri", "description": "Internal Resistance", "value": "10", "units": "Ohms" }
-            ]
-          }
+    $.ajax({
+        url: '/get_test_standards_data/', // URL of the Django view
+        type: 'GET', // HTTP method
+         // Expected response format
+        success: function(response) {
+            // On success, populate the `data` variable
+            // print()
+            data = response;
+            console.log(data); // Output the data to console for verification
+        },
+        error: function(xhr, status, error) {
+            console.log('Error: ' + error);
         }
-      },
-      "Other Standard": {
-        "description": "",
-        "tests": {}
-      }
-    };
-
-
-    // let data = {};
-
+    });
 
     function showSuggestions() {
       const input = document.getElementById("standardInput").value;
@@ -283,10 +250,8 @@
     }
 
     function CreateStandard() {
-      
+      event.preventDefault();
       name = document.getElementById("standardInput").value;
-      // description = document.getElementById("standardDescription");
-      // description.value = "";
       
       //if name is already present, alert the user
       if (data[name]) {
@@ -294,6 +259,8 @@
         return;
       }
 
+      const pulseDescription = document.getElementById("pulseDescription");
+      pulseDescription.innerHTML = "";
       //show the pulses
       showTests(name);
 
@@ -333,6 +300,7 @@
     }
 
     function CreatePulse() {
+      event.preventDefault();
       //uncheck all the radio buttons
       var radios = document.getElementsByName("pulse");
       for (var i = 0; i < radios.length; i++) {
@@ -367,7 +335,7 @@
     }
 
     function CreateParam() {
-
+      event.preventDefault();
       const table = document.getElementById("parametersTable");
       table.style.display = "table";
 
@@ -387,6 +355,7 @@
 
 
     function save() {
+      event.preventDefault();
       //fetch the standard name from standardinput box
       standardName = document.getElementById("standardInput").value;
 
@@ -438,16 +407,33 @@
         };
       }
 
-      //TODO: send the data to the backend
+      
+      var formData = new FormData();
+      formData.append("data",JSON.stringify(data));
+    
+
+      $.ajax({
+        url: '/set_test_standards_data/', // URL of the Django view
+        type: 'POST', // HTTP method
+        contentType: false,
+        processData: false,
+        data: formData,
+        success: function(response) {
+            console.log(" updated data"); // Output the data to console for verification
+        },
+        error: function(xhr, status, error) {
+            console.log('Error: ' + error);
+        }
+    });
       
       //reload the page after populating the data
-      // location.reload();
+      location.reload();
 
-      console.log(data);
     }
 
     
     function cancel() {
+      event.preventDefault();
       //reload the page
       location.reload();
     }
@@ -457,4 +443,3 @@
 </body>
 
 </html>
-{% include "./footer.html" %}
