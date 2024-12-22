@@ -146,7 +146,7 @@
       "PulseParams": {
         "Port 1": ["n1", "n2", "n3"], "Port 2": ["n1", "n2"], "Port 3": ["Ground"],
 
-        "ISO1_12V": [
+        "ISO1 12V": [
       { "name": "Ua", "value": "13.5" },
       { "name": "Us", "value": "-150" },
       { "name": "Ri", "value": "10" },
@@ -158,7 +158,7 @@
       { "name": "t(0)", "value": "1m" },
       { "name": "Ext res.", "value": "10" }
     ],
-    "ISO1_24V": [
+    "ISO1 24V": [
       { "name": "Ua", "value": "27" },
       { "name": "Us", "value": "-600" },
       { "name": "Ri", "value": "50" },
@@ -170,7 +170,7 @@
       { "name": "t(0)", "value": "1m" }
     ],
 
-    "ISO2a_12V": [
+    "ISO2a 12V": [
       { "name": "Ua", "value": "13.5" },
       { "name": "Us", "value": "112" },
       { "name": "Ri", "value": "2" },
@@ -179,7 +179,7 @@
       { "name": "t1(s)", "value": "0.2" },
       { "name": "t(0)", "value": "1m" }
     ],
-    "ISO2a_24V": [
+    "ISO2a 24V": [
       { "name": "Ua", "value": "27" },
       { "name": "Us", "value": "112" },
       { "name": "Ri", "value": "2" },
@@ -188,7 +188,7 @@
       { "name": "t1(s)", "value": "0.2" },
       { "name": "t(0)", "value": "1m" }
     ],
-    "ISO2b_12V": [
+    "ISO2b 12V": [
       { "name": "Ua", "value": "13.5" },
       { "name": "Us", "value": "10" },
       { "name": "Ri", "value": "0.05" },
@@ -200,7 +200,7 @@
       { "name": "ton(s)", "value": "1" },
       { "name": "t0(s)", "value": "1m" }
     ],
-    "ISO2b_24V": [
+    "ISO2b 24V": [
       { "name": "Ua", "value": "27" },
       { "name": "Us", "value": "20" },
       { "name": "Ri", "value": "0.05" },
@@ -213,7 +213,7 @@
       { "name": "t0(s)", "value": "1m" }
     ],
 
-        "ISO_Pulse3a_12V": [
+        "ISO3a 12V": [
     { "name": "Ua", "value": "13.5" },
     { "name": "Us", "value": "-300" },
     { "name": "Ri", "value": "50" },
@@ -225,7 +225,7 @@
     { "name": "t5(s)", "value": "90m" }
 
   ],
-  "ISO_Pulse3a_24V": [
+  "ISO3a 24V": [
     { "name": "Ua", "value": "27" },
     { "name": "Us", "value": "-220" },
     { "name": "Ri", "value": "50" },
@@ -236,7 +236,7 @@
     { "name": "t4(s)", "value": "10m" },
     { "name": "t5(s)", "value": "90m" }
   ],
-  "ISO_Pulse3b_12V": [
+  "ISO3b 12V": [
     { "name": "Ua", "value": "13.5" },
     { "name": "Us", "value": "150" },
     { "name": "Ri", "value": "50" },
@@ -247,7 +247,7 @@
     { "name": "t4(s)", "value": "10m" },
     { "name": "t5(s)", "value": "90m" }
   ],
-  "ISO_Pulse3b_24V": [
+  "ISO3b 24V": [
     { "name": "Ua", "value": "27" },
     { "name": "Us", "value": "300" },
     { "name": "Ri", "value": "50" },
@@ -258,7 +258,7 @@
     { "name": "t4(s)", "value": "10m" },
     { "name": "t5(s)", "value": "90m" }
   ],
-  "ISO_Pulse5_12V": [
+  "ISO5 12V": [
     { "name": "Ua", "value": "14" },
     { "name": "Us", "value": "101" },
     { "name": "UsClamp", "value": "35" },
@@ -267,7 +267,7 @@
     { "name": "tr(s)", "value": "5m" },
     { "name": "t0(s)", "value": "1" }
   ],
-  "ISO_Pulse5_24V": [
+  "ISO5 24V": [
     { "name": "Ua", "value": "28" },
     { "name": "Us", "value": "202" },
     { "name": "UsClamp", "value": "58" },
@@ -415,46 +415,49 @@
       ]
     };
 
-    var graph_data = [
-          ['Time', 'Voltage', 'Current'],
-          ['4',  -1000,      400],
-          ['5',  1170,      -460],
-          ['6',  -660,       1120],
-          ['7',  1030,      -540],
-          ['8',  660,       1120],
-          ['9',  1030,      -540],
-          ['10',  660,       1120],
-          ['11',  1030,      -540],
-          ['12',  660,       1120],
-          ['13',  1030,      -540],
-          ['14',  660,       1120],
-          ['15',  1030,      -540],
-          ['16',  660,       1120],
-          ['17',  1030,      -540],
-          ['18',  660,       1120],
-          ['19',  1030,      -540],
-          ['20',  660,       1120],
-          ['21',  1030,      -540],
-          ['22',  660,       1120],
-          ['23',  1030,      -540],
-          ['24',  660,       1120],
-          ['25',  1030,      -540],
-          ['26',  660,       1120],
-          ['27',  1030,      -540],
-          ['28',  660,       1120],
-          ['29',  1030,      -540],
-          ['30',  660,       1120],
-          ['31',  1030,      -540],
-          ['32',  660,       1120],
-          ['33',  1030,      -540],
-          ['34',  660,       1120],
-          ['35',  1030,      -540],
-          ['36',  660,       1120],
-          ['37',  1030,      -540],
-          ['38',  660,       1120],
-          ['39',  1030,      -540],
-          ['40',  660,       1120],
-        ];
+    var graph_data =  
+    [
+  ['Time', 'Voltage'],
+  ['4', 657],
+  ['5', -959],
+  ['6', -279],
+  ['7', 937],
+  ['8', 989],
+  ['9', 412],
+  ['10', -841],
+  ['11', -998],
+  ['12', -536],
+  ['13', 717],
+  ['14', 993],
+  ['15', 646],
+  ['16', -587],
+  ['17', -974],
+  ['18', -740],
+  ['19', 447],
+  ['20', 940],
+  ['21', 814],
+  ['22', -298],
+  ['23', -892],
+  ['24', -869],
+  ['25', 143],
+  ['26', 832],
+  ['27', 904],
+  ['28', 13],
+  ['29', -762],
+  ['30', -919],
+  ['31', -168],
+  ['32', 683],
+  ['33', 914],
+  ['34', 318],
+  ['35', -597],
+  ['36', -889],
+  ['37', -457],
+  ['38', 501],
+  ['39', 845],
+  ['40', 577]
+];
+
+
   
   </script>
 
@@ -567,7 +570,7 @@
       </div>
 
       <div class="mb-4">
-        <label id="lblMessage" class="form-label text-primary-emphasis px-1"></label>
+        <label id="lblMessage" class="form-label px-1"></label>
         {{ new_element|escape }}
       </div>
     </form>
@@ -929,9 +932,42 @@
         card.style.padding = '0 0.5rem 0 0.5rem';
         card.style.border = 'none'
 
+       
+      
+
         // Append card to the voltage section
         voltageSection.appendChild(card);
+       
       });
+
+       //create 2 buttons for save as, and export
+       const saveAs = document.createElement('button');
+      saveAs.textContent = 'Save As';
+      saveAs.className = 'btn btn-primary mt-3 me-3 btn-lg';
+
+      const exportBtn = document.createElement('button');
+      exportBtn.textContent = 'Export to Excel';
+      exportBtn.className = 'btn btn-primary mt-3 me-3 btn-lg';
+
+      saveAs.addEventListener('click', () => { event.preventDefault(); const csvContent = "Parameter,Value,Units,Total Duration,Units\nPeak,90,V,1.5,us\nRMS,63,V,1.5,us\nAverage,54,V,1.5,us\nFrequency,400,Hz,,\nRise time,5,us,,\nFall time,10,us,,\nTotal time,15,us,,\nProp. delay,22,us,,\nTransient duration,3,s,,";
+
+const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+const link = document.createElement("a");
+link.href = URL.createObjectURL(blob);
+link.download = "complete_report.csv";
+link.click(); });
+
+exportBtn.addEventListener('click', () => exportToExcel('custom-export-div', table_data));
+//put both of them in one row and append to graph card
+const buttonRow = document.createElement('div');
+      buttonRow.className = 'd-flex justify-content-end mb-3 pr-3';
+      buttonRow.appendChild(saveAs);
+      buttonRow.appendChild(exportBtn);
+
+      const customExportDiv = document.createElement('div');
+      customExportDiv.id = 'custom-export-div';
+      voltageSection.appendChild(buttonRow);
+      voltageSection.appendChild(customExportDiv);
     }
 
     //TODO: Implement the createCurrentSection and createPowerSection functions
@@ -975,36 +1011,17 @@
       
 
       fill_graph( graphDivID, graph_data);
-      fill_table(table, table_data);
+      fill_table(table, table_data, data.params);
 
-      //create 2 buttons for save as, and export
-      const saveAs = document.createElement('button');
-      saveAs.textContent = 'Save As';
-      saveAs.className = 'btn btn-primary mt-3 me-3 btn-lg';
-
-      const exportBtn = document.createElement('button');
-      exportBtn.textContent = 'Export to Excel';
-      exportBtn.className = 'btn btn-primary mt-3 me-3 btn-lg';
-
-
-      //put both of them in one row and append to graph card
-      const buttonRow = document.createElement('div');
-      buttonRow.className = 'd-flex justify-content-end mb-3 pr-3';
-      buttonRow.appendChild(saveAs);
-      buttonRow.appendChild(exportBtn);
-
-      const customExportDiv = document.createElement('div');
-      customExportDiv.id = 'custom-export-div';
+      
 
       visualisationCard.appendChild(graphdiv);
       // graphdiv.appendChild(graph);
       visualisationCard.appendChild(tableDiv);
-      visualisationCard.appendChild(buttonRow);
-      visualisationCard.appendChild(customExportDiv);
+      // visualisationCard.appendChild(buttonRow);
+      // visualisationCard.appendChild(customExportDiv);
 
-      saveAs.addEventListener('click', () => { event.preventDefault(); alert('Save as clicked'); });
-
-      exportBtn.addEventListener('click', () => exportToExcel('custom-export-div', table_data));
+      
 
     }
 
@@ -1111,19 +1128,36 @@
       // Add event listeners
       selectAllBtn.addEventListener('click', () => {
         event.preventDefault();
-        alert('Selected all');
+        // alert('Selected all');
+        // Create and download a dummy CSV file
+        const csvContent = "Parameter,Value,Units,Total Duration,Units\nPeak,90,V,1.5,us\nRMS,63,V,1.5,us\nAverage,54,V,1.5,us\nFrequency,400,Hz,,\nRise time,5,us,,\nFall time,10,us,,\nTotal time,15,us,,\nProp. delay,22,us,,\nTransient duration,3,s,,";
+
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "complete_report.csv";
+        link.click();
       });
 
       customBtn.addEventListener('click', () => {
         event.preventDefault();
         customOptions.classList.toggle('d-none');
+
+        
       });
 
       exportBtn.addEventListener('click', () => {
         event.preventDefault();
         const checkedComponents = componentData.filter((component) => component.isChecked);
         const checkedNames = checkedComponents.map((component) => component.name);
-        alert(`Exporting: ${checkedNames.join(', ')}`);
+        // alert(`Exporting: ${checkedNames.join(', ')}`);
+        const csvContent = "Parameter,Value,Units,Total Duration,Units\nPeak,90,V,1.5,us\nRMS,63,V,1.5,us\nAverage,54,V,1.5,us\nFrequency,400,Hz,,\nRise time,5,us,,\nFall time,10,us,,\nTotal time,15,us,,\nProp. delay,22,us,,\nTransient duration,3,s,,";
+
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "custom_report.csv";
+        link.click();
       });
     }
 
@@ -1156,7 +1190,7 @@
      }
 
 
-    function fill_table(tableElement, data) {
+    function fill_table(tableElement, data, selectedParams) {
 
       // const tableElement = document.getElementById(tableID);
       // Clear the existing table content
@@ -1175,9 +1209,12 @@
       tableHeader.appendChild(headerRow);
       tableElement.appendChild(tableHeader);
 
+      const namesArray = selectedParams.map(item => item.name);
+
       // Create the table body
       const tableBody = document.createElement('tbody');
       data.parameters.forEach((param) => {
+        if (!namesArray.includes(param.name)) return;
         const row = document.createElement('tr');
         row.innerHTML = `
       <td>${param.name}</td>
@@ -1197,20 +1234,37 @@
     //TODO: Implement this
     function RunSimulation() {
       event.preventDefault();
-      document.getElementById('lblMessage').textContent = 'Simulation is running...';
+      const msg = document.getElementById('lblMessage');
+      msg.style.fontSize = '1.25rem';
+      msg.textContent = 'Simulation is running...';
+      //set the text colour to blue
+      msg.style.color = 'blue';
       
       
       const simulationParams = save();
+      console.log("simulationParams");
       console.log(simulationParams);
       
       //TODO: Implement the API call
       // API call with simulationParams (payload)
+
+      // Add 2 second delay before showing results
+      setTimeout(() => {
+        console.log("running simulation");
+        
+        //populate visualisation data or get the ID and use it to fetch the data
+        document.getElementById('outerVisualiseResultsSection').style.display = 'block';
+        msg.textContent = 'Simulation is completed...';
+        msg.style.color = 'green';
+        //font size
+        
+      }, 2000);
       
       //populate visualisation data or get the ID and use it to fetch the data
       
       
-      document.getElementById('outerVisualiseResultsSection').style.display = 'block';
-      document.getElementById('lblMessage').textContent = 'Simulation is completed...';
+      // document.getElementById('outerVisualiseResultsSection').style.display = 'block';
+      // document.getElementById('lblMessage').textContent = 'Simulation is completed...';
     }
 
     //TODO: Implement this
@@ -1304,7 +1358,7 @@
       pulseParamDiv.appendChild(form);
 
       // Initially show ISO1 fields
-      updateIsoFields('ISO1_12V');
+      updateIsoFields('ISO1 12V');
     }
 
 
@@ -1423,7 +1477,7 @@
         label.style.width = '5rem'; // Fixed width for label
 
         const input = document.createElement('input');
-        input.type = 'number';
+        // input.type = 'number';
         input.className = 'form-control';
         input.value = field.value;
         input.id = field.name.replace(/\s+/g, '');

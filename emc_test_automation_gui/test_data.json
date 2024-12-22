@@ -1,38 +1,128 @@
 {
     "Transient Immunity Standard": {
-        "description": "description of Transient immunity (optional) - None",
+        "description": "description of Transient immunity (optional)",
         "tests": {
-            "Pulse 1": {
+            "ISO1 12V": {
                 "description": "Pulse 1 default parameters",
                 "parameters": [
                     {
+                        "name": "Ua",
+                        "description": "optional",
+                        "value": "13.5",
+                        "units": "V"
+                    },
+                    {
                         "name": "Us",
                         "description": "optional",
-                        "value": "13.5+/-2",
+                        "value": "-150",
                         "units": "V"
                     },
                     {
                         "name": "Ri",
                         "description": "Internal Resistance",
+                        "value": "10",
+                        "units": "Ohms"
+                    },
+                    {
+                        "name": "td",
+                        "description": "Time delay",
+                        "value": "2m",
+                        "units": "s"
+                    },
+                    {
+                        "name": "tr(s)",
+                        "description": "Rise time",
+                        "value": "1u",
+                        "units": "s"
+                    },
+                    {
+                        "name": "t1(s)",
+                        "description": "Duration tnkd",
+                        "value": "0.6",
+                        "units": "s"
+                    },
+                    {
+                        "name": "t2(s)",
+                        "description": "Duration t2",
+                        "value": "200m",
+                        "units": "s"
+                    },
+                    {
+                        "name": "t3(s)",
+                        "description": "Duration t3",
+                        "value": "50u",
+                        "units": "s"
+                    },
+                    {
+                        "name": "t(0)",
+                        "description": "Start time",
+                        "value": "1m",
+                        "units": "s"
+                    },
+                    {
+                        "name": "Ext res.",
+                        "description": "External Resistance",
                         "value": "10",
                         "units": "Ohms"
                     }
                 ]
             },
-            "Pulse 2": {
-                "description": "Pulse 2 default parameters",
+            "ISO1 24V": {
+                "description": "Pulse 1 default parameters",
                 "parameters": [
+                    {
+                        "name": "Ua",
+                        "description": "optional",
+                        "value": "27",
+                        "units": "V"
+                    },
                     {
                         "name": "Us",
                         "description": "optional",
-                        "value": "13.5+/-2",
+                        "value": "-600",
                         "units": "V"
                     },
                     {
                         "name": "Ri",
                         "description": "Internal Resistance",
-                        "value": "10",
+                        "value": "50",
                         "units": "Ohms"
+                    },
+                    {
+                        "name": "td",
+                        "description": "Time delay",
+                        "value": "1m",
+                        "units": "s"
+                    },
+                    {
+                        "name": "tr(s)",
+                        "description": "Rise time",
+                        "value": "3u",
+                        "units": "s"
+                    },
+                    {
+                        "name": "t1(s)",
+                        "description": "Duration t1",
+                        "value": "0.6",
+                        "units": "s"
+                    },
+                    {
+                        "name": "t2(s)",
+                        "description": "Duration t2",
+                        "value": "200m",
+                        "units": "s"
+                    },
+                    {
+                        "name": "t3(s)",
+                        "description": "Duration t3",
+                        "value": "50u",
+                        "units": "s"
+                    },
+                    {
+                        "name": "t(0)",
+                        "description": "Start time",
+                        "value": "1m",
+                        "units": "s"
                     }
                 ]
             },
@@ -91,6 +181,38 @@
                         "name": "us",
                         "description": "some desc",
                         "value": "2",
+                        "units": "s"
+                    }
+                ]
+            }
+        }
+    },
+    "Trans 3": {
+        "description": "some new standard",
+        "tests": {
+            "ISO 33v": {
+                "description": "some description",
+                "parameters": [
+                    {
+                        "name": "Ua",
+                        "description": "some desc",
+                        "value": "10",
+                        "units": "s"
+                    }
+                ]
+            }
+        }
+    },
+    "Trans 4": {
+        "description": "some desc",
+        "tests": {
+            "pulse 1": {
+                "description": "some desc",
+                "parameters": [
+                    {
+                        "name": "Ua",
+                        "description": "sdd",
+                        "value": "1",
                         "units": "s"
                     }
                 ]
