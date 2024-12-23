@@ -115,33 +115,36 @@
         });
 
       
+        //TODO: backend API incomplete, needed response.nodes = list of all the nodes in the circuit, response.complete_node_data = complete node data (dummy data for now)
+        // $.ajax({
+        //   url: "/get_node_details/",  
+        //   type: "POST",
+        //   data: formData,
+        //   processData: false,
+        //   contentType: false,
+        //   success: function (response) {
+        //     if (response.status === 'success') {
+        //       //update the data[pulse params][port1, port2] with the nodes
+        //       console.log(response.nodes);
+        //       console.log(response.complete_node_data);
 
-        $.ajax({
-          url: "/get_node_list/",  
-          type: "POST",
-          data: formData,
-          processData: false,
-          contentType: false,
-          success: function (response) {
-            if (response.status === 'success' && response.nodes) {
-              //update the data[pulse params][port1, port2] with the nodes
-              console.log(response.nodes);
-
-              data["PulseParams"]["Port 1"] = response.nodes;
-              data["PulseParams"]["Port 2"] = response.nodes;
+        //       comp_node_data = response.complete_node_data;
+        //       nodes_list = response.nodes;
+        //       data["PulseParams"]["Port 1"] = nodes_list;
+        //       data["PulseParams"]["Port 2"] = nodes_list;
 
 
-            } else {
-              alert('Error: No nodes generated.');
-            }
-          },
-        });
+        //     } else {
+        //       alert('Error: nodes data not generated.');
+        //     }
+        //   },
+        // });
 
       })
     });
 
-   
-    //TODO: when the circuit is uploaded and immage is being created then fill this data
+    let simulationID = 0;
+
     let data = {
       "PulseParams": {
         "Port 1": ["n1", "n2", "n3"], "Port 2": ["n1", "n2"], "Port 3": ["Ground"],
@@ -296,13 +299,7 @@
       }
     };
 
-
-    //TODO: when user click on runsimulation, fill this data
-    let visualisationData = {
-      "Voltage": [{
-        "probe": "Vbat",
-        "ref": "Vbat_protect",
-        "params": [
+    const voltage_params =  [
           { "name": "Peak", "unit": ["V", "kV", "mV"] },
           { "name": "RMS", "unit": ["V", "kV", "mV"] },
           { "name": "Average", "unit": ["V", "kV", "mV"] },
@@ -313,37 +310,18 @@
           { "name": "Prop. delay", "unit": ["s", "ms", "us"] },
           { "name": "Transient duration", "unit": ["s", "ms", "us"] }
         ]
-      },
 
-      {
-        "probe": "Vbatprotect",
-        "ref": "Vbuck",
-        "params": [
-          { "name": "Peak", "unit": ["V", "kV", "mV"] },
-          { "name": "RMS", "unit": ["V", "kV", "mV"] },
-          { "name": "Average", "unit": ["V", "kV", "mV"] }
+    const current_params =  [
+          { "name": "Peak", "unit": ["A", "kA", "mA"] },
+          { "name": "RMS", "unit": ["A", "kA", "mA"] },
+          { "name": "Average", "unit": ["A", "kA", "mA"] },
+          { "name": "Frequency", "unit": ["Hz", "kHz", "MHz"] },
+          { "name": "Rise time", "unit": ["s", "ms", "us"] },
+          { "name": "Fall time", "unit": ["s", "ms", "us"] },
+          { "name": "Total time", "unit": ["s", "ms", "us"] },
+          { "name": "Prop. delay", "unit": ["s", "ms", "us"] },
+          { "name": "Transient duration", "unit": ["s", "ms", "us"] }
         ]
-      },
-
-      {
-        "probe": "something",
-        "ref": "something",
-        "params": [
-          { "name": "Peak", "unit": ["V", "kV", "mV"] },
-          { "name": "RMS", "unit": ["V", "kV", "mV"] },
-          { "name": "Average", "unit": ["V", "kV", "mV"] }
-        ]
-      }],
-
-      "Current": {
-        "file": null,
-        "plotType": "Line"
-      },
-      "Power": {
-        "file": null,
-        "plotType": "Line"
-      }
-    };
 
     //when the user click on runsimulation, fill this data
     // Note this is further complex, like every probe-ref has a table data so instead of "parameters" use "probe-ref" as key
@@ -457,7 +435,11 @@
   ['40', 577]
 ];
 
+    
+    // let comp_node_data = ''
+    const comp_node_data = {'C1': ['N003', '0'], 'C6': ['N010', 'N012'], 'L1': ['N012', 'N011'], 'RS1': ['N011', 'OUT2'], 'C7': ['OUT2', '0'], 'C9': ['N020', '0'], 'Rload2': ['OUT2', '0'], 'R7': ['Input', 'N004'], 'R8': ['N004', '0'], 'R9': ['N003', 'N005'], 'R10': ['N022', '0'], 'R1': ['N009', '0'], 'C2': ['N001', 'N002'], 'R2': ['OUT1', 'N015'], 'R3': ['N015', '0'], 'C3': ['OUT1', '0'], 'C5': ['OUT1', '0'], 'Rload1': ['OUT1', '0'], 'L3': ['Input', 'N001'], 'L2': ['0', 'N002'], 'R11': ['N003', 'N006'], 'C10': ['N003', '0'], 'C11': ['0', 'OUT1'], 'C12': ['N021', '0'], 'R12': ['N017', 'N016'], 'C8': ['N016', '0'], 'R13': ['N018', 'N019'], 'C13': ['N019', '0'], 'C14': ['Input', '0'], 'C15': ['N014', '0'], 'R14': ['N009', 'N014'], 'C4': ['N017', '0'], 'C16': ['INTVcc', '0'], 'R4': ['INTVcc', 'N023'], 'C17': ['N024', '0'], 'C18': ['N018', '0']};
 
+    const nodes_list = ['N018', 'N009', 'N021', 'N015', 'N016', 'OUT1', 'OUT2', 'N010', 'N022', '0', 'N014', 'N001', 'N017', 'INTVcc', 'N019', 'N003', 'N012', 'N024', 'N005', 'N020', 'N011', 'Input', 'N023', 'N002', 'N006', 'N004']
   
   </script>
 
@@ -582,7 +564,6 @@
   <script>
     function initialize() {
       createSimulationParamSection();
-      createVisualiseBody();
     }
 
     function createSimulationParamSection() {
@@ -639,10 +620,12 @@
       }
     }
 
-    function createVisualiseBody() {
+    function createVisualiseBody(visualiseBodySections) {
       const visualiseBody = document.getElementById('visualiseSimulationBody');
 
-      ['Voltage', 'Current', 'Power'].forEach(type => {
+      // const visualiseBodySections = ['Voltage', 'Current', 'Power'];
+
+      visualiseBodySections.forEach(type => {
         const card = document.createElement('div');
         card.className = 'card mb-2';
 
@@ -669,21 +652,20 @@
     }
 
     function createVisualiseSection(type) {
-      const data = visualisationData[type];
       const section = document.getElementById(`${type.toLowerCase()}Section`);
 
       if (type === 'Voltage') {
-        createVoltageSection({ "Voltage": data });
+        createVoltageSection("voltageSection");
       } else if (type === 'Current') {
-        createCurrentSection();
+        createVoltageSection("currentSection");
       } else if (type === 'Power') {
-        createPowerSection();
+        createPowerSection('powerSection');
       }
     }
 
 
-    function createVoltageSection(voltageData) {
-      const voltageSection = document.getElementById("voltageSection");
+    function createVoltageSection(SectionID) {
+      const voltageSection = document.getElementById(SectionID);
       voltageSection.innerHTML = ""; // Clear existing content
       // Create the header row for probe and reference
       const headRow = document.createElement("div");
@@ -734,7 +716,9 @@
       voltageSection.appendChild(headRow);
 
 
-      voltageData.Voltage.forEach((item, index) => {
+      Object.entries(comp_node_data).forEach(([comp, nodes]) => {
+        const node1 = nodes[0];
+        const node2 = nodes[1];
         // Create a card for each probe
         const card = document.createElement("div");
         card.className = "card";
@@ -748,7 +732,7 @@
         probeInput.type = "text";
         probeInput.className = "form-control me-2";
         probeInput.placeholder = "Probe";
-        probeInput.value = item.probe;
+        probeInput.value = node1;
         probeInput.disabled = true;
         // probeInput.style.backgroundColor = 'white';
 
@@ -757,7 +741,7 @@
         refInput.type = "text";
         refInput.className = "form-control";
         refInput.placeholder = "Ref";
-        refInput.value = item.ref;
+        refInput.value = node2;
         refInput.disabled = true;
         // refInput.style.backgroundColor = 'white';
 
@@ -766,7 +750,7 @@
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.className = 'form-check-input me-2';
-        checkbox.id = `checkbox-${item.probe}-${item.ref}`;
+        checkbox.id = `checkbox-${node1}-${node2}`;
         //add some margin to the checkbox
         checkbox.style.margin = '0.5rem';
         //increase the size of the checkbox
@@ -799,8 +783,17 @@
         // Create container for rows
         const rowsContainer = document.createElement("div");
 
+
+        params = '';
+        // if SectionID is voltageSection, then use voltage_params, else use current_params 
+        if (SectionID === 'voltageSection') {
+          params = voltage_params;
+        } else {
+          params = current_params;
+        }
+
         // Group parameters into pairs
-        for (let i = 0; i < item.params.length; i += 2) {
+        for (let i = 0; i < params.length; i += 2) {
           const rowDiv = document.createElement("div");
           rowDiv.className = "row mb-2";
 
@@ -814,14 +807,14 @@
           checkbox1.style.transform = 'scale(1.5)';
 
           const paramLabel1 = document.createElement("span");
-          paramLabel1.textContent = item.params[i].name;
+          paramLabel1.textContent = params[i].name;
           paramLabel1.className = "me-3";
           paramLabel1.style.width = '5rem';
 
           const unitSelect1 = document.createElement("select");
           unitSelect1.className = "form-select form-select-sm";
           unitSelect1.style.width = '5rem';
-          item.params[i].unit.forEach((unit) => {
+          params[i].unit.forEach((unit) => {
             const option = document.createElement("option");
             option.value = unit;
             option.textContent = unit;
@@ -834,7 +827,7 @@
           rowDiv.appendChild(col1);
 
           // Second parameter in pair (if exists)
-          if (i + 1 < item.params.length) {
+          if (i + 1 < params.length) {
             const col2 = document.createElement("div");
             col2.className = "col-6 d-flex align-items-center";
 
@@ -844,14 +837,14 @@
             checkbox2.style.transform = 'scale(1.5)';
 
             const paramLabel2 = document.createElement("span");
-            paramLabel2.textContent = item.params[i + 1].name;
+            paramLabel2.textContent = params[i + 1].name;
             paramLabel2.className = "me-3";
             paramLabel2.style.width = '5rem';
 
             const unitSelect2 = document.createElement("select");
             unitSelect2.className = "form-select form-select-sm";
             unitSelect2.style.width = '5rem';
-            item.params[i + 1].unit.forEach((unit) => {
+            params[i + 1].unit.forEach((unit) => {
               const option = document.createElement("option");
               option.value = unit;
               option.textContent = unit;
@@ -885,12 +878,12 @@
           });
 
           const final_data = {
-            "probe": item.probe,
-            "ref": item.ref,
+            "probe": node1,
+            "ref":node2,
             "params": selectedParams,
-            "visualisationCard_id": `visualisation-${item.probe}-${item.ref}`
+            "visualisationCard_id": `visualisation-${node1}-${node2}`
           }
-          // Log the selected parameters TODO: call the function to plot the graph
+          
           console.log(final_data);
           plotGraph(final_data);
         };
@@ -904,7 +897,7 @@
           //hide visualise button if unchecked
           visualiseButton.style.display = event.target.checked ? 'block' : 'none';
           //hide graph and table if unchecked
-          document.getElementById(`visualisation-${item.probe}-${item.ref}`).style.display = 'none';
+          document.getElementById(`visualisation-${node1}-${node2}`).style.display = 'none';
           // document.getElementById(`table-${item.probe}-${item.ref}`).style.display = 'none';
 
           //if unchecked remove the boundary of card
@@ -923,7 +916,7 @@
         const visualisationCard = document.createElement('div');
         visualisationCard.className = 'card mt-3';
         visualisationCard.style.display = 'none';
-        visualisationCard.id = `visualisation-${item.probe}-${item.ref}`;
+        visualisationCard.id = `visualisation-${node1}-${node2}`;
 
         card.appendChild(visualisationCard);
 
@@ -932,8 +925,6 @@
         card.style.padding = '0 0.5rem 0 0.5rem';
         card.style.border = 'none'
 
-       
-      
 
         // Append card to the voltage section
         voltageSection.appendChild(card);
@@ -949,13 +940,18 @@
       exportBtn.textContent = 'Export to Excel';
       exportBtn.className = 'btn btn-primary mt-3 me-3 btn-lg';
 
-      saveAs.addEventListener('click', () => { event.preventDefault(); const csvContent = "Parameter,Value,Units,Total Duration,Units\nPeak,90,V,1.5,us\nRMS,63,V,1.5,us\nAverage,54,V,1.5,us\nFrequency,400,Hz,,\nRise time,5,us,,\nFall time,10,us,,\nTotal time,15,us,,\nProp. delay,22,us,,\nTransient duration,3,s,,";
+      saveAs.addEventListener('click', () => { event.preventDefault(); 
 
-const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-const link = document.createElement("a");
-link.href = URL.createObjectURL(blob);
-link.download = "complete_report.csv";
-link.click(); });
+        const checkedNames = Object.keys(comp_node_data)
+        // alert(`Exporting: ${checkedNames.join(', ')}`);
+
+        //TODO: Implement API call with checkedNames and get the CSV content
+        
+        const csvContent = "Parameter,Value,Units,Total Duration,Units\nPeak,90,V,1.5,us\nRMS,63,V,1.5,us\nAverage,54,V,1.5,us\nFrequency,400,Hz,,\nRise time,5,us,,\nFall time,10,us,,\nTotal time,15,us,,\nProp. delay,22,us,,\nTransient duration,3,s,,";
+
+        downloadCSV(csvContent, 'complete_report.csv');
+
+});
 
 exportBtn.addEventListener('click', () => exportToExcel('custom-export-div', table_data));
 //put both of them in one row and append to graph card
@@ -970,9 +966,8 @@ const buttonRow = document.createElement('div');
       voltageSection.appendChild(customExportDiv);
     }
 
-    //TODO: Implement the createCurrentSection and createPowerSection functions
-    function createCurrentSection(currentData) { }
-    function createPowerSection(PowerData) { }
+    //TODO: Implement the createPowerSection or other sections
+    function createPowerSection(SectionID) { }
 
     function plotGraph(data) {
       // data = {
@@ -1000,28 +995,18 @@ const buttonRow = document.createElement('div');
       const tableDiv = document.createElement('div');
       const table = document.createElement('table');
       const tableID = `table-${data.probe}-${data.ref}`;
-      // alert('created table')
       table.id = tableID;
       tableDiv.style.padding = '2rem';
       tableDiv.appendChild(table);
 
-      //TODO:
-      //fetch the table data
-      //fetch the graph data
+      //TODO: fetch the table data from the server using simulation id, probe, ref, and params
+      //TODO: fetch the graph data from the server using simulation id, probe, ref
       
-
       fill_graph( graphDivID, graph_data);
       fill_table(table, table_data, data.params);
 
-      
-
       visualisationCard.appendChild(graphdiv);
-      // graphdiv.appendChild(graph);
       visualisationCard.appendChild(tableDiv);
-      // visualisationCard.appendChild(buttonRow);
-      // visualisationCard.appendChild(customExportDiv);
-
-      
 
     }
 
@@ -1078,12 +1063,10 @@ const buttonRow = document.createElement('div');
       componentList.id = 'component-list';
       componentList.classList.add('form-check', 'mb-3');
 
-      //TODO: Fetch the component data from the API
-      const componentData = [
-        { name: 'L1', isChecked: false },
-        { name: 'C3', isChecked: false },
-        { name: 'R2', isChecked: false },
-      ];
+      const componentData = Object.keys(comp_node_data).map(key => ({
+        name: key,
+        isChecked: false
+      }));
 
       componentData.forEach((component) => {
         const componentDiv = document.createElement('div');
@@ -1128,15 +1111,21 @@ const buttonRow = document.createElement('div');
       // Add event listeners
       selectAllBtn.addEventListener('click', () => {
         event.preventDefault();
-        // alert('Selected all');
-        // Create and download a dummy CSV file
+        //get the name of all the components from the componentData in a list
+        const checkedNames = componentData.map((component) => component.name);
+        // alert(`Exporting: ${checkedNames.join(', ')}`);
+
+        //TODO: Implement API call with checkedNames and get the CSV content
+
+        // dummy content
         const csvContent = "Parameter,Value,Units,Total Duration,Units\nPeak,90,V,1.5,us\nRMS,63,V,1.5,us\nAverage,54,V,1.5,us\nFrequency,400,Hz,,\nRise time,5,us,,\nFall time,10,us,,\nTotal time,15,us,,\nProp. delay,22,us,,\nTransient duration,3,s,,";
 
-        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-        const link = document.createElement("a");
-        link.href = URL.createObjectURL(blob);
-        link.download = "complete_report.csv";
-        link.click();
+        // const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        // const link = document.createElement("a");
+        // link.href = URL.createObjectURL(blob);
+        // link.download = "complete_report.csv";
+        // link.click();
+        downloadCSV(csvContent, 'complete_report.csv');
       });
 
       customBtn.addEventListener('click', () => {
@@ -1151,17 +1140,28 @@ const buttonRow = document.createElement('div');
         const checkedComponents = componentData.filter((component) => component.isChecked);
         const checkedNames = checkedComponents.map((component) => component.name);
         // alert(`Exporting: ${checkedNames.join(', ')}`);
+
+        //TODO: Implement API call with checkedNames and get the CSV content
         const csvContent = "Parameter,Value,Units,Total Duration,Units\nPeak,90,V,1.5,us\nRMS,63,V,1.5,us\nAverage,54,V,1.5,us\nFrequency,400,Hz,,\nRise time,5,us,,\nFall time,10,us,,\nTotal time,15,us,,\nProp. delay,22,us,,\nTransient duration,3,s,,";
 
-        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-        const link = document.createElement("a");
-        link.href = URL.createObjectURL(blob);
-        link.download = "custom_report.csv";
-        link.click();
+        // const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        // const link = document.createElement("a");
+        // link.href = URL.createObjectURL(blob);
+        // link.download = "custom_report.csv";
+        // link.click();
+        downloadCSV(csvContent, 'custom_report.csv');
       });
     }
 
-    //TODO: Width changes according to client
+
+    function downloadCSV(csvContent, name) {
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = name;
+      link.click();
+    }
+
     function fill_graph(graph, graph_data) {
       
       google.charts.load('current', {'packages':['corechart']});
@@ -1246,25 +1246,24 @@ const buttonRow = document.createElement('div');
       console.log(simulationParams);
       
       //TODO: Implement the API call
-      // API call with simulationParams (payload)
+      // API call with simulationParams (payload) and get the Simulation id
 
-      // Add 2 second delay before showing results
+      const chosenSections = simulationParams.measurements;
+      const visualisationSections = Object.keys(chosenSections)
+        .filter(key => chosenSections[key])
+        .map(key => key.charAt(0).toUpperCase() + key.slice(1));
+
+      createVisualiseBody(visualisationSections);
+
+      // Add 2 second delay before showing results //TODO: Remove this
       setTimeout(() => {
         console.log("running simulation");
-        
-        //populate visualisation data or get the ID and use it to fetch the data
         document.getElementById('outerVisualiseResultsSection').style.display = 'block';
         msg.textContent = 'Simulation is completed...';
         msg.style.color = 'green';
-        //font size
         
       }, 2000);
       
-      //populate visualisation data or get the ID and use it to fetch the data
-      
-      
-      // document.getElementById('outerVisualiseResultsSection').style.display = 'block';
-      // document.getElementById('lblMessage').textContent = 'Simulation is completed...';
     }
 
     //TODO: Implement this
