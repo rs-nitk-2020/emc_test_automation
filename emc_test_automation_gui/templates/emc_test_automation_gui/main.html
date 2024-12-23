@@ -114,7 +114,7 @@
           }
         });
 
-      
+
         //TODO: backend API incomplete, needed response.nodes = list of all the nodes in the circuit, response.complete_node_data = complete node data (dummy data for now)
         // $.ajax({
         //   url: "/get_node_details/",  
@@ -147,138 +147,142 @@
 
     let data = {
       "PulseParams": {
-        "Port 1": ["n1", "n2", "n3"], "Port 2": ["n1", "n2"], "Port 3": ["Ground"],
+        "Port 1": ['N018', 'N009', 'N021', 'N015', 'N016', 'OUT1', 'OUT2', 'N010', 'N022', '0', 'N014', 'N001', 'N017', 'INTVcc', 'N019', 'N003', 'N012', 'N024', 'N005', 'N020', 'N011', 'Input', 'N023', 'N002', 'N006', 'N004'], 
+
+        "Port 2": ['N018', 'N009', 'N021', 'N015', 'N016', 'OUT1', 'OUT2', 'N010', 'N022', '0', 'N014', 'N001', 'N017', 'INTVcc', 'N019', 'N003', 'N012', 'N024', 'N005', 'N020', 'N011', 'Input', 'N023', 'N002', 'N006', 'N004'], 
+
+        "Port 3": ["Gnd"],
 
         "ISO1 12V": [
-      { "name": "Ua", "value": "13.5" },
-      { "name": "Us", "value": "-150" },
-      { "name": "Ri", "value": "10" },
-      { "name": "td", "value": "2m" },
-      { "name": "tr(s)", "value": "1u" },
-      { "name": "t1(s)", "value": "0.5" },
-      { "name": "t2(s)", "value": "200m" },
-      { "name": "t3(s)", "value": "50u" },
-      { "name": "t(0)", "value": "1m" },
-      { "name": "Ext res.", "value": "10" }
-    ],
-    "ISO1 24V": [
-      { "name": "Ua", "value": "27" },
-      { "name": "Us", "value": "-600" },
-      { "name": "Ri", "value": "50" },
-      { "name": "td", "value": "1m" },
-      { "name": "tr(s)", "value": "3u" },
-      { "name": "t1(s)", "value": "0.5" },
-      { "name": "t2(s)", "value": "200m" },
-      { "name": "t3(s)", "value": "50u" },
-      { "name": "t(0)", "value": "1m" }
-    ],
+          { "name": "Ua", "value": "13.5" },
+          { "name": "Us", "value": "-150" },
+          { "name": "Ri", "value": "10" },
+          { "name": "td", "value": "2m" },
+          { "name": "tr(s)", "value": "1u" },
+          { "name": "t1(s)", "value": "0.5" },
+          { "name": "t2(s)", "value": "200m" },
+          { "name": "t3(s)", "value": "50u" },
+          { "name": "t(0)", "value": "1m" },
+          { "name": "Ext res.", "value": "10" }
+        ],
+        "ISO1 24V": [
+          { "name": "Ua", "value": "27" },
+          { "name": "Us", "value": "-600" },
+          { "name": "Ri", "value": "50" },
+          { "name": "td", "value": "1m" },
+          { "name": "tr(s)", "value": "3u" },
+          { "name": "t1(s)", "value": "0.5" },
+          { "name": "t2(s)", "value": "200m" },
+          { "name": "t3(s)", "value": "50u" },
+          { "name": "t(0)", "value": "1m" }
+        ],
 
-    "ISO2a 12V": [
-      { "name": "Ua", "value": "13.5" },
-      { "name": "Us", "value": "112" },
-      { "name": "Ri", "value": "2" },
-      { "name": "td", "value": "0.05m" },
-      { "name": "tr(s)", "value": "1u" },
-      { "name": "t1(s)", "value": "0.2" },
-      { "name": "t(0)", "value": "1m" }
-    ],
-    "ISO2a 24V": [
-      { "name": "Ua", "value": "27" },
-      { "name": "Us", "value": "112" },
-      { "name": "Ri", "value": "2" },
-      { "name": "td", "value": "0.05m" },
-      { "name": "tr(s)", "value": "1u" },
-      { "name": "t1(s)", "value": "0.2" },
-      { "name": "t(0)", "value": "1m" }
-    ],
-    "ISO2b 12V": [
-      { "name": "Ua", "value": "13.5" },
-      { "name": "Us", "value": "10" },
-      { "name": "Ri", "value": "0.05" },
-      { "name": "td", "value": "0.2" },
-      { "name": "t12(s)", "value": "1m" },
-      { "name": "tr(s)", "value": "1m" },
-      { "name": "t6(s)", "value": "1m" },
-      { "name": "trep(s)", "value": "5" },
-      { "name": "ton(s)", "value": "1" },
-      { "name": "t0(s)", "value": "1m" }
-    ],
-    "ISO2b 24V": [
-      { "name": "Ua", "value": "27" },
-      { "name": "Us", "value": "20" },
-      { "name": "Ri", "value": "0.05" },
-      { "name": "td", "value": "0.2" },
-      { "name": "t12(s)", "value": "1m" },
-      { "name": "tr(s)", "value": "1m" },
-      { "name": "t6(s)", "value": "1m" },
-      { "name": "trep(s)", "value": "5" },
-      { "name": "ton(s)", "value": "1" },
-      { "name": "t0(s)", "value": "1m" }
-    ],
+        "ISO2a 12V": [
+          { "name": "Ua", "value": "13.5" },
+          { "name": "Us", "value": "112" },
+          { "name": "Ri", "value": "2" },
+          { "name": "td", "value": "0.05m" },
+          { "name": "tr(s)", "value": "1u" },
+          { "name": "t1(s)", "value": "0.2" },
+          { "name": "t(0)", "value": "1m" }
+        ],
+        "ISO2a 24V": [
+          { "name": "Ua", "value": "27" },
+          { "name": "Us", "value": "112" },
+          { "name": "Ri", "value": "2" },
+          { "name": "td", "value": "0.05m" },
+          { "name": "tr(s)", "value": "1u" },
+          { "name": "t1(s)", "value": "0.2" },
+          { "name": "t(0)", "value": "1m" }
+        ],
+        "ISO2b 12V": [
+          { "name": "Ua", "value": "13.5" },
+          { "name": "Us", "value": "10" },
+          { "name": "Ri", "value": "0.05" },
+          { "name": "td", "value": "0.2" },
+          { "name": "t12(s)", "value": "1m" },
+          { "name": "tr(s)", "value": "1m" },
+          { "name": "t6(s)", "value": "1m" },
+          { "name": "trep(s)", "value": "5" },
+          { "name": "ton(s)", "value": "1" },
+          { "name": "t0(s)", "value": "1m" }
+        ],
+        "ISO2b 24V": [
+          { "name": "Ua", "value": "27" },
+          { "name": "Us", "value": "20" },
+          { "name": "Ri", "value": "0.05" },
+          { "name": "td", "value": "0.2" },
+          { "name": "t12(s)", "value": "1m" },
+          { "name": "tr(s)", "value": "1m" },
+          { "name": "t6(s)", "value": "1m" },
+          { "name": "trep(s)", "value": "5" },
+          { "name": "ton(s)", "value": "1" },
+          { "name": "t0(s)", "value": "1m" }
+        ],
 
         "ISO3a 12V": [
-    { "name": "Ua", "value": "13.5" },
-    { "name": "Us", "value": "-300" },
-    { "name": "Ri", "value": "50" },
-    { "name": "td(s)", "value": "150n" },
-    { "name": "tr(s)", "value": "5n" },
-    { "name": "t1(s)", "value": "100u" },
-    { "name": "t0(s)", "value": "1m" },
-    { "name": "t4(s)", "value": "10m" },
-    { "name": "t5(s)", "value": "90m" }
+          { "name": "Ua", "value": "13.5" },
+          { "name": "Us", "value": "-300" },
+          { "name": "Ri", "value": "50" },
+          { "name": "td(s)", "value": "150n" },
+          { "name": "tr(s)", "value": "5n" },
+          { "name": "t1(s)", "value": "100u" },
+          { "name": "t0(s)", "value": "1m" },
+          { "name": "t4(s)", "value": "10m" },
+          { "name": "t5(s)", "value": "90m" }
 
-  ],
-  "ISO3a 24V": [
-    { "name": "Ua", "value": "27" },
-    { "name": "Us", "value": "-220" },
-    { "name": "Ri", "value": "50" },
-    { "name": "td(s)", "value": "150n" },
-    { "name": "tr(s)", "value": "5n" },
-    { "name": "t1(s)", "value": "100u" },
-    { "name": "t0(s)", "value": "1m" },
-    { "name": "t4(s)", "value": "10m" },
-    { "name": "t5(s)", "value": "90m" }
-  ],
-  "ISO3b 12V": [
-    { "name": "Ua", "value": "13.5" },
-    { "name": "Us", "value": "150" },
-    { "name": "Ri", "value": "50" },
-    { "name": "td(s)", "value": "150n" },
-    { "name": "tr(s)", "value": "5n" },
-    { "name": "t1(s)", "value": "100u" },
-    { "name": "t0(s)", "value": "1m" },
-    { "name": "t4(s)", "value": "10m" },
-    { "name": "t5(s)", "value": "90m" }
-  ],
-  "ISO3b 24V": [
-    { "name": "Ua", "value": "27" },
-    { "name": "Us", "value": "300" },
-    { "name": "Ri", "value": "50" },
-    { "name": "td(s)", "value": "150n" },
-    { "name": "tr(s)", "value": "5n" },
-    { "name": "t1(s)", "value": "100u" },
-    { "name": "t0(s)", "value": "1m" },
-    { "name": "t4(s)", "value": "10m" },
-    { "name": "t5(s)", "value": "90m" }
-  ],
-  "ISO5 12V": [
-    { "name": "Ua", "value": "14" },
-    { "name": "Us", "value": "101" },
-    { "name": "UsClamp", "value": "35" },
-    { "name": "Ri", "value": "0.5" },
-    { "name": "td(s)", "value": "40m" },
-    { "name": "tr(s)", "value": "5m" },
-    { "name": "t0(s)", "value": "1" }
-  ],
-  "ISO5 24V": [
-    { "name": "Ua", "value": "28" },
-    { "name": "Us", "value": "202" },
-    { "name": "UsClamp", "value": "58" },
-    { "name": "Ri", "value": "1" },
-    { "name": "td(s)", "value": "100m" },
-    { "name": "tr(s)", "value": "5m" },
-    { "name": "t0(s)", "value": "1" }
-  ]
+        ],
+        "ISO3a 24V": [
+          { "name": "Ua", "value": "27" },
+          { "name": "Us", "value": "-220" },
+          { "name": "Ri", "value": "50" },
+          { "name": "td(s)", "value": "150n" },
+          { "name": "tr(s)", "value": "5n" },
+          { "name": "t1(s)", "value": "100u" },
+          { "name": "t0(s)", "value": "1m" },
+          { "name": "t4(s)", "value": "10m" },
+          { "name": "t5(s)", "value": "90m" }
+        ],
+        "ISO3b 12V": [
+          { "name": "Ua", "value": "13.5" },
+          { "name": "Us", "value": "150" },
+          { "name": "Ri", "value": "50" },
+          { "name": "td(s)", "value": "150n" },
+          { "name": "tr(s)", "value": "5n" },
+          { "name": "t1(s)", "value": "100u" },
+          { "name": "t0(s)", "value": "1m" },
+          { "name": "t4(s)", "value": "10m" },
+          { "name": "t5(s)", "value": "90m" }
+        ],
+        "ISO3b 24V": [
+          { "name": "Ua", "value": "27" },
+          { "name": "Us", "value": "300" },
+          { "name": "Ri", "value": "50" },
+          { "name": "td(s)", "value": "150n" },
+          { "name": "tr(s)", "value": "5n" },
+          { "name": "t1(s)", "value": "100u" },
+          { "name": "t0(s)", "value": "1m" },
+          { "name": "t4(s)", "value": "10m" },
+          { "name": "t5(s)", "value": "90m" }
+        ],
+        "ISO5 12V": [
+          { "name": "Ua", "value": "14" },
+          { "name": "Us", "value": "101" },
+          { "name": "UsClamp", "value": "35" },
+          { "name": "Ri", "value": "0.5" },
+          { "name": "td(s)", "value": "40m" },
+          { "name": "tr(s)", "value": "5m" },
+          { "name": "t0(s)", "value": "1" }
+        ],
+        "ISO5 24V": [
+          { "name": "Ua", "value": "28" },
+          { "name": "Us", "value": "202" },
+          { "name": "UsClamp", "value": "58" },
+          { "name": "Ri", "value": "1" },
+          { "name": "td(s)", "value": "100m" },
+          { "name": "tr(s)", "value": "5m" },
+          { "name": "t0(s)", "value": "1" }
+        ]
 
 
       },
@@ -299,29 +303,29 @@
       }
     };
 
-    const voltage_params =  [
-          { "name": "Peak", "unit": ["V", "kV", "mV"] },
-          { "name": "RMS", "unit": ["V", "kV", "mV"] },
-          { "name": "Average", "unit": ["V", "kV", "mV"] },
-          { "name": "Frequency", "unit": ["Hz", "kHz", "MHz"] },
-          { "name": "Rise time", "unit": ["s", "ms", "us"] },
-          { "name": "Fall time", "unit": ["s", "ms", "us"] },
-          { "name": "Total time", "unit": ["s", "ms", "us"] },
-          { "name": "Prop. delay", "unit": ["s", "ms", "us"] },
-          { "name": "Transient duration", "unit": ["s", "ms", "us"] }
-        ]
+    const voltage_params = [
+      { "name": "Peak", "unit": ["V", "kV", "mV"] },
+      { "name": "RMS", "unit": ["V", "kV", "mV"] },
+      { "name": "Average", "unit": ["V", "kV", "mV"] },
+      { "name": "Frequency", "unit": ["Hz", "kHz", "MHz"] },
+      { "name": "Rise time", "unit": ["s", "ms", "us"] },
+      { "name": "Fall time", "unit": ["s", "ms", "us"] },
+      { "name": "Total time", "unit": ["s", "ms", "us"] },
+      { "name": "Prop. delay", "unit": ["s", "ms", "us"] },
+      { "name": "Transient duration", "unit": ["s", "ms", "us"] }
+    ]
 
-    const current_params =  [
-          { "name": "Peak", "unit": ["A", "kA", "mA"] },
-          { "name": "RMS", "unit": ["A", "kA", "mA"] },
-          { "name": "Average", "unit": ["A", "kA", "mA"] },
-          { "name": "Frequency", "unit": ["Hz", "kHz", "MHz"] },
-          { "name": "Rise time", "unit": ["s", "ms", "us"] },
-          { "name": "Fall time", "unit": ["s", "ms", "us"] },
-          { "name": "Total time", "unit": ["s", "ms", "us"] },
-          { "name": "Prop. delay", "unit": ["s", "ms", "us"] },
-          { "name": "Transient duration", "unit": ["s", "ms", "us"] }
-        ]
+    const current_params = [
+      { "name": "Peak", "unit": ["A", "kA", "mA"] },
+      { "name": "RMS", "unit": ["A", "kA", "mA"] },
+      { "name": "Average", "unit": ["A", "kA", "mA"] },
+      { "name": "Frequency", "unit": ["Hz", "kHz", "MHz"] },
+      { "name": "Rise time", "unit": ["s", "ms", "us"] },
+      { "name": "Fall time", "unit": ["s", "ms", "us"] },
+      { "name": "Total time", "unit": ["s", "ms", "us"] },
+      { "name": "Prop. delay", "unit": ["s", "ms", "us"] },
+      { "name": "Transient duration", "unit": ["s", "ms", "us"] }
+    ]
 
     //when the user click on runsimulation, fill this data
     // Note this is further complex, like every probe-ref has a table data so instead of "parameters" use "probe-ref" as key
@@ -393,54 +397,54 @@
       ]
     };
 
-    var graph_data =  
-    [
-  ['Time', 'Voltage'],
-  ['4', 657],
-  ['5', -959],
-  ['6', -279],
-  ['7', 937],
-  ['8', 989],
-  ['9', 412],
-  ['10', -841],
-  ['11', -998],
-  ['12', -536],
-  ['13', 717],
-  ['14', 993],
-  ['15', 646],
-  ['16', -587],
-  ['17', -974],
-  ['18', -740],
-  ['19', 447],
-  ['20', 940],
-  ['21', 814],
-  ['22', -298],
-  ['23', -892],
-  ['24', -869],
-  ['25', 143],
-  ['26', 832],
-  ['27', 904],
-  ['28', 13],
-  ['29', -762],
-  ['30', -919],
-  ['31', -168],
-  ['32', 683],
-  ['33', 914],
-  ['34', 318],
-  ['35', -597],
-  ['36', -889],
-  ['37', -457],
-  ['38', 501],
-  ['39', 845],
-  ['40', 577]
-];
+    var graph_data =
+      [
+        ['Time', 'Voltage'],
+        ['4', 657],
+        ['5', -959],
+        ['6', -279],
+        ['7', 937],
+        ['8', 989],
+        ['9', 412],
+        ['10', -841],
+        ['11', -998],
+        ['12', -536],
+        ['13', 717],
+        ['14', 993],
+        ['15', 646],
+        ['16', -587],
+        ['17', -974],
+        ['18', -740],
+        ['19', 447],
+        ['20', 940],
+        ['21', 814],
+        ['22', -298],
+        ['23', -892],
+        ['24', -869],
+        ['25', 143],
+        ['26', 832],
+        ['27', 904],
+        ['28', 13],
+        ['29', -762],
+        ['30', -919],
+        ['31', -168],
+        ['32', 683],
+        ['33', 914],
+        ['34', 318],
+        ['35', -597],
+        ['36', -889],
+        ['37', -457],
+        ['38', 501],
+        ['39', 845],
+        ['40', 577]
+      ];
 
-    
+
     // let comp_node_data = ''
-    const comp_node_data = {'C1': ['N003', '0'], 'C6': ['N010', 'N012'], 'L1': ['N012', 'N011'], 'RS1': ['N011', 'OUT2'], 'C7': ['OUT2', '0'], 'C9': ['N020', '0'], 'Rload2': ['OUT2', '0'], 'R7': ['Input', 'N004'], 'R8': ['N004', '0'], 'R9': ['N003', 'N005'], 'R10': ['N022', '0'], 'R1': ['N009', '0'], 'C2': ['N001', 'N002'], 'R2': ['OUT1', 'N015'], 'R3': ['N015', '0'], 'C3': ['OUT1', '0'], 'C5': ['OUT1', '0'], 'Rload1': ['OUT1', '0'], 'L3': ['Input', 'N001'], 'L2': ['0', 'N002'], 'R11': ['N003', 'N006'], 'C10': ['N003', '0'], 'C11': ['0', 'OUT1'], 'C12': ['N021', '0'], 'R12': ['N017', 'N016'], 'C8': ['N016', '0'], 'R13': ['N018', 'N019'], 'C13': ['N019', '0'], 'C14': ['Input', '0'], 'C15': ['N014', '0'], 'R14': ['N009', 'N014'], 'C4': ['N017', '0'], 'C16': ['INTVcc', '0'], 'R4': ['INTVcc', 'N023'], 'C17': ['N024', '0'], 'C18': ['N018', '0']};
+    const comp_node_data = { 'C1': ['N003', '0'], 'C6': ['N010', 'N012'], 'L1': ['N012', 'N011'], 'RS1': ['N011', 'OUT2'], 'C7': ['OUT2', '0'], 'C9': ['N020', '0'], 'Rload2': ['OUT2', '0'], 'R7': ['Input', 'N004'], 'R8': ['N004', '0'], 'R9': ['N003', 'N005'], 'R10': ['N022', '0'], 'R1': ['N009', '0'], 'C2': ['N001', 'N002'], 'R2': ['OUT1', 'N015'], 'R3': ['N015', '0'], 'C3': ['OUT1', '0'], 'C5': ['OUT1', '0'], 'Rload1': ['OUT1', '0'], 'L3': ['Input', 'N001'], 'L2': ['0', 'N002'], 'R11': ['N003', 'N006'], 'C10': ['N003', '0'], 'C11': ['0', 'OUT1'], 'C12': ['N021', '0'], 'R12': ['N017', 'N016'], 'C8': ['N016', '0'], 'R13': ['N018', 'N019'], 'C13': ['N019', '0'], 'C14': ['Input', '0'], 'C15': ['N014', '0'], 'R14': ['N009', 'N014'], 'C4': ['N017', '0'], 'C16': ['INTVcc', '0'], 'R4': ['INTVcc', 'N023'], 'C17': ['N024', '0'], 'C18': ['N018', '0'] };
 
     const nodes_list = ['N018', 'N009', 'N021', 'N015', 'N016', 'OUT1', 'OUT2', 'N010', 'N022', '0', 'N014', 'N001', 'N017', 'INTVcc', 'N019', 'N003', 'N012', 'N024', 'N005', 'N020', 'N011', 'Input', 'N023', 'N002', 'N006', 'N004']
-  
+
   </script>
 
   <style>
@@ -560,7 +564,7 @@
 
 
 
-  
+
   <script>
     function initialize() {
       createSimulationParamSection();
@@ -879,11 +883,11 @@
 
           const final_data = {
             "probe": node1,
-            "ref":node2,
+            "ref": node2,
             "params": selectedParams,
             "visualisationCard_id": `visualisation-${node1}-${node2}`
           }
-          
+
           console.log(final_data);
           plotGraph(final_data);
         };
@@ -928,11 +932,11 @@
 
         // Append card to the voltage section
         voltageSection.appendChild(card);
-       
+
       });
 
-       //create 2 buttons for save as, and export
-       const saveAs = document.createElement('button');
+      //create 2 buttons for save as, and export
+      const saveAs = document.createElement('button');
       saveAs.textContent = 'Save As';
       saveAs.className = 'btn btn-primary mt-3 me-3 btn-lg';
 
@@ -940,22 +944,23 @@
       exportBtn.textContent = 'Export to Excel';
       exportBtn.className = 'btn btn-primary mt-3 me-3 btn-lg';
 
-      saveAs.addEventListener('click', () => { event.preventDefault(); 
+      saveAs.addEventListener('click', () => {
+        event.preventDefault();
 
         const checkedNames = Object.keys(comp_node_data)
         // alert(`Exporting: ${checkedNames.join(', ')}`);
 
         //TODO: Implement API call with checkedNames and get the CSV content
-        
+
         const csvContent = "Parameter,Value,Units,Total Duration,Units\nPeak,90,V,1.5,us\nRMS,63,V,1.5,us\nAverage,54,V,1.5,us\nFrequency,400,Hz,,\nRise time,5,us,,\nFall time,10,us,,\nTotal time,15,us,,\nProp. delay,22,us,,\nTransient duration,3,s,,";
 
         downloadCSV(csvContent, 'complete_report.csv');
 
-});
+      });
 
-exportBtn.addEventListener('click', () => exportToExcel('custom-export-div', table_data));
-//put both of them in one row and append to graph card
-const buttonRow = document.createElement('div');
+      exportBtn.addEventListener('click', () => exportToExcel('custom-export-div', table_data));
+      //put both of them in one row and append to graph card
+      const buttonRow = document.createElement('div');
       buttonRow.className = 'd-flex justify-content-end mb-3 pr-3';
       buttonRow.appendChild(saveAs);
       buttonRow.appendChild(exportBtn);
@@ -990,7 +995,7 @@ const buttonRow = document.createElement('div');
       graphdiv.style.border = '1px solid #ccc';
       graphdiv.style.overflow = 'auto';
       graphdiv.id = graphDivID;
-      
+
 
       const tableDiv = document.createElement('div');
       const table = document.createElement('table');
@@ -1001,8 +1006,8 @@ const buttonRow = document.createElement('div');
 
       //TODO: fetch the table data from the server using simulation id, probe, ref, and params
       //TODO: fetch the graph data from the server using simulation id, probe, ref
-      
-      fill_graph( graphDivID, graph_data);
+
+      fill_graph(graphDivID, graph_data);
       fill_table(table, table_data, data.params);
 
       visualisationCard.appendChild(graphdiv);
@@ -1132,7 +1137,7 @@ const buttonRow = document.createElement('div');
         event.preventDefault();
         customOptions.classList.toggle('d-none');
 
-        
+
       });
 
       exportBtn.addEventListener('click', () => {
@@ -1163,11 +1168,11 @@ const buttonRow = document.createElement('div');
     }
 
     function fill_graph(graph, graph_data) {
-      
-      google.charts.load('current', {'packages':['corechart']});
+
+      google.charts.load('current', { 'packages': ['corechart'] });
       google.charts.setOnLoadCallback(drawChart);
 
-      function drawChart() {        
+      function drawChart() {
 
         var data = google.visualization.arrayToDataTable(graph_data);
 
@@ -1175,19 +1180,19 @@ const buttonRow = document.createElement('div');
           title: graph.split('-').join(' '),
           curveType: 'function',
           legend: { position: 'bottom' },
-          explorer: { actions: ['dragToPan','dragToZoom', 'rightClickToReset']},
+          explorer: { actions: ['dragToPan', 'dragToZoom', 'rightClickToReset'] },
           // width: graph_data.length * 40,
-          hAxis: {showTextEvery: 2},
-        // height: 700
+          hAxis: { showTextEvery: 2 },
+          // height: 700
         };
 
         var chart = new google.visualization.LineChart(document.getElementById(graph));
 
         chart.draw(data, options);
       }
-      
 
-     }
+
+    }
 
 
     function fill_table(tableElement, data, selectedParams) {
@@ -1239,12 +1244,12 @@ const buttonRow = document.createElement('div');
       msg.textContent = 'Simulation is running...';
       //set the text colour to blue
       msg.style.color = 'blue';
-      
-      
+
+
       const simulationParams = save();
       console.log("simulationParams");
       console.log(simulationParams);
-      
+
       //TODO: Implement the API call
       // API call with simulationParams (payload) and get the Simulation id
 
@@ -1261,9 +1266,9 @@ const buttonRow = document.createElement('div');
         document.getElementById('outerVisualiseResultsSection').style.display = 'block';
         msg.textContent = 'Simulation is completed...';
         msg.style.color = 'green';
-        
+
       }, 2000);
-      
+
     }
 
     //TODO: Implement this
@@ -1505,7 +1510,7 @@ const buttonRow = document.createElement('div');
         isoFields[field.name] = document.getElementById(field.name.replace(/\s+/g, '')).value;
       });
 
-      
+
       const runParams = {};
       data.RunParams.forEach(param => {
         const value = document.getElementById(param.name.replace(/\s+/g, '')).value;

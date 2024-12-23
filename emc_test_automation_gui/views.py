@@ -164,38 +164,40 @@ def generate_netlist(asc_file):
     print(f"Netlist file not found {netlist}") 
     return None
 
-def get_node_list(request):
+def get_node_details(request):
+    log_dashboard = app_dashboard.EMCTestAutomationApi()
     if request.method == 'POST' and request.FILES['file1']:
         asc_file = request.FILES['file1']
 
         request_id = request.POST.get('requestId')
         circuit_type = request.POST.get('circuitType')
 
+
+        # generate netlist
         custom_path = os.path.join(settings.BASE_DIR, f'emc_test_automation_api/data/Schematics/{request_id}/{circuit_type}')  # Adjust the folder name or path as needed
         os.makedirs(custom_path, exist_ok=True)  # Ensure the directory exists
+        asc_file_path = os.path.join(custom_path, asc_file.name)
+        print(asc_file_path)
 
-        # Define the full path to save the file, including its name
-        file_path = os.path.join(custom_path, asc_file.name)
+        results = log_dashboard.get_node_details(asc_file_path)
+        # netlist_path = generate_netlist(asc_file_path)
+        # print(netlist_path)
+ 
+        # components = {}
+        # nodes = set()
+        # with open(netlist_path, 'r') as f:
+        #     netlist_lines = f.readlines()
 
-        net_list = generate_netlist(file_path)
-        print(net_list)
-        # Set to store unique nodes
-        nodes = set()
-
-        # Read the netlist file
-        with open(net_list, 'r') as file:
-            for line in file:
-                # Skip empty lines or comments
-                line = line.strip()
-                if not line or line.startswith('*'):
-                    continue
-
-                # Split the line into words (assuming netlist format)
-                words = line.split()
-                
-                # Extract nodes (ignore the first word, which is usually the component name)
-                for word in words[1:len(words)-1]:
-                    if word.upper() not in {"GND", "0"}:  # Exclude GND and 0
-                        nodes.add(word)
+        #     for line in netlist_lines:
+        #         tokens = line.split()
+        #         if tokens:  # Avoid empty lines
+        #             comp_name = tokens[0]
+        #             # Check for R, L, or C components
+        #             if comp_name.startswith(('R', 'L', 'C')):
+        #                 node1 = tokens[1]
+        #                 node2 = tokens[2]
+        #                 components[comp_name] = [node1, node2]
+        #                 nodes.add(node1)
+        #                 nodes.add(node2)
         
-        return JsonResponse({'status': 'success','nodes': list(nodes)})
+        return JsonResponse({'status': 'success','nodes': results.nodes, 'complete_node_data': results.complete_node_data})

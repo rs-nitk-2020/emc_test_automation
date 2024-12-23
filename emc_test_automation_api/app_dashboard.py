@@ -30,6 +30,7 @@ from emc_test_automation_api.src.services.database_ops import (
 )
 
 from emc_test_automation_api.src.services.prediction import ( Prediction )
+from emc_test_automation_api.src.services.get_nodes_data import ( Node_data )
 
 
 class EMCTestAutomationApi:
@@ -75,6 +76,9 @@ class EMCTestAutomationApi:
     
     def getPrediction(self, inputs):
         return Prediction.predict_results(inputs)
+    
+    def get_node_details(self, asc_file: str):
+        return Node_data.get_node_details(asc_file)
 
     def process_compiler_warnings(self, files: Any):
         """
