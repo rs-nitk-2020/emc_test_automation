@@ -148,22 +148,6 @@ def set_test_standards_data(request):
             return JsonResponse({'error': str(e)}, status=500)
 
 
-from PyLTSpice import SimRunner, SpiceEditor, LTspice, RawRead, SimCommander
-def generate_netlist(asc_file):
-    # if request.method == 'POST' and request.FILES['file1']:
-    # asc_file = request.FILES['file1']
-    sim = SimCommander(asc_file)
-    sim.add_instruction('.tran 100u 100m 0 100u')
-    sim.run()
-    netlist = asc_file.replace(".asc", ".net")
-    search_path='.'
-    for root, dirs, files in os.walk(search_path):
-        if netlist in files:
-            return os.path.join(root, netlist)
-
-    print(f"Netlist file not found {netlist}") 
-    return None
-
 def get_node_details(request):
     log_dashboard = app_dashboard.EMCTestAutomationApi()
     if request.method == 'POST' and request.FILES['file1']:
@@ -172,32 +156,11 @@ def get_node_details(request):
         request_id = request.POST.get('requestId')
         circuit_type = request.POST.get('circuitType')
 
-
-        # generate netlist
         custom_path = os.path.join(settings.BASE_DIR, f'emc_test_automation_api/data/Schematics/{request_id}/{circuit_type}')  # Adjust the folder name or path as needed
         os.makedirs(custom_path, exist_ok=True)  # Ensure the directory exists
         asc_file_path = os.path.join(custom_path, asc_file.name)
         print(asc_file_path)
 
         results = log_dashboard.get_node_details(asc_file_path)
-        # netlist_path = generate_netlist(asc_file_path)
-        # print(netlist_path)
- 
-        # components = {}
-        # nodes = set()
-        # with open(netlist_path, 'r') as f:
-        #     netlist_lines = f.readlines()
-
-        #     for line in netlist_lines:
-        #         tokens = line.split()
-        #         if tokens:  # Avoid empty lines
-        #             comp_name = tokens[0]
-        #             # Check for R, L, or C components
-        #             if comp_name.startswith(('R', 'L', 'C')):
-        #                 node1 = tokens[1]
-        #                 node2 = tokens[2]
-        #                 components[comp_name] = [node1, node2]
-        #                 nodes.add(node1)
-        #                 nodes.add(node2)
         
         return JsonResponse({'status': 'success','nodes': results.nodes, 'complete_node_data': results.complete_node_data})

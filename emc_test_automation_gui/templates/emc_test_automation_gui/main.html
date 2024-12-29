@@ -329,8 +329,7 @@
 
     //when the user click on runsimulation, fill this data
     // Note this is further complex, like every probe-ref has a table data so instead of "parameters" use "probe-ref" as key
-    const table_data = {
-      "parameters": [
+    const table_data =  [
         {
           "name": "Peak",
           "value": 90,
@@ -394,8 +393,7 @@
           "totalDuration": null,
           "units2": null
         }
-      ]
-    };
+      ];
 
     var graph_data =
       [
@@ -663,7 +661,9 @@
       } else if (type === 'Current') {
         createVoltageSection("currentSection");
       } else if (type === 'Power') {
-        createPowerSection('powerSection');
+        createVoltageSection('powerSection');
+      } else if (type === 'Frequency') {
+        createVoltageSection('frequencySection');
       }
     }
 
@@ -889,7 +889,7 @@
           }
 
           console.log(final_data);
-          plotGraph(final_data);
+          plotGraph(final_data, SectionID);
         };
 
         // Append everything to the card
@@ -954,11 +954,11 @@
 
         const csvContent = "Parameter,Value,Units,Total Duration,Units\nPeak,90,V,1.5,us\nRMS,63,V,1.5,us\nAverage,54,V,1.5,us\nFrequency,400,Hz,,\nRise time,5,us,,\nFall time,10,us,,\nTotal time,15,us,,\nProp. delay,22,us,,\nTransient duration,3,s,,";
 
-        downloadCSV(csvContent, 'complete_report.csv');
+        downloadCSV(csvContent, SectionID +'_complete_report.csv');
 
       });
 
-      exportBtn.addEventListener('click', () => exportToExcel('custom-export-div', table_data));
+      exportBtn.addEventListener('click', () => exportToExcel('custom-export-div', SectionID));
       //put both of them in one row and append to graph card
       const buttonRow = document.createElement('div');
       buttonRow.className = 'd-flex justify-content-end mb-3 pr-3';
@@ -971,10 +971,8 @@
       voltageSection.appendChild(customExportDiv);
     }
 
-    //TODO: Implement the createPowerSection or other sections
-    function createPowerSection(SectionID) { }
 
-    function plotGraph(data) {
+    function plotGraph(data, SectionID) {
       // data = {
       //       "probe": item.probe,
       //       "ref": item.ref,
@@ -1004,8 +1002,8 @@
       tableDiv.style.padding = '2rem';
       tableDiv.appendChild(table);
 
-      //TODO: fetch the table data from the server using simulation id, probe, ref, and params
-      //TODO: fetch the graph data from the server using simulation id, probe, ref
+      //TODO: fetch the table data from the server using simulation id, probe, ref, and SectionID
+      //TODO: fetch the graph data from the server using simulation id, probe, ref and SectionID
 
       fill_graph(graphDivID, graph_data);
       fill_table(table, table_data, data.params);
@@ -1015,7 +1013,7 @@
 
     }
 
-    function exportToExcel(customExportDiv) {
+    function exportToExcel(customExportDiv, SectionID) {
       event.preventDefault();
       // Get the custom export div
       const customExport = document.getElementById(customExportDiv);
@@ -1125,12 +1123,7 @@
         // dummy content
         const csvContent = "Parameter,Value,Units,Total Duration,Units\nPeak,90,V,1.5,us\nRMS,63,V,1.5,us\nAverage,54,V,1.5,us\nFrequency,400,Hz,,\nRise time,5,us,,\nFall time,10,us,,\nTotal time,15,us,,\nProp. delay,22,us,,\nTransient duration,3,s,,";
 
-        // const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-        // const link = document.createElement("a");
-        // link.href = URL.createObjectURL(blob);
-        // link.download = "complete_report.csv";
-        // link.click();
-        downloadCSV(csvContent, 'complete_report.csv');
+        downloadCSV(csvContent, SectionID + '_complete_report.csv');
       });
 
       customBtn.addEventListener('click', () => {
@@ -1149,12 +1142,7 @@
         //TODO: Implement API call with checkedNames and get the CSV content
         const csvContent = "Parameter,Value,Units,Total Duration,Units\nPeak,90,V,1.5,us\nRMS,63,V,1.5,us\nAverage,54,V,1.5,us\nFrequency,400,Hz,,\nRise time,5,us,,\nFall time,10,us,,\nTotal time,15,us,,\nProp. delay,22,us,,\nTransient duration,3,s,,";
 
-        // const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-        // const link = document.createElement("a");
-        // link.href = URL.createObjectURL(blob);
-        // link.download = "custom_report.csv";
-        // link.click();
-        downloadCSV(csvContent, 'custom_report.csv');
+        downloadCSV(csvContent, SectionID+'_custom_report.csv');
       });
     }
 
@@ -1218,7 +1206,7 @@
 
       // Create the table body
       const tableBody = document.createElement('tbody');
-      data.parameters.forEach((param) => {
+      data.forEach((param) => {
         if (!namesArray.includes(param.name)) return;
         const row = document.createElement('tr');
         row.innerHTML = `
@@ -1239,6 +1227,15 @@
     //TODO: Implement this
     function RunSimulation() {
       event.preventDefault();
+
+      //clear the visualiseSimulationBody div
+      document.getElementById('visualiseSimulationBody').innerHTML = '';
+
+      // hide the outerVisualiseResultsSection if it's visible
+      document.getElementById('outerVisualiseResultsSection').style.display = 'none';
+
+
+
       const msg = document.getElementById('lblMessage');
       msg.style.fontSize = '1.25rem';
       msg.textContent = 'Simulation is running...';
