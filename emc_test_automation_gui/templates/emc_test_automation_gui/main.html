@@ -26,6 +26,7 @@
       return `${year}${month}${day}${hours}${minutes}${seconds}${milliseconds}`;
     }
 
+    var requestId = generateId();
     $(document).ready(function () {
       // Initially show the "Configure Simulation" section
       $("#configureSimulation").collapse("show");
@@ -40,7 +41,7 @@
         targetHeader.find('.symbol').text($(this).hasClass('show') ? '▼' : '▶');
       });
 
-      var requestId = generateId();
+      
 
       // Handle file upload for pulse generator
       $("#imageUploadPanel1").change(function () {
@@ -115,7 +116,7 @@
         });
 
 
-        //TODO: backend API incomplete, needed response.nodes = list of all the nodes in the circuit, response.complete_node_data = complete node data (dummy data for now)
+        //TODO: Implement API 
         // $.ajax({
         //   url: "/get_node_details/",  
         //   type: "POST",
@@ -143,7 +144,7 @@
       })
     });
 
-    let simulationID = 0;
+   
 
     let data = {
       "PulseParams": {
@@ -327,6 +328,29 @@
       { "name": "Transient duration", "unit": ["s", "ms", "us"] }
     ]
 
+    const power_params= [
+      { "name": "Peak", "unit": ["A", "kA", "mA"] },
+      { "name": "RMS", "unit": ["A", "kA", "mA"] },
+      { "name": "Average", "unit": ["A", "kA", "mA"] },
+      { "name": "Frequency", "unit": ["Hz", "kHz", "MHz"] },
+      { "name": "Rise time", "unit": ["s", "ms", "us"] },
+      { "name": "Fall time", "unit": ["s", "ms", "us"] },
+      { "name": "Total time", "unit": ["s", "ms", "us"] },
+      { "name": "Prop. delay", "unit": ["s", "ms", "us"] },
+      { "name": "Transient duration", "unit": ["s", "ms", "us"] }
+    ]
+
+    const frequency_params = [
+      { "name": "Peak", "unit": ["A", "kA", "mA"] },
+      { "name": "RMS", "unit": ["A", "kA", "mA"] },
+      { "name": "Average", "unit": ["A", "kA", "mA"] },
+      { "name": "Frequency", "unit": ["Hz", "kHz", "MHz"] },
+      { "name": "Rise time", "unit": ["s", "ms", "us"] },
+      { "name": "Fall time", "unit": ["s", "ms", "us"] },
+      { "name": "Total time", "unit": ["s", "ms", "us"] },
+      { "name": "Prop. delay", "unit": ["s", "ms", "us"] },
+      { "name": "Transient duration", "unit": ["s", "ms", "us"] }
+    ]
     //when the user click on runsimulation, fill this data
     // Note this is further complex, like every probe-ref has a table data so instead of "parameters" use "probe-ref" as key
     const table_data =  [
@@ -792,8 +816,12 @@
         // if SectionID is voltageSection, then use voltage_params, else use current_params 
         if (SectionID === 'voltageSection') {
           params = voltage_params;
-        } else {
+        } else if (SectionID === 'currentSection') {
           params = current_params;
+        } else if (SectionID === 'powerSection') {
+          params = power_params;
+        } else if (SectionID === 'frequencySection') {
+          params = frequency_params;
         }
 
         // Group parameters into pairs
@@ -885,7 +913,7 @@
             "probe": node1,
             "ref": node2,
             "params": selectedParams,
-            "visualisationCard_id": `visualisation-${node1}-${node2}`
+            "visualisationCard_id": `visualisation-${node1}-${node2}-${SectionID}`
           }
 
           console.log(final_data);
@@ -901,7 +929,7 @@
           //hide visualise button if unchecked
           visualiseButton.style.display = event.target.checked ? 'block' : 'none';
           //hide graph and table if unchecked
-          document.getElementById(`visualisation-${node1}-${node2}`).style.display = 'none';
+          document.getElementById(`visualisation-${node1}-${node2}-${SectionID}`).style.display = 'none';
           // document.getElementById(`table-${item.probe}-${item.ref}`).style.display = 'none';
 
           //if unchecked remove the boundary of card
@@ -920,7 +948,7 @@
         const visualisationCard = document.createElement('div');
         visualisationCard.className = 'card mt-3';
         visualisationCard.style.display = 'none';
-        visualisationCard.id = `visualisation-${node1}-${node2}`;
+        visualisationCard.id = `visualisation-${node1}-${node2}-${SectionID}`;
 
         card.appendChild(visualisationCard);
 
@@ -950,9 +978,39 @@
         const checkedNames = Object.keys(comp_node_data)
         // alert(`Exporting: ${checkedNames.join(', ')}`);
 
-        //TODO: Implement API call with checkedNames and get the CSV content
+        var csvContent = "";
 
-        const csvContent = "Parameter,Value,Units,Total Duration,Units\nPeak,90,V,1.5,us\nRMS,63,V,1.5,us\nAverage,54,V,1.5,us\nFrequency,400,Hz,,\nRise time,5,us,,\nFall time,10,us,,\nTotal time,15,us,,\nProp. delay,22,us,,\nTransient duration,3,s,,";
+        //TODO: Implement API 
+
+        // var formData = new FormData();
+        // formData.append("csrfmiddlewaretoken", "{{ csrf_token }}");
+        // formData.append("requestId", requestId);
+        // formData.append("components", checkedNames.join(','));
+        // formData.append("sectionId", SectionID);
+
+        // $.ajax({
+        //   url: "/get_report_data/",  
+        //   type: "POST",
+        //   data: formData,
+        //   processData: false,
+        //   contentType: false,
+        //   success: function (response) {
+        //     if (response.status === 'success') {
+        //       //update the data[pulse params][port1, port2] with the nodes
+        //       console.log(response.nodes);
+        //       console.log(response.complete_node_data);
+
+        //       csvContent = response.csvContent;
+
+
+        //     } else {
+        //       alert('Error: nodes data not generated.');
+        //     }
+        //   },
+        // });
+
+
+        csvContent = "Parameter,Value,Units,Total Duration,Units\nPeak,90,V,1.5,us\nRMS,63,V,1.5,us\nAverage,54,V,1.5,us\nFrequency,400,Hz,,\nRise time,5,us,,\nFall time,10,us,,\nTotal time,15,us,,\nProp. delay,22,us,,\nTransient duration,3,s,,";
 
         downloadCSV(csvContent, SectionID +'_complete_report.csv');
 
@@ -1002,8 +1060,52 @@
       tableDiv.style.padding = '2rem';
       tableDiv.appendChild(table);
 
-      //TODO: fetch the table data from the server using simulation id, probe, ref, and SectionID
-      //TODO: fetch the graph data from the server using simulation id, probe, ref and SectionID
+
+      // var graph_data = '';
+      // var table_data = '';
+
+      // var formData = new FormData();
+      // formData.append("csrfmiddlewaretoken", "{{ csrf_token }}");
+      // formData.append("requestId", requestId);
+      // formData.append("probe", data.probe);
+      // formData.append("ref", data.ref);
+      // formData.append("sectionID", SectionID);
+
+      //TODO: Implement API
+      // $.ajax({
+      //   url: "/get_graph_data/",
+      //   type: "POST",
+      //   data: formData,
+      //   processData: false,
+      //   contentType: false,
+      //   success: function (response) {
+      //     if (response.status === 'success') {
+      //       
+      //       graph_data = response.graph_data;
+
+      //     } else {
+      //       alert('Error: nodes data not generated.');
+      //     }
+      //   },
+      // });
+
+      //TODO: Implement API
+      // $.ajax({
+      //   url: "/get_table_data/",
+      //   type: "POST",
+      //   data: formData,
+      //   processData: false,
+      //   contentType: false,
+      //   success: function (response) {
+      //     if (response.status === 'success') {
+      //       
+      //       table_data = response.table_data;
+
+      //     } else {
+      //       alert('Error: nodes data not generated.');
+      //     }
+      //   },
+      // });
 
       fill_graph(graphDivID, graph_data);
       fill_table(table, table_data, data.params);
@@ -1116,12 +1218,36 @@
         event.preventDefault();
         //get the name of all the components from the componentData in a list
         const checkedNames = componentData.map((component) => component.name);
+        var csvContent = "";
         // alert(`Exporting: ${checkedNames.join(', ')}`);
 
-        //TODO: Implement API call with checkedNames and get the CSV content
+        //TODO: Implement API 
+        // var formData = new FormData();
+        // formData.append("csrfmiddlewaretoken", "{{ csrf_token }}");
+        // formData.append("requestId", requestId);
+        // formData.append("components", checkedNames.join(','));
+        // formData.append("sectionId", SectionID);
+
+        // $.ajax({
+        //   url: "/get_report_data/",  
+        //   type: "POST",
+        //   data: formData,
+        //   processData: false,
+        //   contentType: false,
+        //   success: function (response) {
+        //     if (response.status === 'success') {
+
+        //       csvContent = response.csvContent;
+
+
+        //     } else {
+        //       alert('Error: nodes data not generated.');
+        //     }
+        //   },
+        // });
 
         // dummy content
-        const csvContent = "Parameter,Value,Units,Total Duration,Units\nPeak,90,V,1.5,us\nRMS,63,V,1.5,us\nAverage,54,V,1.5,us\nFrequency,400,Hz,,\nRise time,5,us,,\nFall time,10,us,,\nTotal time,15,us,,\nProp. delay,22,us,,\nTransient duration,3,s,,";
+        csvContent = "Parameter,Value,Units,Total Duration,Units\nPeak,90,V,1.5,us\nRMS,63,V,1.5,us\nAverage,54,V,1.5,us\nFrequency,400,Hz,,\nRise time,5,us,,\nFall time,10,us,,\nTotal time,15,us,,\nProp. delay,22,us,,\nTransient duration,3,s,,";
 
         downloadCSV(csvContent, SectionID + '_complete_report.csv');
       });
@@ -1137,10 +1263,33 @@
         event.preventDefault();
         const checkedComponents = componentData.filter((component) => component.isChecked);
         const checkedNames = checkedComponents.map((component) => component.name);
+        var csvContent = "";
         // alert(`Exporting: ${checkedNames.join(', ')}`);
 
-        //TODO: Implement API call with checkedNames and get the CSV content
-        const csvContent = "Parameter,Value,Units,Total Duration,Units\nPeak,90,V,1.5,us\nRMS,63,V,1.5,us\nAverage,54,V,1.5,us\nFrequency,400,Hz,,\nRise time,5,us,,\nFall time,10,us,,\nTotal time,15,us,,\nProp. delay,22,us,,\nTransient duration,3,s,,";
+        //TODO: Implement API 
+        // var formData = new FormData();
+        // formData.append("csrfmiddlewaretoken", "{{ csrf_token }}");
+        // formData.append("requestId", requestId);
+        // formData.append("components", checkedNames.join(','));
+        // formData.append("sectionId", SectionID);
+
+        // $.ajax({
+        //   url: "/get_report_data/",  
+        //   type: "POST",
+        //   data: formData,
+        //   processData: false,
+        //   contentType: false,
+        //   success: function (response) {
+        //     if (response.status === 'success') {
+        //       csvContent = response.csvContent;
+
+
+        //     } else {
+        //       alert('Error: nodes data not generated.');
+        //     }
+        //   },
+        // });
+        csvContent = "Parameter,Value,Units,Total Duration,Units\nPeak,90,V,1.5,us\nRMS,63,V,1.5,us\nAverage,54,V,1.5,us\nFrequency,400,Hz,,\nRise time,5,us,,\nFall time,10,us,,\nTotal time,15,us,,\nProp. delay,22,us,,\nTransient duration,3,s,,";
 
         downloadCSV(csvContent, SectionID+'_custom_report.csv');
       });
@@ -1224,7 +1373,6 @@
       tableElement.classList.add('table', 'table-striped', 'table-bordered', 'table-hover');
     }
 
-    //TODO: Implement this
     function RunSimulation() {
       event.preventDefault();
 
@@ -1247,8 +1395,30 @@
       console.log("simulationParams");
       console.log(simulationParams);
 
-      //TODO: Implement the API call
-      // API call with simulationParams (payload) and get the Simulation id
+      //TODO: Implement API 
+      // var formData = new FormData();
+        // formData.append("csrfmiddlewaretoken", "{{ csrf_token }}");
+        // formData.append("requestId", requestId);
+        // formData.append("simulationParams", simulationParams);
+      
+
+        // $.ajax({
+        //   url: "/run_simulation/",  
+        //   type: "POST",
+        //   data: formData,
+        //   processData: false,
+        //   contentType: false,
+        //   success: function (response) {
+        //     if (response.status === 'success') {
+        //       //update the data[pulse params][port1, port2] with the nodes
+        //      console.log(response.status);
+
+
+        //     } else {
+        //       alert('Error: nodes data not generated.');
+        //     }
+        //   },
+        // });
 
       const chosenSections = simulationParams.measurements;
       const visualisationSections = Object.keys(chosenSections)
