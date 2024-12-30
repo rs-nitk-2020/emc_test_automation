@@ -116,29 +116,29 @@
 
 
         //TODO: backend API incomplete, needed response.nodes = list of all the nodes in the circuit, response.complete_node_data = complete node data (dummy data for now)
-        // $.ajax({
-        //   url: "/get_node_details/",  
-        //   type: "POST",
-        //   data: formData,
-        //   processData: false,
-        //   contentType: false,
-        //   success: function (response) {
-        //     if (response.status === 'success') {
-        //       //update the data[pulse params][port1, port2] with the nodes
-        //       console.log(response.nodes);
-        //       console.log(response.complete_node_data);
+       $.ajax({
+         url: "/get_node_details/",  
+         type: "POST",
+         data: formData,
+         processData: false,
+         contentType: false,
+         success: function (response) {
+           if (response.status === 'success') {
+             //update the data[pulse params][port1, port2] with the nodes
+             console.log(response.nodes);
+             console.log(response.complete_node_data);
 
-        //       comp_node_data = response.complete_node_data;
-        //       nodes_list = response.nodes;
-        //       data["PulseParams"]["Port 1"] = nodes_list;
-        //       data["PulseParams"]["Port 2"] = nodes_list;
+             comp_node_data = response.complete_node_data;
+             nodes_list = response.nodes;
+             data["PulseParams"]["Port 1"] = nodes_list;
+             data["PulseParams"]["Port 2"] = nodes_list;
 
 
-        //     } else {
-        //       alert('Error: nodes data not generated.');
-        //     }
-        //   },
-        // });
+           } else {
+             alert('Error: nodes data not generated.');
+           }
+         },
+       });
 
       })
     });
@@ -147,9 +147,9 @@
 
     let data = {
       "PulseParams": {
-        "Port 1": ['N018', 'N009', 'N021', 'N015', 'N016', 'OUT1', 'OUT2', 'N010', 'N022', '0', 'N014', 'N001', 'N017', 'INTVcc', 'N019', 'N003', 'N012', 'N024', 'N005', 'N020', 'N011', 'Input', 'N023', 'N002', 'N006', 'N004'], 
+        "Port 1": [], 
 
-        "Port 2": ['N018', 'N009', 'N021', 'N015', 'N016', 'OUT1', 'OUT2', 'N010', 'N022', '0', 'N014', 'N001', 'N017', 'INTVcc', 'N019', 'N003', 'N012', 'N024', 'N005', 'N020', 'N011', 'Input', 'N023', 'N002', 'N006', 'N004'], 
+        "Port 2": [], 
 
         "Port 3": ["Gnd"],
 
@@ -441,9 +441,9 @@
 
 
     // let comp_node_data = ''
-    const comp_node_data = { 'C1': ['N003', '0'], 'C6': ['N010', 'N012'], 'L1': ['N012', 'N011'], 'RS1': ['N011', 'OUT2'], 'C7': ['OUT2', '0'], 'C9': ['N020', '0'], 'Rload2': ['OUT2', '0'], 'R7': ['Input', 'N004'], 'R8': ['N004', '0'], 'R9': ['N003', 'N005'], 'R10': ['N022', '0'], 'R1': ['N009', '0'], 'C2': ['N001', 'N002'], 'R2': ['OUT1', 'N015'], 'R3': ['N015', '0'], 'C3': ['OUT1', '0'], 'C5': ['OUT1', '0'], 'Rload1': ['OUT1', '0'], 'L3': ['Input', 'N001'], 'L2': ['0', 'N002'], 'R11': ['N003', 'N006'], 'C10': ['N003', '0'], 'C11': ['0', 'OUT1'], 'C12': ['N021', '0'], 'R12': ['N017', 'N016'], 'C8': ['N016', '0'], 'R13': ['N018', 'N019'], 'C13': ['N019', '0'], 'C14': ['Input', '0'], 'C15': ['N014', '0'], 'R14': ['N009', 'N014'], 'C4': ['N017', '0'], 'C16': ['INTVcc', '0'], 'R4': ['INTVcc', 'N023'], 'C17': ['N024', '0'], 'C18': ['N018', '0'] };
+    var comp_node_data = {};
 
-    const nodes_list = ['N018', 'N009', 'N021', 'N015', 'N016', 'OUT1', 'OUT2', 'N010', 'N022', '0', 'N014', 'N001', 'N017', 'INTVcc', 'N019', 'N003', 'N012', 'N024', 'N005', 'N020', 'N011', 'Input', 'N023', 'N002', 'N006', 'N004']
+    var nodes_list = [];
 
   </script>
 

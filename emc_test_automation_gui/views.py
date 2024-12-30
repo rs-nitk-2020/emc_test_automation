@@ -147,57 +147,56 @@ def set_test_standards_data(request):
             print(e)
             return JsonResponse({'error': str(e)}, status=500)
 
+# from PyLTSpice import SimRunner, SpiceEditor, LTspice, RawRead, SimCommander
+# def generate_netlist(asc_file):
+#     sim = SimCommander(asc_file)
+#     try:
+#         sim.add_instruction('.tran 100u 100m 0 100u')
+#         sim.run()
+#     except Exception as e:
+#         print(f"Error running simulation: {e}")
+#         return None
+    
+#     netlist = asc_file.replace(".asc", ".net")
+#     print("\n\n\n\n",netlist,"\n\n\n\n")
+#     return str(netlist)
 
-from PyLTSpice import SimRunner, SpiceEditor, LTspice, RawRead, SimCommander
-def generate_netlist(asc_file):
-    # if request.method == 'POST' and request.FILES['file1']:
-    # asc_file = request.FILES['file1']
-    sim = SimCommander(asc_file)
-    sim.add_instruction('.tran 100u 100m 0 100u')
-    sim.run()
-    netlist = asc_file.replace(".asc", ".net")
-    search_path='.'
-    for root, dirs, files in os.walk(search_path):
-        if netlist in files:
-            return os.path.join(root, netlist)
 
-    print(f"Netlist file not found {netlist}") 
-    return None
-
+@csrf_exempt
 def get_node_details(request):
     log_dashboard = app_dashboard.EMCTestAutomationApi()
-    if request.method == 'POST' and request.FILES['file1']:
+    if request.method == 'POST' and request.FILES.get('file1'):
         asc_file = request.FILES['file1']
-
         request_id = request.POST.get('requestId')
         circuit_type = request.POST.get('circuitType')
-
-
-        # generate netlist
-        custom_path = os.path.join(settings.BASE_DIR, f'emc_test_automation_api/data/Schematics/{request_id}/{circuit_type}')  # Adjust the folder name or path as needed
-        os.makedirs(custom_path, exist_ok=True)  # Ensure the directory exists
-        asc_file_path = os.path.join(custom_path, asc_file.name)
-        print(asc_file_path)
+        # Generate netlist path
+        custom_path = os.path.join(settings.BASE_DIR, "emc_test_automation_api","data","Schematics",str(request_id),str(circuit_type))
+        os.makedirs(custom_path, exist_ok=True)
+        asc_file_path = os.path.join(custom_path,str(asc_file.name))
+        print(f"ASC file path: {asc_file_path}")
 
         results = log_dashboard.get_node_details(asc_file_path)
-        # netlist_path = generate_netlist(asc_file_path)
-        # print(netlist_path)
- 
-        # components = {}
-        # nodes = set()
-        # with open(netlist_path, 'r') as f:
-        #     netlist_lines = f.readlines()
 
-        #     for line in netlist_lines:
-        #         tokens = line.split()
-        #         if tokens:  # Avoid empty lines
-        #             comp_name = tokens[0]
-        #             # Check for R, L, or C components
-        #             if comp_name.startswith(('R', 'L', 'C')):
-        #                 node1 = tokens[1]
-        #                 node2 = tokens[2]
-        #                 components[comp_name] = [node1, node2]
-        #                 nodes.add(node1)
-        #                 nodes.add(node2)
-        
-        return JsonResponse({'status': 'success','nodes': results.nodes, 'complete_node_data': results.complete_node_data})
+        return JsonResponse({'status': 'success', 'nodes': results["nodes"], 'complete_node_data': results["complete_node_data"]})
+    else:
+        return JsonResponse({'status': 'error', 'message': 'No file uploaded'})
+    
+
+def get_report_data(request):
+    print("hello")
+
+
+def get_table_data(request):
+    if request.method=='POST':
+        body = json.loads(request.body)
+        node1 = body.get("node1")
+        node2 = body.get("node2")
+        section_id = body.get("SectionID")
+
+
+def get_graph_data(request):
+    print("hello")
+
+
+def run_simulation(request):
+    print("hello")

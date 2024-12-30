@@ -1,6 +1,6 @@
 # log_analysis_gui/urls.py
 from django.urls import path
-from .views import home, validation_rules, process_log_warnings, display_report, download_report, generate_schematic_image, test_config_gui, prediction_gui, get_Prediction, get_test_standards_data, set_test_standards_data, get_node_details
+from .views import home, validation_rules, process_log_warnings, display_report, download_report, generate_schematic_image, test_config_gui, prediction_gui, get_Prediction, get_test_standards_data, set_test_standards_data, get_node_details,get_table_data,get_nodes_data,get_report_data,get_graph_data,run_simulation
 
 urlpatterns = [
     path('', home, name='home'),
@@ -15,6 +15,8 @@ urlpatterns = [
     path('get_test_standards_data/', get_test_standards_data, name='get_test_standards_data'),
     path('set_test_standards_data/', set_test_standards_data, name='set_test_standards_data'),
     path('get_node_details/', get_node_details, name='get_node_details'),
-    
-
+    path('get_report_data/', get_report_data, name='get_report_data'),
+    path('get_table_data/', get_table_data, name='get_table_data'),
+    path('get_graph_data/', get_graph_data, name='get_graph_data'),
+    path('run_simulation/', run_simulation, name='run_simulation'),
 ]
