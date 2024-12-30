@@ -133,6 +133,8 @@
         //       nodes_list = response.nodes;
         //       data["PulseParams"]["Port 1"] = nodes_list;
         //       data["PulseParams"]["Port 2"] = nodes_list;
+        //       
+        //       ['Pulse Parameters', 'Run Parameters',].forEach(type => {createSimulationSection(type);});
 
 
         //     } else {
@@ -1447,6 +1449,11 @@
     function createPulseParamForm(Section_id) {
       // Create form for pulse parameters
       const pulseParamDiv = document.getElementById(Section_id);
+
+      // empty the pulseParamDiv
+      pulseParamDiv.innerHTML = '';
+
+
       const form = document.createElement('form');
       // form.className = 'mt-3';
 
@@ -1536,6 +1543,10 @@
     function createRunParamForm(Section_id) {
       // Create form for run parameters
       const runParamDiv = document.getElementById(Section_id);
+
+      //empty the runParamDiv
+      runParamDiv.innerHTML = '';
+      
       const runParamForm = document.createElement('form');
       runParamForm.className = 'mt-3';
 
