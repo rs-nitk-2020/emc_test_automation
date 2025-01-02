@@ -6,13 +6,13 @@ import glob
 from scipy.fft import fft, fftfreq
 from PyLTSpice import SimRunner, SpiceEditor, LTspice, RawRead, SimCommander
 
-class Node_data:
+class Circuit_Simulator:
     def __init__(self):
         pass
 
     @staticmethod
     def iso_fields_selector(iso_type):
-        if iso_type=="ISO1_12V":
+        if iso_type=="ISO1 12V":
             return [
                 { "name": "Ua", "value": "13.5" },
                 { "name": "Us", "value": "-150" },
@@ -24,7 +24,7 @@ class Node_data:
                 { "name": "t3", "value": "50u" },
                 { "name": "t", "value": "1m" },
                 { "name": "Ext_res", "value": "10" } ]
-        elif(iso_type=="ISO1_24V"):
+        elif(iso_type=="ISO1 24V"):
             return [
                 { "name": "Ua", "value": "27" },
                 { "name": "Us", "value": "-600" },
@@ -35,7 +35,7 @@ class Node_data:
                 { "name": "t2", "value": "200m" },
                 { "name": "t3", "value": "50u" },
                 { "name": "t", "value": "1m" } ]
-        elif(iso_type=="ISO2a_12V"):
+        elif(iso_type=="ISO2a 12V"):
             return [
                 { "name": "Ua", "value": "13.5" },
                 { "name": "Us", "value": "112" },
@@ -45,7 +45,7 @@ class Node_data:
                 { "name": "t1", "value": "0.2" },
                 { "name": "t", "value": "1m" } 
             ]
-        elif(iso_type=="ISO2a_24V"):
+        elif(iso_type=="ISO2a 24V"):
             return  [
                 { "name": "Ua", "value": "27" },
                 { "name": "Us", "value": "112" },
@@ -55,7 +55,7 @@ class Node_data:
                 { "name": "t1", "value": "0.2" },
                 { "name": "t", "value": "1m" }
             ]
-        elif(iso_type=="ISO2b_12V"):
+        elif(iso_type=="ISO2b 12V"):
             return [
                 { "name": "Ua", "value": "13.5" },
                 { "name": "Us", "value": "10" },
@@ -68,7 +68,7 @@ class Node_data:
                 { "name": "ton", "value": "1" },
                 { "name": "t0", "value": "1m" }   #check this once (if t and t0 mean the same thing)
             ]
-        elif(iso_type=="ISO2b_24V"):
+        elif(iso_type=="ISO2b 24V"):
             return  [
                 { "name": "Ua", "value": "27" },
                 { "name": "Us", "value": "20" },
@@ -81,7 +81,7 @@ class Node_data:
                 { "name": "ton", "value": "1" },
                 { "name": "t0", "value":"1m" }
             ]
-        elif(iso_type=="ISO_Pulse3a_12V"):
+        elif(iso_type=="ISO3a 12V"):
             return [
                 { "name": "Ua", "value": "13.5" },
                 { "name": "Us", "value": "-300" },
@@ -93,7 +93,7 @@ class Node_data:
                 { "name": "t4", "value": "10m" },
                 { "name": "t5", "value": "90m" }
             ]
-        elif(iso_type== "ISO_Pulse3a_24V"):
+        elif(iso_type== "ISO3a 24V"):
             return [
                 { "name": "Ua", "value": "27" },
                 { "name": "Us", "value": "-220" },
@@ -105,7 +105,7 @@ class Node_data:
                 { "name": "t4", "value": "10m" },
                 { "name": "t5", "value": "90m" }
             ]
-        elif(iso_type=="ISO_Pulse3b_12V"):
+        elif(iso_type=="ISO3b 12V"):
             return  [
                 { "name": "Ua", "value": "13.5" },
                 { "name": "Us", "value": "150" },
@@ -117,7 +117,7 @@ class Node_data:
                 { "name": "t4", "value": "10m" },
                 { "name": "t5", "value": "90m" }
             ]
-        elif(iso_type== "ISO_Pulse3b_24V"):
+        elif(iso_type== "ISO3b 24V"):
             return [
                 { "name": "Ua", "value": "27" },
                 { "name": "Us", "value": "300" },
@@ -129,7 +129,7 @@ class Node_data:
                 { "name": "t4", "value": "10m" },
                 { "name": "t5", "value": "90m" }
             ]
-        elif(iso_type=="ISO_Pulse5_12V"):
+        elif(iso_type=="ISO5 12V"):
             return [
                 { "name": "Ua", "value": "14" },
                 { "name": "Us", "value": "101" },
@@ -139,7 +139,7 @@ class Node_data:
                 { "name": "tr", "value": "5m" },
                 { "name": "t0", "value": "1" }
             ]
-        elif(iso_type=="ISO_Pulse5_24V"):
+        elif(iso_type=="ISO5 24V"):
             return [
                 { "name": "Ua", "value": "28" },
                 { "name": "Us", "value": "202" },
@@ -185,7 +185,7 @@ class Node_data:
         start_time = time.time()
         print(base_name)
         while True:
-            latest_raw_file = Node_data.get_latest_raw_file(base_name)
+            latest_raw_file = Circuit_Simulator.get_latest_raw_file(base_name)
             if latest_raw_file:
                 print(f"Latest .raw file found: {latest_raw_file}")
                 return latest_raw_file
@@ -218,7 +218,22 @@ class Node_data:
             try:
                 # Create simulation object and run
                 sim = SimCommander(asc_file)
-                pulse = iso_type #'Pulse1_12V' ......iso type
+                pulse_name_dictionary = {
+                    "ISO1 12V": "Pulse1_12V",   
+                    "ISO1 24V": "Pulse1_24V",
+                    "ISO2a 12V": "Pulse2a_12V",
+                    "ISO2a 24V": "Pulse2a_24V",
+                    "ISO2b 12V": "Pulse2b_12V",
+                    "ISO2b 24V": "Pulse2b_24V",
+                    "ISO3a 12V": "Pulse3a_12V",
+                    "ISO3a 24V": "Pulse3a_24V",
+                    "ISO3b 12V": "Pulse3b_12V",
+                    "ISO3b 24V": "Pulse3b_24V",
+                    "ISO5 12V": "Pulse5_12V",
+                    "ISO5 24V": "Pulse5_24V"
+
+                }
+                pulse = pulse_name_dictionary[iso_type] #'Pulse1_12V' ......iso type
                 node = 'Vin' #port1, create 3 for 3 ports
 
                 #creating instructions from default_iso_fields
@@ -238,7 +253,7 @@ class Node_data:
                 sim.add_instruction('.lib ISO7637-2.lib')
                 sim.run()
                 # Wait for the .raw file
-                raw_file = Node_data.wait_for_latest_raw_file(asc_file, timeout=30)
+                raw_file = Circuit_Simulator.wait_for_latest_raw_file(asc_file, timeout=30)
                 if not raw_file:
                     print(f"No .raw file generated for {asc_file}. Skipping...")
 

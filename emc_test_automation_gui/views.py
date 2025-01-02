@@ -313,10 +313,12 @@ def get_graph_data(request):
 def run_simulation(request):
     log_dashboard = app_dashboard.EMCTestAutomationApi()
     if request.method=='POST':
-        data = json.loads(request.body)
-        port1 = data.get('pulseParams').get('Port1')
-        port2 = data.get('pulseParams').get('Port2')
-        port3 = data.get('pulseParams').get('Port3')
+        data = json.loads(request.POST.get('simulationParams'))
+        # data = data.get('simulationParams')
+        print("\n\n\n", data,"\n\n")
+        port1 = data.get('pulseParams').get('Port 1')
+        port2 = data.get('pulseParams').get('Port 2')
+        port3 = data.get('pulseParams').get('Port 3')
         iso_type = data.get('isoType')
         default_iso_fields = log_dashboard.iso_fields_selector(iso_type)
         user_iso_fields = data.get("isoFields")
@@ -340,12 +342,12 @@ def run_simulation(request):
         # t3 = data.get('isoFields').get('t3')
         # t = data.get('isoFields').get('t')
         # Ext_res = data.get('isoFields').get('extRes') 
-        stop_time_val = data.get('runParams').get('stopTime').get('value')
-        stop_time_unit = data.get('runParams').get('stopTime').get('unit')
-        save_time_val = data.get('runParams').get('timeToStartSavingData').get('value')
-        save_time_unit = data.get('runParams').get('timeToStartSavingData').get('unit')
-        max_time_val = data.get('runParams').get('maximumTimestep').get('value')
-        max_time_unit = data.get('runParams').get('maximumTimestep').get('unit')
+        stop_time_val = data.get('runParams').get('Stop time').get('value')
+        stop_time_unit = data.get('runParams').get('Stop time').get('unit')
+        save_time_val = data.get('runParams').get('Time to start saving data').get('value')
+        save_time_unit = data.get('runParams').get('Time to start saving data').get('unit')
+        max_time_val = data.get('runParams').get('Maximum Timestep').get('value')
+        max_time_unit = data.get('runParams').get('Maximum Timestep').get('unit')
         measurements = ""
         asc_file_path = os.path.join(settings.BASE_DIR, "emc_test_automation_api","data","Schematics","12345","DUT","circuit.net")
         csv_file_path = os.path.join(settings.BASE_DIR, "emc_test_automation_api","data","Schematics","12345","DUT","test_output.csv")
@@ -358,4 +360,4 @@ def run_simulation(request):
 
         log_dashboard.run_simulation(asc_file_path,csv_file_path,iso_type,port1,port2,port3,default_iso_fields,stop_time_val,stop_time_unit,save_time_val,save_time_unit,max_time_val,max_time_unit,measurements)
 
-        return HttpResponse("Hello: success")
+        return JsonResponse({'status': 'success'})

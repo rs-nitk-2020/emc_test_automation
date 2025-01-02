@@ -26,7 +26,7 @@
       return `${year}${month}${day}${hours}${minutes}${seconds}${milliseconds}`;
     }
 
-    var requestId = generateId();
+    var requestId = "12345";
     $(document).ready(function () {
       // Initially show the "Configure Simulation" section
       $("#configureSimulation").collapse("show");
@@ -116,7 +116,7 @@
         });
 
 
-        //TODO: backend API incomplete, needed response.nodes = list of all the nodes in the circuit, response.complete_node_data = complete node data (dummy data for now)
+        
        $.ajax({
          url: "/get_node_details/",  
          type: "POST",
@@ -126,14 +126,17 @@
          success: function (response) {
            if (response.status === 'success') {
              //update the data[pulse params][port1, port2] with the nodes
-             console.log(response.nodes);
-             console.log(response.complete_node_data);
+            //  console.log(response.nodes);
+            //  console.log(response.complete_node_data);
 
              comp_node_data = response.complete_node_data;
              nodes_list = response.nodes;
              data["PulseParams"]["Port 1"] = nodes_list;
              data["PulseParams"]["Port 2"] = nodes_list;
 
+             ['Pulse Parameters', 'Run Parameters',].forEach(type => {
+                createSimulationSection(type);
+             });
 
            } else {
              alert('Error: nodes data not generated.');
@@ -1396,45 +1399,48 @@
       console.log(simulationParams);
 
       //TODO: Implement API 
-      // var formData = new FormData();
-        // formData.append("csrfmiddlewaretoken", "{{ csrf_token }}");
-        // formData.append("requestId", requestId);
-        // formData.append("simulationParams", simulationParams);
+      var formData = new FormData();
+        formData.append("csrfmiddlewaretoken", "{{ csrf_token }}");
+        formData.append("requestId", requestId);
+        formData.append("simulationParams", JSON.stringify(simulationParams));
       
 
-        // $.ajax({
-        //   url: "/run_simulation/",  
-        //   type: "POST",
-        //   data: formData,
-        //   processData: false,
-        //   contentType: false,
-        //   success: function (response) {
-        //     if (response.status === 'success') {
-        //       //update the data[pulse params][port1, port2] with the nodes
-        //      console.log(response.status);
+        $.ajax({
+          url: "/run_simulation/",  
+          type: "POST",
+          data: formData,
+          processData: false,
+          contentType: false,
+          // body: JSON.stringify(simulationParams),
+          success: function (response) {
+            if (response.status === 'success') {
+              //update the data[pulse params][port1, port2] with the nodes
+             console.log(response.status);
+
+             const chosenSections = simulationParams.measurements;
+            const visualisationSections = Object.keys(chosenSections)
+              .filter(key => chosenSections[key])
+              .map(key => key.charAt(0).toUpperCase() + key.slice(1));
 
 
-        //     } else {
-        //       alert('Error: nodes data not generated.');
-        //     }
-        //   },
-        // });
+            
 
-      const chosenSections = simulationParams.measurements;
-      const visualisationSections = Object.keys(chosenSections)
-        .filter(key => chosenSections[key])
-        .map(key => key.charAt(0).toUpperCase() + key.slice(1));
+            createVisualiseBody(visualisationSections);      
+            console.log("running simulation");
+            document.getElementById('outerVisualiseResultsSection').style.display = 'block';
+            msg.textContent = 'Simulation is completed...';
+            msg.style.color = 'green';
 
-      createVisualiseBody(visualisationSections);
 
-      // Add 2 second delay before showing results //TODO: Remove this
-      setTimeout(() => {
-        console.log("running simulation");
-        document.getElementById('outerVisualiseResultsSection').style.display = 'block';
-        msg.textContent = 'Simulation is completed...';
-        msg.style.color = 'green';
+            } else {
+              alert('Error: nodes data not generated.');
+            }
+          },
+        });
 
-      }, 2000);
+      
+
+     
 
     }
 
