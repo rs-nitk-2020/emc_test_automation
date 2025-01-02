@@ -1,0 +1,6 @@
+* Example Circuit 1
+R1 Vout Vin 10
+L1 0 Vout 5m
+C1 Vout 0 1u
+.backanno
+.end

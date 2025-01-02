@@ -1,6 +1,7 @@
 import base64
 import json
 import os
+import csv
 from django.shortcuts import render
 from emc_test_automation_api import app_dashboard
 from django.http import HttpResponse, JsonResponse
@@ -181,11 +182,38 @@ def get_node_details(request):
     else:
         return JsonResponse({'status': 'error', 'message': 'No file uploaded'})
     
-
+@csrf_exempt
 def get_report_data(request):
-    print("hello")
+    if request.method=='POST':
+        body = json.loads(request.body)
+        components = body.get('components',[])
 
+        if not components:
+            return JsonResponse({"error":"Invalid components list"},status=400)
+        
+        file_path = os.path.join(settings.BASE_DIR, "emc_test_automation_api","data","Schematics","12345","DUT","test_output.csv")
 
+        if not os.path.exists(file_path):
+            return JsonResponse({"error":"Invalid file path. CSV file not found at given path"},status=404)
+        
+        output_rows = []
+        with open(file_path,'r') as file:
+            reader = csv.reader(file)
+            for row in reader:
+                if not row or len(row)!=3:  #check this logic once as the first two rows of the csv might have length 3 
+                    continue
+                elif any(component in  row[1] for component in components):
+                    output_rows.append(row)
+                    print(row,"\n")
+        
+        response_content = ""
+        for row in output_rows:
+            response_content+=",".join(map(str,row))+"\n"
+
+        return JsonResponse({"csv_data":response_content})
+    
+
+@csrf_exempt
 def get_table_data(request):
     if request.method=='POST':
         body = json.loads(request.body)
@@ -193,10 +221,141 @@ def get_table_data(request):
         node2 = body.get("node2")
         section_id = body.get("SectionID")
 
+        if section_id not in ["voltageSection", "currentSection", "powerSection", "frequencySection"]:
+            return JsonResponse({"error": "Invalid SectionID"}, status=400)
 
+        file_path = os.path.join(settings.BASE_DIR, "emc_test_automation_api","data","Schematics","12345","DUT","test_output.csv")
+
+        if not os.path.exists(file_path):
+            return JsonResponse({"error": "CSV file not found."}, status=404)
+
+        summary_data = []
+        with open(file_path, "r") as file:
+            reader = csv.reader(file)
+            # Skip to the "Summary Data" section
+            for row in reader:
+                if row and row[0].strip() == "Summary Data:":
+                    break
+            
+            # Read the header for the "Summary Data"
+            header = next(reader, [])
+            # Create section maps. this can be used for the name section in the json response below 
+            # section_map = {
+            #     "voltageSection": ["Peak Voltage", "Average Voltage", "RMS Voltage"],
+            #     "currentSection": ["Peak Current", "Average Current", "RMS Current"],
+            #     "powerSection": [],  # power-related columns need to be added
+            #     "frequencySection": []  # frequency related coluns need to be added
+            # }
+
+            print("Header:", header)
+            print("Filtering rows for SectionID:", section_id)
+
+            # Process the rows in the "Summary Data" section
+            for row in reader:
+                if not row or len(row) < 3:
+                    continue
+                
+                parameter, node_or_component, value = row[0].strip(), row[1].strip(), row[2].strip()
+
+                # Convert the value to a float if possible
+                try:
+                    value = float(value)
+                except ValueError:
+                    pass
+
+                sections = {"currentSection":"current","voltageSection":"voltage","powerSection":"power","frequencySection":"frequency"}
+
+                if sections[section_id] in parameter.lower() and (node_or_component==node1 or node_or_component==node2): # Make sure we match on the correct parameters for currentSection (case-insensitive) and also match the nodes which we are looking for
+                    print(f"Matched: {parameter}")
+                    summary_data.append({
+                        "name": "Peak" if "peak" in parameter.lower() else "RMS" if "rms" in parameter.lower() else "Average", # might need to change this for frequency and power
+                        "value": value,
+                        "units": node_or_component.split("(")[0],  # Extract unit ("A" for current)
+                        "totalDuration": 1.5,  # Assuming a fixed totalDuration for now. Need to check how to get this value
+                        "units2": "us",       # Assuming a fixed units2 for now. Depends on the above.
+                    })
+
+                #ignore the following comments (its for debugging)
+                # if section_id == "currentSection":
+                # # Make sure we match on the correct parameters for currentSection (case-insensitive)
+                #     if "current" in parameter.lower():
+                #         print(f"Matched: {parameter}")
+                #         summary_data.append({
+                #             "name": "Peak" if "peak" in parameter.lower() else "RMS" if "rms" in parameter.lower() else "Average",
+                #             "value": value,
+                #             "units": node_or_component.split("(")[0],  # Extract unit ("A" for current)
+                #             "totalDuration": 1.5,  # Assuming a fixed totalDuration for now
+                #             "units2": "us",       # Assuming a fixed units2 for now
+                #         })
+                # elif section_id == "voltageSection":
+                #     # Make sure we match on the correct parameters for voltageSection (case-insensitive)
+                #     if "voltage" in parameter.lower():
+                #         print(f"Matched: {parameter}")
+                #         summary_data.append({
+                #             "name": "Peak" if "peak" in parameter.lower() else "RMS" if "rms" in parameter.lower() else "Average",
+                #             "value": value,
+                #             "units": node_or_component.split("(")[0],  # Extract unit ("V" for voltage)
+                #             "totalDuration": 1.5,  # Assuming a fixed totalDuration for now
+                #             "units2": "us",       # Assuming a fixed units2 for now
+                #         })
+                # # need to add code for frequency and power sections
+        
+        if not summary_data:
+            return JsonResponse({"error": "No data found for the given parameters."}, status=404)
+        return JsonResponse(summary_data, safe=False)
+
+@csrf_exempt
 def get_graph_data(request):
     print("hello")
 
-
+    
+@csrf_exempt
 def run_simulation(request):
-    print("hello")
+    log_dashboard = app_dashboard.EMCTestAutomationApi()
+    if request.method=='POST':
+        data = json.loads(request.body)
+        port1 = data.get('pulseParams').get('Port1')
+        port2 = data.get('pulseParams').get('Port2')
+        port3 = data.get('pulseParams').get('Port3')
+        iso_type = data.get('isoType')
+        default_iso_fields = log_dashboard.iso_fields_selector(iso_type)
+        user_iso_fields = data.get("isoFields")
+        for item in default_iso_fields:  #checks if the value sent by the user is different from the default, if so, then that value is changed
+            key = item.get("name")
+            if key in user_iso_fields:
+                item["value"] = user_iso_fields[key]
+
+        existing_keys = {item["name"] for item in default_iso_fields}  #if some parameter sent by the user is not present in the default list, then it is appended to the default list
+        for key,val in user_iso_fields.items():
+            if key not in existing_keys:
+                default_iso_fields.append({"name": key, "value": val})
+
+        # Ua = data.get('isoFields').get('Ua')
+        # Us = data.get('isoFields').get('Us')
+        # Ri = data.get('isoFields').get('Ri')
+        # td = data.get('isoFields').get('td')
+        # tr = data.get('isoFields').get('tr')
+        # t1 = data.get('isoFields').get('t1')
+        # t2 = data.get('isoFields').get('t2')
+        # t3 = data.get('isoFields').get('t3')
+        # t = data.get('isoFields').get('t')
+        # Ext_res = data.get('isoFields').get('extRes') 
+        stop_time_val = data.get('runParams').get('stopTime').get('value')
+        stop_time_unit = data.get('runParams').get('stopTime').get('unit')
+        save_time_val = data.get('runParams').get('timeToStartSavingData').get('value')
+        save_time_unit = data.get('runParams').get('timeToStartSavingData').get('unit')
+        max_time_val = data.get('runParams').get('maximumTimestep').get('value')
+        max_time_unit = data.get('runParams').get('maximumTimestep').get('unit')
+        measurements = ""
+        asc_file_path = os.path.join(settings.BASE_DIR, "emc_test_automation_api","data","Schematics","12345","DUT","circuit.net")
+        csv_file_path = os.path.join(settings.BASE_DIR, "emc_test_automation_api","data","Schematics","12345","DUT","test_output.csv")
+
+        #debug - Ua,Us,Ri,td,tr,t1,t2,t3,t,Ext_res
+
+        arr = [asc_file_path,csv_file_path,iso_type,port1,port2,port3,default_iso_fields,stop_time_val,stop_time_unit,save_time_val,save_time_unit,max_time_val,max_time_unit,measurements]
+        for item in arr:
+            print(item,"\n")
+
+        log_dashboard.run_simulation(asc_file_path,csv_file_path,iso_type,port1,port2,port3,default_iso_fields,stop_time_val,stop_time_unit,save_time_val,save_time_unit,max_time_val,max_time_unit,measurements)
+
+        return HttpResponse("Hello: success")

@@ -31,6 +31,7 @@ from emc_test_automation_api.src.services.database_ops import (
 
 from emc_test_automation_api.src.services.prediction import ( Prediction )
 from emc_test_automation_api.src.services.get_nodes_data import ( Node_data )
+from emc_test_automation_api.src.services.run_simulation import ( Node_data )
 
 
 class EMCTestAutomationApi:
@@ -79,6 +80,12 @@ class EMCTestAutomationApi:
     
     def get_node_details(self, asc_file: str):
         return Node_data.get_node_details(asc_file)
+    
+    def run_simulation(self, asc_file_path,csv_file_path,iso_type,port1,port2,port3,default_iso_fields,stop_time_val,stop_time_unit,save_time_val,save_time_unit,max_time_val,max_time_unit,measurements):
+        Node_data.run_simulation_func(asc_file_path,csv_file_path,iso_type,port1,port2,port3,default_iso_fields,stop_time_val,stop_time_unit,save_time_val,save_time_unit,max_time_val,max_time_unit,measurements)
+
+    def iso_fields_selector(self,iso_type):
+        return Node_data.iso_fields_selector(iso_type)
 
     def process_compiler_warnings(self, files: Any):
         """
