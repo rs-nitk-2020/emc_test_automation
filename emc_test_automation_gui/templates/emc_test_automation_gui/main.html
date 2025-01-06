@@ -119,8 +119,8 @@
                 success: function (response) {
                   if (response.status === 'success') {
                     //update the data[pulse params][port1, port2] with the nodes
-                   //  console.log(response.nodes);
-                   //  console.log(response.complete_node_data);
+                    // console.log(response.nodes);
+                    // console.log(response.complete_node_data);
        
                     comp_node_data = response.complete_node_data;
                     nodes_list = response.nodes;
@@ -344,9 +344,9 @@
     ]
 
     const power_params= [
-      { "name": "Peak", "unit": ["A", "kA", "mA"] },
-      { "name": "RMS", "unit": ["A", "kA", "mA"] },
-      { "name": "Average", "unit": ["A", "kA", "mA"] },
+      { "name": "Peak", "unit": ["W"] },
+      { "name": "RMS", "unit": ["W"] },
+      { "name": "Average", "unit": ["W"] },
       { "name": "Frequency", "unit": ["Hz", "kHz", "MHz"] },
       { "name": "Rise time", "unit": ["s", "ms", "us"] },
       { "name": "Fall time", "unit": ["s", "ms", "us"] },
@@ -356,9 +356,9 @@
     ]
 
     const frequency_params = [
-      { "name": "Peak", "unit": ["A", "kA", "mA"] },
-      { "name": "RMS", "unit": ["A", "kA", "mA"] },
-      { "name": "Average", "unit": ["A", "kA", "mA"] },
+      { "name": "Peak", "unit": ["Hz"] },
+      { "name": "RMS", "unit": ["Hz"] },
+      { "name": "Average", "unit": ["Hz"] },
       { "name": "Frequency", "unit": ["Hz", "kHz", "MHz"] },
       { "name": "Rise time", "unit": ["s", "ms", "us"] },
       { "name": "Fall time", "unit": ["s", "ms", "us"] },
@@ -625,7 +625,7 @@
       head2.type = "text";
       head2.className = "form-control me-2";
       head2.placeholder = "Ref";
-      head2.value = "Ref";
+      head2.value = "Ref (Component)";
       head2.disabled = true;
       head2.style.backgroundColor = '#A9A9A9';
 
@@ -681,7 +681,7 @@
         refInput.type = "text";
         refInput.className = "form-control";
         refInput.placeholder = "Ref";
-        refInput.value = node2;
+        refInput.value = node2 + " ("+ comp + ")";
         refInput.disabled = true;
         // refInput.style.backgroundColor = 'white';
 
@@ -824,6 +824,7 @@
           const final_data = {
             "probe": node1,
             "ref": node2,
+            "component": comp,
             "params": selectedParams,
             "visualisationCard_id": `visualisation-${node1}-${node2}-${SectionID}`
           }
@@ -944,6 +945,7 @@
       // data = {
       //       "probe": item.probe,
       //       "ref": item.ref,
+      //       "component" : comp
       //       "params": selectedParams,
       //       "visualisationCard_id": `visualisation-${item.probe}-${item.ref}`
       //     }
@@ -978,6 +980,7 @@
       
        formData.append("node1", data.probe);
        formData.append("node2", data.ref);
+        formData.append("component", data.component);
        formData.append("sectionID", SectionID);
 
       

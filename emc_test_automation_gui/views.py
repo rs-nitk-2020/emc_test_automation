@@ -231,16 +231,20 @@ def get_table_data(request):
         body = request.POST
         node1 = body.get("node1")
         node2 = body.get("node2")
+        component = body.get("component")
         section_id = body.get("sectionID")
-
+        data_point = None
 
         if section_id not in ["voltageSection", "currentSection", "powerSection", "frequencySection"]:
             return JsonResponse({"error": "Invalid SectionID"}, status=400)
         
-        if section_id == "voltageSection":
+        if section_id == "voltageSection" or section_id == "powerSection":
             node1 = 'V(' + node1.lower() + ')'
             node2 = 'V(' + node2.lower() + ')'
 
+        if section_id == "currentSection"  or section_id == "powerSection":
+            data_point = 'I(' + component + ')'
+            
         print(node1,node2,section_id)
         file_path = os.path.join(settings.BASE_DIR, "emc_test_automation_api","data","Schematics","12345","DUT","test_output.csv")
 
@@ -283,15 +287,18 @@ def get_table_data(request):
 
                 sections = {"currentSection":"current","voltageSection":"voltage","powerSection":"power","frequencySection":"frequency"}
 
-                if sections[section_id] in parameter.lower() and (node_or_component==node1 or node_or_component==node2): # Make sure we match on the correct parameters for currentSection (case-insensitive) and also match the nodes which we are looking for
+                
+                if sections[section_id] in parameter.lower() and (node_or_component==node1 or node_or_component==node2 or node_or_component == data_point): # Make sure we match on the correct parameters for currentSection (case-insensitive) and also match the nodes which we are looking for
                     print(f"Matched: {parameter}")
                     summary_data.append({
                         "name": "Peak" if "peak" in parameter.lower() else "RMS" if "rms" in parameter.lower() else "Average", # might need to change this for frequency and power
                         "value": value,
-                        "units": node_or_component.split("(")[0],  # Extract unit ("A" for current)
+                        "units": "V" if section_id == 'voltageSection' else "A",  # Extract unit ("A" for current)
                         "totalDuration": "",  # Assuming a fixed totalDuration for now. Need to check how to get this value
                         "units2": "",       # Assuming a fixed units2 for now. Depends on the above.
                     })
+               
+
 
                 #ignore the following comments (its for debugging)
                 # if section_id == "currentSection":
@@ -334,14 +341,20 @@ def get_graph_data(request):
         node1 = body.get("node1")
         node2 = body.get("node2")
         section_id = body.get("sectionID")
-
+        component = body.get("component")
+        data_point = None
 
         if section_id not in ["voltageSection", "currentSection", "powerSection", "frequencySection"]:
             return JsonResponse({"error": "Invalid SectionID"}, status=400)
         
-        if section_id == "voltageSection":
+        if section_id == "voltageSection" or section_id == "powerSection":
             node1 = 'V(' + node1.lower() + ')'
             node2 = 'V(' + node2.lower() + ')'
+
+        if section_id == "currentSection" or section_id == "powerSection":
+            data_point = 'I(' + component + ')'
+
+        
 
         print(node1,node2,section_id)
         file_path = os.path.join(settings.BASE_DIR, "emc_test_automation_api","data","Schematics","12345","DUT","test_output.csv")
@@ -353,19 +366,44 @@ def get_graph_data(request):
         data = []
         node1_idx = -1
         node2_idx = -1
+        current_idx = -1
         with open(file_path, "r") as file:
             reader = csv.reader(file)
             
             for row in reader:
                 if row:
-                    if node1_idx == -1:
-                        node1_idx = list(row).index(node1)
-                        node2_idx = list(row).index(node2)
-                        data.append([row[0], row[node1_idx], row[node2_idx]])
-                    elif row[0]=="Summary Data:":
-                        break
-                    else:
-                        data.append([float(row[0]), float(row[node1_idx]), float(row[node2_idx])])
+                    if section_id == "voltageSection":
+                        if node1_idx == -1:
+                            node1_idx = list(row).index(node1)
+                            node2_idx = list(row).index(node2)
+                            data.append([row[0], row[node1_idx], row[node2_idx]])
+                        elif row[0]=="Summary Data:":
+                            break
+                        else:
+                            data.append([float(row[0]), float(row[node1_idx]), float(row[node2_idx])])
+
+                    elif section_id == "currentSection":
+                        if node1_idx == -1:
+                            node1_idx = list(row).index(data_point)
+                            data.append([row[0], row[node1_idx]])
+                        elif row[0]=="Summary Data:":
+                            break
+                        else:
+                            data.append([float(row[0]), float(row[node1_idx])])
+
+                    elif section_id == "powerSection":
+                        if node1_idx == -1:
+                            node1_idx = list(row).index(node1)
+                            node2_idx = list(row).index(node2)
+                            current_idx = list(row).index("I("+component+")")
+                            data.append([row[0], "Power "+ component])
+                        elif row[0]=="Summary Data:":
+                            break
+                        else:
+                            node1_val = float(row[node1_idx])
+                            node2_val = float(row[node2_idx])
+                            current_val = float(row[current_idx])
+                            data.append([float(row[0]), float((node1_val - node2_val)*current_val) ])
                     
         return JsonResponse({'status':'success', 'graph_data': data})
 
