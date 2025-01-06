@@ -71,6 +71,7 @@ def download_report(request):
     except Exception as e:
         return HttpResponse(f"Error occurred while handling the file: {e}", status=500)
 
+@csrf_exempt
 def generate_schematic_image(request):
     log_dashboard = app_dashboard.EMCTestAutomationApi()
     if request.method == 'POST' and request.FILES['file1']:
@@ -84,7 +85,7 @@ def generate_schematic_image(request):
         os.makedirs(custom_path, exist_ok=True)  # Ensure the directory exists
 
         # Define the full path to save the file, including its name
-        file_path = os.path.join(custom_path, asc_file.name)
+        file_path = os.path.join(custom_path, "dut.asc")
 
         # Write the file manually
         with open(file_path, 'wb+') as destination:
@@ -166,27 +167,34 @@ def set_test_standards_data(request):
 @csrf_exempt
 def get_node_details(request):
     log_dashboard = app_dashboard.EMCTestAutomationApi()
-    if request.method == 'POST' and request.FILES.get('file1'):
-        asc_file = request.FILES['file1']
-        request_id = request.POST.get('requestId')
-        circuit_type = request.POST.get('circuitType')
+    if request.method == 'POST':
+        # asc_file = request.FILES['file1']
+        # request_id = request.POST.get('requestId')
+        # circuit_type = request.POST.get('circuitType')
+
+
         # Generate netlist path
-        custom_path = os.path.join(settings.BASE_DIR, "emc_test_automation_api","data","Schematics",str(request_id),str(circuit_type))
+        custom_path = os.path.join(settings.BASE_DIR, "emc_test_automation_api","data","Schematics",str("12345"),str("DUT"))
         os.makedirs(custom_path, exist_ok=True)
-        asc_file_path = os.path.join(custom_path,str(asc_file.name))
+        asc_file_path = os.path.join(custom_path,str("dut.asc"))
         print(f"ASC file path: {asc_file_path}")
 
         results = log_dashboard.get_node_details(asc_file_path)
+        node_list = results["nodes"]
+        node_list.sort()
 
-        return JsonResponse({'status': 'success', 'nodes': results["nodes"], 'complete_node_data': results["complete_node_data"]})
+        return JsonResponse({'status': 'success', 'nodes': node_list, 'complete_node_data': results["complete_node_data"]})
     else:
         return JsonResponse({'status': 'error', 'message': 'No file uploaded'})
     
 @csrf_exempt
 def get_report_data(request):
     if request.method=='POST':
-        body = json.loads(request.body)
-        components = body.get('components',[])
+        # body = json.loads(request.POST)
+        components =request.POST.get('components') 
+        components = components.split(',')
+
+        print(components)
 
         if not components:
             return JsonResponse({"error":"Invalid components list"},status=400)
@@ -210,20 +218,30 @@ def get_report_data(request):
         for row in output_rows:
             response_content+=",".join(map(str,row))+"\n"
 
-        return JsonResponse({"csv_data":response_content})
+        return JsonResponse({"status":"success","csvContent":response_content})
     
 
 @csrf_exempt
 def get_table_data(request):
     if request.method=='POST':
-        body = json.loads(request.body)
+        # data = json.loads(request.body)
+        # node1 = data.get("node1")
+        # node2 = data.get("node2")
+        # section_id = data.get("sectionID")
+        body = request.POST
         node1 = body.get("node1")
         node2 = body.get("node2")
-        section_id = body.get("SectionID")
+        section_id = body.get("sectionID")
+
 
         if section_id not in ["voltageSection", "currentSection", "powerSection", "frequencySection"]:
             return JsonResponse({"error": "Invalid SectionID"}, status=400)
+        
+        if section_id == "voltageSection":
+            node1 = 'V(' + node1.lower() + ')'
+            node2 = 'V(' + node2.lower() + ')'
 
+        print(node1,node2,section_id)
         file_path = os.path.join(settings.BASE_DIR, "emc_test_automation_api","data","Schematics","12345","DUT","test_output.csv")
 
         if not os.path.exists(file_path):
@@ -271,8 +289,8 @@ def get_table_data(request):
                         "name": "Peak" if "peak" in parameter.lower() else "RMS" if "rms" in parameter.lower() else "Average", # might need to change this for frequency and power
                         "value": value,
                         "units": node_or_component.split("(")[0],  # Extract unit ("A" for current)
-                        "totalDuration": 1.5,  # Assuming a fixed totalDuration for now. Need to check how to get this value
-                        "units2": "us",       # Assuming a fixed units2 for now. Depends on the above.
+                        "totalDuration": "",  # Assuming a fixed totalDuration for now. Need to check how to get this value
+                        "units2": "",       # Assuming a fixed units2 for now. Depends on the above.
                     })
 
                 #ignore the following comments (its for debugging)
@@ -302,11 +320,56 @@ def get_table_data(request):
         
         if not summary_data:
             return JsonResponse({"error": "No data found for the given parameters."}, status=404)
-        return JsonResponse(summary_data, safe=False)
+        return JsonResponse({'status': 'success', "table_data": summary_data}, safe=False)
 
 @csrf_exempt
 def get_graph_data(request):
-    print("hello")
+    log_dashboard = app_dashboard.EMCTestAutomationApi()
+    if request.method=='POST':
+        # data = json.loads(request.body)
+        # node1 = data.get("node1")
+        # node2 = data.get("node2")
+        # section_id = data.get("sectionID")
+        body = request.POST
+        node1 = body.get("node1")
+        node2 = body.get("node2")
+        section_id = body.get("sectionID")
+
+
+        if section_id not in ["voltageSection", "currentSection", "powerSection", "frequencySection"]:
+            return JsonResponse({"error": "Invalid SectionID"}, status=400)
+        
+        if section_id == "voltageSection":
+            node1 = 'V(' + node1.lower() + ')'
+            node2 = 'V(' + node2.lower() + ')'
+
+        print(node1,node2,section_id)
+        file_path = os.path.join(settings.BASE_DIR, "emc_test_automation_api","data","Schematics","12345","DUT","test_output.csv")
+
+        if not os.path.exists(file_path):
+            return JsonResponse({"error": "CSV file not found."}, status=404)
+        
+    
+        data = []
+        node1_idx = -1
+        node2_idx = -1
+        with open(file_path, "r") as file:
+            reader = csv.reader(file)
+            
+            for row in reader:
+                if row:
+                    if node1_idx == -1:
+                        node1_idx = list(row).index(node1)
+                        node2_idx = list(row).index(node2)
+                        data.append([row[0], row[node1_idx], row[node2_idx]])
+                    elif row[0]=="Summary Data:":
+                        break
+                    else:
+                        data.append([float(row[0]), float(row[node1_idx]), float(row[node2_idx])])
+                    
+        return JsonResponse({'status':'success', 'graph_data': data})
+
+
 
     
 @csrf_exempt
@@ -316,6 +379,7 @@ def run_simulation(request):
         data = json.loads(request.POST.get('simulationParams'))
         # data = data.get('simulationParams')
         print("\n\n\n", data,"\n\n")
+
         port1 = data.get('pulseParams').get('Port 1')
         port2 = data.get('pulseParams').get('Port 2')
         port3 = data.get('pulseParams').get('Port 3')
@@ -349,14 +413,11 @@ def run_simulation(request):
         max_time_val = data.get('runParams').get('Maximum Timestep').get('value')
         max_time_unit = data.get('runParams').get('Maximum Timestep').get('unit')
         measurements = ""
-        asc_file_path = os.path.join(settings.BASE_DIR, "emc_test_automation_api","data","Schematics","12345","DUT","circuit.net")
+        asc_file_path = os.path.join(settings.BASE_DIR, "emc_test_automation_api","data","Schematics","12345","DUT","dut.net")
         csv_file_path = os.path.join(settings.BASE_DIR, "emc_test_automation_api","data","Schematics","12345","DUT","test_output.csv")
 
         #debug - Ua,Us,Ri,td,tr,t1,t2,t3,t,Ext_res
 
-        arr = [asc_file_path,csv_file_path,iso_type,port1,port2,port3,default_iso_fields,stop_time_val,stop_time_unit,save_time_val,save_time_unit,max_time_val,max_time_unit,measurements]
-        for item in arr:
-            print(item,"\n")
 
         log_dashboard.run_simulation(asc_file_path,csv_file_path,iso_type,port1,port2,port3,default_iso_fields,stop_time_val,stop_time_unit,save_time_val,save_time_unit,max_time_val,max_time_unit,measurements)
 

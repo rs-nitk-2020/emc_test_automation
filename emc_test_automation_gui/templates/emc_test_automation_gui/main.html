@@ -106,6 +106,39 @@
               // Set the image source to the Base64 data and show the container
               $('#dutCircuitImage').attr('src', `data:image/png;base64,${base64Image}`);
               $('#dutCircuitImageContainer').show();  // Display the image container
+
+
+
+
+              $.ajax({
+                url: "/get_node_details/",  
+                type: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (response) {
+                  if (response.status === 'success') {
+                    //update the data[pulse params][port1, port2] with the nodes
+                   //  console.log(response.nodes);
+                   //  console.log(response.complete_node_data);
+       
+                    comp_node_data = response.complete_node_data;
+                    nodes_list = response.nodes;
+                    data["PulseParams"]["Port 1"] = nodes_list;
+                    data["PulseParams"]["Port 2"] = nodes_list;
+       
+                    ['Pulse Parameters', 'Run Parameters',].forEach(type => {
+                       createSimulationSection(type);
+                    });
+       
+                  } else {
+                    alert('Error: nodes data not generated.');
+                  }
+                },
+              });
+
+
+
             } else {
               alert('Error: No image generated.');
             }
@@ -117,32 +150,11 @@
 
 
         
-       $.ajax({
-         url: "/get_node_details/",  
-         type: "POST",
-         data: formData,
-         processData: false,
-         contentType: false,
-         success: function (response) {
-           if (response.status === 'success') {
-             //update the data[pulse params][port1, port2] with the nodes
-            //  console.log(response.nodes);
-            //  console.log(response.complete_node_data);
+        
+    
 
-             comp_node_data = response.complete_node_data;
-             nodes_list = response.nodes;
-             data["PulseParams"]["Port 1"] = nodes_list;
-             data["PulseParams"]["Port 2"] = nodes_list;
-
-             ['Pulse Parameters', 'Run Parameters',].forEach(type => {
-                createSimulationSection(type);
-             });
-
-           } else {
-             alert('Error: nodes data not generated.');
-           }
-         },
-       });
+        
+       
 
       })
     });
@@ -356,112 +368,9 @@
     ]
     //when the user click on runsimulation, fill this data
     // Note this is further complex, like every probe-ref has a table data so instead of "parameters" use "probe-ref" as key
-    const table_data =  [
-        {
-          "name": "Peak",
-          "value": 90,
-          "units": "V",
-          "totalDuration": 1.5,
-          "units2": "us"
-        },
-        {
-          "name": "RMS",
-          "value": 63,
-          "units": "V",
-          "totalDuration": 1.5,
-          "units2": "us"
-        },
-        {
-          "name": "Average",
-          "value": 54,
-          "units": "V",
-          "totalDuration": 1.5,
-          "units2": "us"
-        },
-        {
-          "name": "Frequency",
-          "value": 400,
-          "units": "Hz",
-          "totalDuration": null,
-          "units2": null
-        },
-        {
-          "name": "Rise time",
-          "value": 5,
-          "units": "us",
-          "totalDuration": null,
-          "units2": null
-        },
-        {
-          "name": "Fall time",
-          "value": 10,
-          "units": "us",
-          "totalDuration": null,
-          "units2": null
-        },
-        {
-          "name": "Total time",
-          "value": 15,
-          "units": "us",
-          "totalDuration": null,
-          "units2": null
-        },
-        {
-          "name": "Prop. delay",
-          "value": 22,
-          "units": "us",
-          "totalDuration": null,
-          "units2": null
-        },
-        {
-          "name": "Transient duration",
-          "value": 3,
-          "units": "s",
-          "totalDuration": null,
-          "units2": null
-        }
-      ];
-
+    
     var graph_data =
       [
-        ['Time', 'Voltage'],
-        ['4', 657],
-        ['5', -959],
-        ['6', -279],
-        ['7', 937],
-        ['8', 989],
-        ['9', 412],
-        ['10', -841],
-        ['11', -998],
-        ['12', -536],
-        ['13', 717],
-        ['14', 993],
-        ['15', 646],
-        ['16', -587],
-        ['17', -974],
-        ['18', -740],
-        ['19', 447],
-        ['20', 940],
-        ['21', 814],
-        ['22', -298],
-        ['23', -892],
-        ['24', -869],
-        ['25', 143],
-        ['26', 832],
-        ['27', 904],
-        ['28', 13],
-        ['29', -762],
-        ['30', -919],
-        ['31', -168],
-        ['32', 683],
-        ['33', 914],
-        ['34', 318],
-        ['35', -597],
-        ['36', -889],
-        ['37', -457],
-        ['38', 501],
-        ['39', 845],
-        ['40', 577]
       ];
 
 
@@ -985,37 +894,35 @@
 
         //TODO: Implement API 
 
-        // var formData = new FormData();
-        // formData.append("csrfmiddlewaretoken", "{{ csrf_token }}");
-        // formData.append("requestId", requestId);
-        // formData.append("components", checkedNames.join(','));
-        // formData.append("sectionId", SectionID);
+         var formData = new FormData();
+         formData.append("components", checkedNames.join(','));
+        
 
-        // $.ajax({
-        //   url: "/get_report_data/",  
-        //   type: "POST",
-        //   data: formData,
-        //   processData: false,
-        //   contentType: false,
-        //   success: function (response) {
-        //     if (response.status === 'success') {
-        //       //update the data[pulse params][port1, port2] with the nodes
-        //       console.log(response.nodes);
-        //       console.log(response.complete_node_data);
-
-        //       csvContent = response.csvContent;
-
-
-        //     } else {
-        //       alert('Error: nodes data not generated.');
-        //     }
-        //   },
-        // });
-
-
-        csvContent = "Parameter,Value,Units,Total Duration,Units\nPeak,90,V,1.5,us\nRMS,63,V,1.5,us\nAverage,54,V,1.5,us\nFrequency,400,Hz,,\nRise time,5,us,,\nFall time,10,us,,\nTotal time,15,us,,\nProp. delay,22,us,,\nTransient duration,3,s,,";
-
+         $.ajax({
+           url: "/get_report_data/",  
+           type: "POST",
+           data: formData,
+           processData: false,
+           contentType: false,
+           success: function (response) {
+             if (response.status === 'success') {
+               //update the data[pulse params][port1, port2] with the nodes
+               
+              csvContent = response.csvContent;
+              console.log(csvContent)
         downloadCSV(csvContent, SectionID +'_complete_report.csv');
+
+
+             } else {
+               alert('Error: nodes data not generated.');
+             }
+           },
+         });
+
+
+        //csvContent = "Parameter,Value,Units,Total Duration,Units\nPeak,90,V,1.5,us\nRMS,63,V,1.5,us\nAverage,54,V,1.5,us\nFrequency,400,Hz,,\nRise time,5,us,,\nFall time,10,us,,\nTotal time,15,us,,\nProp. delay,22,us,,\nTransient duration,3,s,,";
+
+        //downloadCSV(csvContent, SectionID +'_complete_report.csv');
 
       });
 
@@ -1065,53 +972,56 @@
 
 
       // var graph_data = '';
-      // var table_data = '';
+       var table_data = '';
 
-      // var formData = new FormData();
-      // formData.append("csrfmiddlewaretoken", "{{ csrf_token }}");
-      // formData.append("requestId", requestId);
-      // formData.append("probe", data.probe);
-      // formData.append("ref", data.ref);
-      // formData.append("sectionID", SectionID);
+       var formData = new FormData();
+      
+       formData.append("node1", data.probe);
+       formData.append("node2", data.ref);
+       formData.append("sectionID", SectionID);
 
-      //TODO: Implement API
-      // $.ajax({
-      //   url: "/get_graph_data/",
-      //   type: "POST",
-      //   data: formData,
-      //   processData: false,
-      //   contentType: false,
-      //   success: function (response) {
-      //     if (response.status === 'success') {
-      //       
-      //       graph_data = response.graph_data;
-
-      //     } else {
-      //       alert('Error: nodes data not generated.');
-      //     }
-      //   },
-      // });
+      
 
       //TODO: Implement API
-      // $.ajax({
-      //   url: "/get_table_data/",
-      //   type: "POST",
-      //   data: formData,
-      //   processData: false,
-      //   contentType: false,
-      //   success: function (response) {
-      //     if (response.status === 'success') {
-      //       
-      //       table_data = response.table_data;
+       $.ajax({
+         url: "/get_graph_data/",
+         type: "POST",
+         data: formData,
+         processData: false,
+         contentType: false,
+         success: function (response) {
+           if (response.status === 'success') {
+             
+             graph_data = response.graph_data;
+             console.log(graph_data)
+             fill_graph(graphDivID, graph_data);
 
-      //     } else {
-      //       alert('Error: nodes data not generated.');
-      //     }
-      //   },
-      // });
+           } else {
+             alert('Error: nodes data not generated.');
+           }
+         },
+       });
 
-      fill_graph(graphDivID, graph_data);
-      fill_table(table, table_data, data.params);
+      //TODO: Implement API
+       $.ajax({
+         url: "/get_table_data/",
+         type: "POST",
+         data: formData,
+         processData: false,
+         contentType: false,
+         success: function (response) {
+           if (response.status === 'success') {
+             
+             table_data = response.table_data;
+             fill_table(table, table_data, data.params);
+          } else {
+             alert('Error: table data not generated.');
+           }
+        },
+       });
+
+      
+      
 
       visualisationCard.appendChild(graphdiv);
       visualisationCard.appendChild(tableDiv);
@@ -1225,34 +1135,34 @@
         // alert(`Exporting: ${checkedNames.join(', ')}`);
 
         //TODO: Implement API 
-        // var formData = new FormData();
-        // formData.append("csrfmiddlewaretoken", "{{ csrf_token }}");
-        // formData.append("requestId", requestId);
-        // formData.append("components", checkedNames.join(','));
-        // formData.append("sectionId", SectionID);
+         var formData = new FormData();
+       
+         formData.append("components", checkedNames.join(','));
+       
 
-        // $.ajax({
-        //   url: "/get_report_data/",  
-        //   type: "POST",
-        //   data: formData,
-        //   processData: false,
-        //   contentType: false,
-        //   success: function (response) {
-        //     if (response.status === 'success') {
+         $.ajax({
+           url: "/get_report_data/",  
+           type: "POST",
+           data: formData,
+           processData: false,
+           contentType: false,
+           success: function (response) {
+             if (response.status === 'success') {
 
-        //       csvContent = response.csvContent;
+               csvContent = response.csvContent;
+               downloadCSV(csvContent, SectionID + '_complete_report.csv');
 
 
-        //     } else {
-        //       alert('Error: nodes data not generated.');
-        //     }
-        //   },
-        // });
+             } else {
+               alert('Error: nodes data not generated.');
+             }
+           },
+         });
 
         // dummy content
-        csvContent = "Parameter,Value,Units,Total Duration,Units\nPeak,90,V,1.5,us\nRMS,63,V,1.5,us\nAverage,54,V,1.5,us\nFrequency,400,Hz,,\nRise time,5,us,,\nFall time,10,us,,\nTotal time,15,us,,\nProp. delay,22,us,,\nTransient duration,3,s,,";
+        //csvContent = "Parameter,Value,Units,Total Duration,Units\nPeak,90,V,1.5,us\nRMS,63,V,1.5,us\nAverage,54,V,1.5,us\nFrequency,400,Hz,,\nRise time,5,us,,\nFall time,10,us,,\nTotal time,15,us,,\nProp. delay,22,us,,\nTransient duration,3,s,,";
 
-        downloadCSV(csvContent, SectionID + '_complete_report.csv');
+        //downloadCSV(csvContent, SectionID + '_complete_report.csv');
       });
 
       customBtn.addEventListener('click', () => {
@@ -1270,31 +1180,33 @@
         // alert(`Exporting: ${checkedNames.join(', ')}`);
 
         //TODO: Implement API 
-        // var formData = new FormData();
+         var formData = new FormData();
         // formData.append("csrfmiddlewaretoken", "{{ csrf_token }}");
         // formData.append("requestId", requestId);
-        // formData.append("components", checkedNames.join(','));
+         formData.append("components", checkedNames.join(','));
         // formData.append("sectionId", SectionID);
 
-        // $.ajax({
-        //   url: "/get_report_data/",  
-        //   type: "POST",
-        //   data: formData,
-        //   processData: false,
-        //   contentType: false,
-        //   success: function (response) {
-        //     if (response.status === 'success') {
-        //       csvContent = response.csvContent;
+        $.ajax({
+          url: "/get_report_data/",  
+          type: "POST",
+          data: formData,
+          processData: false,
+          contentType: false,
+          success: function (response) {
+            if (response.status === 'success') {
+
+              csvContent = response.csvContent;
+              downloadCSV(csvContent, SectionID + '_custom_report.csv');
 
 
-        //     } else {
-        //       alert('Error: nodes data not generated.');
-        //     }
-        //   },
-        // });
-        csvContent = "Parameter,Value,Units,Total Duration,Units\nPeak,90,V,1.5,us\nRMS,63,V,1.5,us\nAverage,54,V,1.5,us\nFrequency,400,Hz,,\nRise time,5,us,,\nFall time,10,us,,\nTotal time,15,us,,\nProp. delay,22,us,,\nTransient duration,3,s,,";
+            } else {
+              alert('Error: nodes data not generated.');
+            }
+          },
+        });
+        //csvContent = "Parameter,Value,Units,Total Duration,Units\nPeak,90,V,1.5,us\nRMS,63,V,1.5,us\nAverage,54,V,1.5,us\nFrequency,400,Hz,,\nRise time,5,us,,\nFall time,10,us,,\nTotal time,15,us,,\nProp. delay,22,us,,\nTransient duration,3,s,,";
 
-        downloadCSV(csvContent, SectionID+'_custom_report.csv');
+        //downloadCSV(csvContent, SectionID+'_custom_report.csv');
       });
     }
 
@@ -1355,6 +1267,9 @@
       tableElement.appendChild(tableHeader);
 
       const namesArray = selectedParams.map(item => item.name);
+
+      console.log("Received data")
+      console.log(data)
 
       // Create the table body
       const tableBody = document.createElement('tbody');

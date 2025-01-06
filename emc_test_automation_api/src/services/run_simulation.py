@@ -207,6 +207,9 @@ class Circuit_Simulator:
 # output_csv = "res_divider.csv"
     @staticmethod
     def run_simulation_func(asc_file_path,csv_file_path,iso_type,port1,port2,port3,default_iso_fields,stop_time_value,stop_time_unit,save_time_value,save_time_unit,max_time_value,max_time_unit,measurements):
+        # arr = [asc_file_path,csv_file_path,iso_type,port1,port2,port3,default_iso_fields,stop_time_value,stop_time_unit,save_time_value,save_time_unit,max_time_value,max_time_unit,measurements]
+        # for item in arr:
+        #     print(item,"\n")
         asc_file = asc_file_path
         output_csv = csv_file_path
         if not os.path.exists(asc_file):
@@ -233,7 +236,10 @@ class Circuit_Simulator:
                     "ISO5 24V": "Pulse5_24V"
 
                 }
+
+                
                 pulse = pulse_name_dictionary[iso_type] #'Pulse1_12V' ......iso type
+                print("\n",pulse,"\n")
                 node = 'Vin' #port1, create 3 for 3 ports
 
                 #creating instructions from default_iso_fields
@@ -244,7 +250,9 @@ class Circuit_Simulator:
                 for item in default_iso_fields:
                     if(item["name"]=="Ri"):
                         Ri = item["value"]
-
+                # print(str1,"\n")
+                # print(f'Ri {port1} {port2} {Ri}',"\n")
+                # print(f'.tran 100u {stop_time_value}{stop_time_unit} {save_time_value}{save_time_unit} {max_time_value}{max_time_unit}',"\n")
                 sim.add_instructions(str1)
                 #sim.add_instructions(f'XU1 {port1} {port3} {pulse} Ua={Ua} Us={Us} Ri=1u td={td} tr={tr} t1={t1} t2={t2} t3={t3} t={t}')
                 sim.add_instructions(f'Ri {port1} {port2} {Ri}')
