@@ -227,6 +227,7 @@ def get_table_data(request):
         # data = json.loads(request.body)
         # node1 = data.get("node1")
         # node2 = data.get("node2")
+        # component = data.get("component")
         # section_id = data.get("sectionID")
         body = request.POST
         node1 = body.get("node1")
@@ -251,79 +252,110 @@ def get_table_data(request):
         if not os.path.exists(file_path):
             return JsonResponse({"error": "CSV file not found."}, status=404)
 
-        summary_data = []
-        with open(file_path, "r") as file:
-            reader = csv.reader(file)
-            # Skip to the "Summary Data" section
-            for row in reader:
-                if row and row[0].strip() == "Summary Data:":
-                    break
-            
-            # Read the header for the "Summary Data"
-            header = next(reader, [])
-            # Create section maps. this can be used for the name section in the json response below 
-            # section_map = {
-            #     "voltageSection": ["Peak Voltage", "Average Voltage", "RMS Voltage"],
-            #     "currentSection": ["Peak Current", "Average Current", "RMS Current"],
-            #     "powerSection": [],  # power-related columns need to be added
-            #     "frequencySection": []  # frequency related coluns need to be added
-            # }
+        if section_id=="powerSection":
+            node1_vals = {}
+            node2_vals = {}
+            component_vals = {}
 
-            print("Header:", header)
-            print("Filtering rows for SectionID:", section_id)
+            with open(file_path, 'r') as file:
+                reader = csv.reader(file)
+                for row in reader:
+                    if row and row[0].strip() == "Summary Data:":
+                        break  
+                header = next(reader, [])
 
-            # Process the rows in the "Summary Data" section
-            for row in reader:
-                if not row or len(row) < 3:
-                    continue
+                for row in reader:
+                    if not row or len(row) < 3:
+                        continue
                 
-                parameter, node_or_component, value = row[0].strip(), row[1].strip(), row[2].strip()
+                    param, name, value = row[0].strip(), row[1].strip(), row[2].strip()
 
-                # Convert the value to a float if possible
-                try:
                     value = float(value)
-                except ValueError:
-                    pass
 
-                sections = {"currentSection":"current","voltageSection":"voltage","powerSection":"power","frequencySection":"frequency"}
+                    # Assign values to node1, node2, and component dictionaries based on user input
+                    if name == node1:
+                        if param == 'Peak Voltage':
+                            node1_vals['peak'] = value
+                        elif param == 'Average Voltage':
+                            node1_vals['avg'] = value
+                        elif param == 'RMS Voltage':
+                            node1_vals['rms'] = value
+                    if name == node2:
+                        if param == 'Peak Voltage':
+                            node2_vals['peak'] = value
+                        elif param == 'Average Voltage':
+                            node2_vals['avg'] = value
+                        elif param == 'RMS Voltage':
+                            node2_vals['rms'] = value
+                    if name == data_point:
+                        if param == 'Peak Current':
+                            component_vals['peak'] = value
+                        elif param == 'Average Current':
+                            component_vals['avg'] = value
+                        elif param == 'RMS Current':
+                            component_vals['rms'] = value
 
+
+            summary_data = []
+            for param in ['peak', 'avg', 'rms']:
+
+                result = {
+                    "name": "Peak" if "peak" in param.lower() else "RMS" if "rms" in param.lower() else "Average",
+                    "value": (node1_vals[param] - node2_vals[param]) * component_vals[param],
+                    "units": "W", 
+                    "totalDuration": "",  
+                    "units2": "",         
+                }
+                summary_data.append(result)
+
+        else:
+            summary_data = []
+            with open(file_path, "r") as file:
+                reader = csv.reader(file)
+                # Skip to the "Summary Data" section
+                for row in reader:
+                    if row and row[0].strip() == "Summary Data:":
+                        break
                 
-                if sections[section_id] in parameter.lower() and (node_or_component==node1 or node_or_component==node2 or node_or_component == data_point): # Make sure we match on the correct parameters for currentSection (case-insensitive) and also match the nodes which we are looking for
-                    print(f"Matched: {parameter}")
-                    summary_data.append({
-                        "name": "Peak" if "peak" in parameter.lower() else "RMS" if "rms" in parameter.lower() else "Average", # might need to change this for frequency and power
-                        "value": value,
-                        "units": "V" if section_id == 'voltageSection' else "A",  # Extract unit ("A" for current)
-                        "totalDuration": "",  # Assuming a fixed totalDuration for now. Need to check how to get this value
-                        "units2": "",       # Assuming a fixed units2 for now. Depends on the above.
-                    })
-               
+                # Read the header for the "Summary Data"
+                header = next(reader, [])
+                # Create section maps. this can be used for the name section in the json response below 
+                # section_map = {
+                #     "voltageSection": ["Peak Voltage", "Average Voltage", "RMS Voltage"],
+                #     "currentSection": ["Peak Current", "Average Current", "RMS Current"],
+                #     "powerSection": [],  # power-related columns need to be added
+                #     "frequencySection": []  # frequency related coluns need to be added
+                # }
 
+                print("Header:", header)
+                print("Filtering rows for SectionID:", section_id)
 
-                #ignore the following comments (its for debugging)
-                # if section_id == "currentSection":
-                # # Make sure we match on the correct parameters for currentSection (case-insensitive)
-                #     if "current" in parameter.lower():
-                #         print(f"Matched: {parameter}")
-                #         summary_data.append({
-                #             "name": "Peak" if "peak" in parameter.lower() else "RMS" if "rms" in parameter.lower() else "Average",
-                #             "value": value,
-                #             "units": node_or_component.split("(")[0],  # Extract unit ("A" for current)
-                #             "totalDuration": 1.5,  # Assuming a fixed totalDuration for now
-                #             "units2": "us",       # Assuming a fixed units2 for now
-                #         })
-                # elif section_id == "voltageSection":
-                #     # Make sure we match on the correct parameters for voltageSection (case-insensitive)
-                #     if "voltage" in parameter.lower():
-                #         print(f"Matched: {parameter}")
-                #         summary_data.append({
-                #             "name": "Peak" if "peak" in parameter.lower() else "RMS" if "rms" in parameter.lower() else "Average",
-                #             "value": value,
-                #             "units": node_or_component.split("(")[0],  # Extract unit ("V" for voltage)
-                #             "totalDuration": 1.5,  # Assuming a fixed totalDuration for now
-                #             "units2": "us",       # Assuming a fixed units2 for now
-                #         })
-                # # need to add code for frequency and power sections
+                # Process the rows in the "Summary Data" section
+                for row in reader:
+                    if not row or len(row) < 3:
+                        continue
+                    
+                    parameter, node_or_component, value = row[0].strip(), row[1].strip(), row[2].strip()
+
+                    # Convert the value to a float if possible
+                    try:
+                        value = float(value)
+                    except ValueError:
+                        pass
+
+                    sections = {"currentSection":"current","voltageSection":"voltage","powerSection":"power","frequencySection":"frequency"}
+
+                    
+                    if sections[section_id] in parameter.lower() and (node_or_component==node1 or node_or_component==node2 or node_or_component == data_point): # Make sure we match on the correct parameters for currentSection (case-insensitive) and also match the nodes which we are looking for
+                        print(f"Matched: {parameter}")
+                        summary_data.append({
+                            "name": "Peak" if "peak" in parameter.lower() else "RMS" if "rms" in parameter.lower() else "Average", # might need to change this for frequency and power
+                            "value": value,
+                            "units": "V" if section_id == 'voltageSection' else "A",  # Extract unit ("A" for current)
+                            "totalDuration": "",  # Assuming a fixed totalDuration for now. Need to check how to get this value
+                            "units2": "",       # Assuming a fixed units2 for now. Depends on the above.
+                        })
+
         
         if not summary_data:
             return JsonResponse({"error": "No data found for the given parameters."}, status=404)
