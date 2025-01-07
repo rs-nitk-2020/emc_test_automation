@@ -315,7 +315,7 @@
         "voltage": true,
         "current": true,
         "power": true,
-        "frequency": false,
+        // "frequency": false,
         // "powerLoss": false,
         // "thermal": false
       }
@@ -1273,21 +1273,30 @@
 
       const namesArray = selectedParams.map(item => item.name);
 
-      console.log("Received data")
-      console.log(data)
+      // console.log("Received data")
+      // console.log(data)
 
       // Create the table body
       const tableBody = document.createElement('tbody');
       data.forEach((param) => {
         if (!namesArray.includes(param.name)) return;
         const row = document.createElement('tr');
+
+
+        const result = selectedParams.find(item => item.name === param.name);
+        var value = param.value;
+        if (result.unit[0] === 'm') value = value*1000;
+        else if (result.unit[0] === 'k') value = value/1000;
+        else if (result.unit[0] === 'u') value = value*1000000;
+
         row.innerHTML = `
       <td>${param.name}</td>
-      <td>${param.value}</td>
-      <td>${param.units}</td>
+      <td>${value}</td>
+      <td>${result.unit}</td>
       <td>${param.totalDuration || ''}</td>
       <td>${param.units2 || ''}</td>
     `;
+
         tableBody.appendChild(row);
       });
       tableElement.appendChild(tableBody);
