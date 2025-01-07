@@ -13,3 +13,4 @@ wxPython==4.2.2
 keras
 tensorflow
 PyLTSpice
+django-pwa

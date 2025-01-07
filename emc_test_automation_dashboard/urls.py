@@ -21,4 +21,5 @@ urlpatterns = [
     path('', include('emc_test_automation_gui.urls')),  # Handle root path
     path('admin/', admin.site.urls),
     path('emc_test_automation_gui/', include('emc_test_automation_gui.urls')),
+    path('',include('pwa.urls')),
 ]

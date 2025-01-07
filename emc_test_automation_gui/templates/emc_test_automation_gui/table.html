@@ -1,7 +1,10 @@
+{% load pwa %}
 {% load static %}
 <html>
 
 <head>
+  {% progressive_web_app_meta %}
+
   <link rel="stylesheet" type="text/css" href=" {% static '/css/custom-styles.css' %} ">
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
   <script src="{% static 'js/bootstrap.min.js' %}"></script>

@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 import emc_test_automation_gui
@@ -21,7 +21,7 @@ STATIC_URL = '/static/'
 
 # Assuming your static files are in a directory called "static" at the root level
 STATICFILES_DIRS = [
-    BASE_DIR / "emc_test_automation_gui/static",
+    os.path.join(BASE_DIR, "emc_test_automation_gui", "static"),
 ]
 
 # Quick-start development settings - unsuitable for production
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'pwa',
     'emc_test_automation_gui.apps.EMCTestAutomationGuiConfig'
 ]
 
@@ -124,7 +125,29 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+
+PWA_APP_NAME = 'Marelli EMC Test Automation PWA'
+PWA_APP_DESCRIPTION = 'This is a Django Progressive Web App for EMC test automation'
+PWA_APP_THEME_COLOR = '#000000'
+PWA_APP_BACKGROUND_COLOR = '#FFFFFF'
+PWA_APP_DISPLAY = 'standalone'
+PWA_APP_SCOPE = '/'
+PWA_APP_START_URL = '/'
+PWA_APP_ICON = '/static/images/icons/marelli.png'  # Path to your app's icon
+PWA_APP_DIR = 'ltr'
+PWA_APP_LANG = 'en-US'
+
+PWA_APP_ICONS = [
+    {
+        'src': '/static/images/icons/marelli.png',
+        'sizes': '192x192',
+    },
+    {
+        'src': '/static/images/icons/marelli.png',
+        'sizes': '512x512',
+    },
+]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

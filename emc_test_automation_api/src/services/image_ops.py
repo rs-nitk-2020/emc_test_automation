@@ -12,6 +12,20 @@ import win32con
 from pywinauto import Application
 
 class ImageOps:
+    def find_ltspice_exe():
+        user_path = os.path.expandvars(r"%LocalAppData%\Programs\ADI\LTspice\LTspice.exe")
+        global_path = os.path.expandvars(r"%ProgramFiles%\ADI\LTspice\LTspice.exe")
+
+        if os.path.exists(user_path):
+            print("LTspice.exe path found at {user_path}\n")
+            return str(user_path)
+        elif os.path.exists(global_path):
+            print("LTspice.exe path found at {global_path}\n")
+            return str(global_path)
+        else:
+            print("LTspice.exe path not found\n")
+            return None
+
     # Function to get system DPI scaling
     def get_dpi_scaling():
         user32 = ctypes.windll.user32
@@ -46,7 +60,7 @@ class ImageOps:
 
     @staticmethod
     def generate_schematic_image(schematic_file):
-        ltspice_path = "C:/Users/Dilshad/AppData/Local/Programs/ADI/LTspice/LTspice.exe"
+        ltspice_path = ImageOps.find_ltspice_exe()
         # Step 1: Check if the input file exists
         if not os.path.exists(schematic_file):
             return {'status': 'error', 'error_details': 'Schematic file does not exist.'}
